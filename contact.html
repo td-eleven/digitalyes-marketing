@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Work Together — Thippesh A | DigitalYes Marketing</title>
+  <meta name="description" content="Get in touch with Thippesh A — AI web design and web application development. Select a service, share your details, and I'll respond within 24 hours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F2F7F7;
+      --seafoam: #C8DEDE;
+      --seafoam-2: #E4F0F0;
+      --surface: #FFFFFF;
+      --dark: #252D35;
+      --dark-2: #1A2229;
+      --green: #5A8888;
+      --green-dark: #3D6666;
+      --green-lt: #EEF5F5;
+      --border: #D5E4E4;
+      --border-light: #E4EEEE;
+      --text-1: #0F1923;
+      --text-2: #3D4F56;
+      --text-3: #6B7B80;
+      --text-4: #9AABAF;
+      --error: #EF4444;
+      --success: #22C55E;
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; cursor: none; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* --- Custom Cursor --- */
+    .cursor-dot, .cursor-circle {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 10000;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
+    }
+    .cursor-dot { width: 6px; height: 6px; background: var(--green); }
+    .cursor-circle {
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--green);
+      opacity: 0.5;
+    }
+    .cursor-active .cursor-circle {
+      width: 60px; height: 60px;
+      background: rgba(90,136,136,0.1);
+      border-color: var(--green);
+    }
+    .cursor-active .cursor-dot { transform: translate(-50%, -50%) scale(0.5); }
+
+    @media (max-width: 900px) {
+      .cursor-dot, .cursor-circle { display: none; }
+      html { cursor: auto; }
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ─── NAV (identical to main page) ─── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(228, 240, 240, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+    }
+
+    .nav-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text-1);
+      letter-spacing: -0.4px;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--text-1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-logo-mark::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 14px; height: 14px;
+      background: var(--green);
+      border-radius: 0 0 0 8px;
+    }
+
+    .nav-logo-mark span {
+      font-size: 13px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-logo em { color: var(--dark); font-style: normal; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-3);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text-1); }
+    .nav-links a.active { color: var(--green); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: white !important;
+      border-radius: 50px;
+      padding: 6px 6px 6px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.1); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text-1);
+    }
+
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--seafoam-2);
+      border-top: 1px solid var(--border);
+      padding: 20px 28px;
+    }
+
+    #mobile-menu a {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-2);
+    }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      padding: 120px 0 60px;
+      background: linear-gradient(150deg, var(--seafoam) 0%, var(--seafoam-2) 60%, #EEF6F6 100%);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .ph-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(37,45,53,0.12);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    .ph-tag-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .page-header h1 {
+      font-size: clamp(36px, 5vw, 54px);
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: -2px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 17px;
+      color: var(--text-3);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── CONTACT SECTION ─── */
+    .contact-section {
+      padding: 72px 0 96px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+
+    .form-card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-card > p {
+      font-size: 14px;
+      color: var(--text-4);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+
+    .form-group label .req {
+      color: var(--error);
+      margin-left: 2px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: var(--font);
+      font-weight: 500;
+      color: var(--text-1);
+      background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--green);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(90,136,136,0.1);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-4);
+      font-weight: 400;
+    }
+
+    .form-control.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(239,68,68,0.08);
+    }
+
+    /* Select styling */
+    .select-wrap {
+      position: relative;
+    }
+
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--text-4);
+      pointer-events: none;
+    }
+
+    .form-control select,
+    select.form-control {
+      cursor: pointer;
+      padding-right: 40px;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Standardized Buttons */
+    .submit-btn {
+      width: 100%;
+      background: #1B3B3B;
+      color: white;
+      border: none;
+      padding: 16px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-top: 8px;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(90,136,136,0.25);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    /* Success State */
+    .success-state {
+      text-align: center;
+      padding: 32px 16px;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: #F0FDF4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+      color: var(--success);
+      border: 2px solid #BBF7D0;
+    }
+
+    .success-state h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-1);
+      margin-bottom: 12px;
+    }
+
+    .success-state p {
+      font-size: 15px;
+      color: var(--text-3);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .success-state a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* ─── INFO SIDEBAR ─── */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+    }
+
+    .info-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: -0.3px;
+      margin-bottom: 24px;
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: rgba(245,183,48,0.12);
+      color: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .step-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 3px;
+    }
+
+    .step-item p {
+      font-size: 13px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .email-card {
+      background: var(--dark);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      color: white;
+    }
+
+    .email-card p {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .email-card a {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .email-card a:hover { color: #A8D67A; }
+
+    .services-badge {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .services-badge h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .service-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-2);
+      margin: 0 6px 8px 0;
+    }
+
+    .sp-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-2);
+      padding: 48px 0 36px;
+      color: white;
+    }
+
+    .footer-simple {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .footer-logo-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--amber);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .footer-logo-wrap em { color: var(--amber); font-style: normal; }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+      font-weight: 500;
+    }
+
+    .footer-back a {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+
+    .footer-back a:hover { color: white; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .mobile-menu-btn { display: block; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 22px; }
+
+      .footer-simple {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-header { padding: 100px 0 48px; }
+      .page-header h1 { font-size: 34px; letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-circle"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>DY</span></div>
+        Digital<em>Yes</em>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+
+      <a href="contact.html" class="nav-cta">
+        Let's Talk
+        <div class="cta-icon">↗</div>
+      </a>
+
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 7h16M3 12h16M3 17h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="ph-tag">
+      <span class="ph-tag-dot"></span>
+      I respond within 24 hours
+    </div>
+    <h1>Let's Work Together</h1>
+    <p>Tell me what you need and I'll put together a plan that fits your business and budget.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form Card -->
+        <div class="form-card">
+          <h2>Send Me a Message</h2>
+          <p>Fill in your details below and select the service you're looking for.</p>
+
+          <form id="contact-form" action="send_mail.php" method="POST" novalidate>
+
+            <div class="form-group">
+              <label for="name">Full Name <span class="req">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                placeholder="e.g. Ravi Kumar"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="req">*</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-control"
+                placeholder="+91 98765 43210"
+                required
+                autocomplete="tel"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="you@example.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Required <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="service" name="service" class="form-control" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="WordPress website built on a professional theme">WordPress website built on a professional theme</option>
+                  <option value="Websites Built with Advanced AI Tools">Websites Built with Advanced AI Tools</option>
+                  <option value="Web Applications with AI Assistance">Web Applications with AI Assistance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span style="font-weight:500; color: var(--text-4);">(Optional)</span></label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="4"
+                placeholder="Tell me briefly about your project, goals, or any questions you have..."
+              ></textarea>
+            </div>
+
+            <p id="form-error" style="font-size:13px; color:var(--error); font-weight:600; margin-bottom:12px; display:none;"></p>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+              Send Message
+              <div class="s-icon">↗</div>
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="contact-sidebar">
+
+          <!-- What happens next -->
+          <div class="info-card">
+            <h3>What happens next?</h3>
+            <div class="step-list">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div>
+                  <strong>Submit your details</strong>
+                  <p>Fill in the form with your name, contact info, and which service you need.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div>
+                  <strong>I review your request</strong>
+                  <p>You'll hear back from me within 24 hours with clear next steps.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div>
+                  <strong>Quick strategy call</strong>
+                  <p>We hop on a short call to understand your goals and I'll put together a plan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct email -->
+          <div class="email-card">
+            <p>Or email me directly</p>
+            <a href="mailto:thippeshdigital@gmail.com">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/>
+                <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              thippeshdigital@gmail.com
+            </a>
+          </div>
+
+          <!-- Services offered -->
+          <div class="services-badge">
+            <h4>Services Available</h4>
+            <div>
+              <div class="service-pill">
+                <div class="sp-dot" style="background:#5A8888;"></div>
+                WordPress Websites
+              </div>
+              <div class="service-pill">
+                <div class="sp-dot" style="background:#252D35;"></div>
+                AI Web Design
+              </div>
+              <div class="service-pill">
+                <div class="sp-dot" style="background:#1B3B3B;"></div>
+                AI Web Applications
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-simple">
+        <div class="footer-logo-wrap">
+          <div class="footer-logo-mark">DY</div>
+          Digital<em>Yes</em>
+        </div>
+        <p class="footer-copy">© 2025 DigitalYes Marketing. All rights reserved.</p>
+        <div class="footer-back">
+          <a href="index.html">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    function toggleMenu() {
+      const m = document.getElementById('mobile-menu');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Form submission
+    const form = document.getElementById('contact-form');
+    const btn  = document.getElementById('submit-btn');
+    const errEl = document.getElementById('form-error');
+
+    function showError(msg) {
+      errEl.textContent = msg;
+      errEl.style.display = 'block';
+    }
+
+    function clearError() {
+      errEl.style.display = 'none';
+      errEl.textContent = '';
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      clearError();
+
+      // Client-side validation
+      const name    = form.name.value.trim();
+      const phone   = form.phone.value.trim();
+      const email   = form.email.value.trim();
+      const service = form.service.value;
+
+      if (!name)    return showError('Please enter your full name.');
+      if (!phone)   return showError('Please enter your phone number.');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+                    return showError('Please enter a valid email address.');
+      if (!service) return showError('Please select a service.');
+
+      // Send
+      btn.innerHTML = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const fd = new FormData(form);
+        const res = await fetch('send_mail.php', { method: 'POST', body: fd });
+        const data = await res.json();
+
+        if (data.success) {
+          // Success UI
+          form.innerHTML = `
+            <div class="success-state">
+              <div class="success-icon">✓</div>
+              <h3>Message Sent!</h3>
+              <p>Thank you, <strong>${name}</strong>! I've received your enquiry for <strong>${service}</strong>.<br>I'll get back to you within 24 hours.</p>
+              <a href="index.html">← Back to Home</a>
+            </div>
+          `;
+        } else {
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          showError(data.message || 'Something went wrong. Please try again or email us directly.');
+        }
+      } catch (err) {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        showError('Network error. Please email us directly at thippeshdigital@gmail.com');
+      }
+    });
+
+    // Remove field error states on input
+    document.querySelectorAll('.form-control').forEach(el => {
+      el.addEventListener('input', () => el.classList.remove('error'));
+    });
+
+    // Custom Cursor
+    const dot = document.querySelector('.cursor-dot');
+    const circle = document.querySelector('.cursor-circle');
+    
+    let mX = 0, mY = 0; // Mouse Pos
+    let cX = 0, cY = 0; // Circle Pos
+    let dX = 0, dY = 0; // Dot Pos
+    
+    window.addEventListener('mousemove', (e) => {
+      mX = e.clientX;
+      mY = e.clientY;
+    });
+    
+    function animateCursor() {
+      dX = mX; dY = mY;
+      cX += (mX - cX) * 0.15;
+      cY += (mY - cY) * 0.15;
+      dot.style.transform = `translate(${dX}px, ${dY}px)`;
+      circle.style.transform = `translate(${cX}px, ${cY}px)`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    
+    document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+    });
+  </script>
+</body>
+</html>
