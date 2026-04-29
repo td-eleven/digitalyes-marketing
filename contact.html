@@ -904,11 +904,26 @@
       btn.disabled = true;
 
       try {
-        const fd = new FormData(form);
-        const res = await fetch('send_mail.php', { method: 'POST', body: fd });
+        const payload = {
+          name: name,
+          phone: phone,
+          email: email,
+          service: service,
+          message: form.message.value,
+          _subject: "New Lead: " + name + " - DigitalYes"
+        };
+
+        const res = await fetch('https://formsubmit.co/ajax/thippeshdigital@gmail.com', { 
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
         const data = await res.json();
 
-        if (data.success) {
+        if (data.success === "true" || data.success === true) {
           // Success UI
           form.innerHTML = `
             <div class="success-state">
