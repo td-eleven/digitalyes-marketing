@@ -33,13 +33,9 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // ── Validate service is one of the allowed options
 $allowed_services = [
-    'Keyword Visibility Report',
     'Competitor Report',
-    'Business Intelligence Dashboard',
-    'GBP Setup & Optimization',
-    'Monthly GBP Management',
-    'Google Ads Management',
-    'Facebook Ads Management'
+    'Keyword Visibility Report',
+    'Business Intelligence Dashboard'
 ];
 if (!in_array($service, $allowed_services)) {
     echo json_encode(['success' => false, 'message' => 'Invalid service selection.']);
