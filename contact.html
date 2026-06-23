@@ -12,20 +12,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #FAF8F4;
-      --yellow: #F5C518;
-      --yellow-dark: #E0B010;
-      --yellow-lt: #FFF8E1;
-      --charcoal: #1A1A1A;
-      --charcoal-2: #2A2A2A;
-      --bg: #FAF8F4;
+      --bg: #FFFDF7;
+      --beige: #F7F0DD;
       --surface: #FFFFFF;
-      --border: #E8E4DC;
-      --border-light: #F0ECE4;
-      --text-1: #1A1A1A;
-      --text-2: #4A4A4A;
-      --text-3: #6B6B6B;
-      --text-4: #9A9A9A;
+      --text-1: #102A23;
+      --text-2: #3D524C;
+      --text-3: #5C6F69;
+      --text-4: #8A9A94;
+      --yellow: #F4B400;
+      --yellow-dk: #D9A000;
+      --border: #E8E1CC;
+      --footer: #0F1720;
       --error: #EF4444;
       --success: #22C55E;
       --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -57,7 +54,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250, 248, 244, 0.92);
+      background: rgba(255, 253, 247, 0.9);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid transparent;
@@ -88,7 +85,7 @@
     .nav-logo-mark {
       width: 34px;
       height: 34px;
-      background: var(--charcoal);
+      background: var(--text-1);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -121,13 +118,13 @@
     }
 
     .nav-links a:hover { color: var(--text-1); }
-    .nav-links a.active { color: var(--charcoal); font-weight: 700; }
+    .nav-links a.active { color: var(--text-1); font-weight: 700; }
 
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--charcoal);
+      background: var(--text-1);
       color: white !important;
       border-radius: 50px;
       padding: 10px 20px 10px 22px;
@@ -137,7 +134,7 @@
       justify-self: end;
     }
 
-    .nav-cta:hover { background: var(--charcoal-2); }
+    .nav-cta:hover { opacity: 0.88; }
 
     .mobile-menu-btn {
       display: none;
@@ -174,7 +171,7 @@
     .ph-tag {
       display: inline-block;
       background: var(--yellow);
-      color: var(--charcoal);
+      color: var(--text-1);
       padding: 7px 16px;
       border-radius: 50px;
       font-size: 13px;
@@ -271,9 +268,9 @@
     }
 
     .form-control:focus {
-      border-color: var(--yellow-dark);
+      border-color: var(--yellow-dk);
       background: white;
-      box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
+      box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.15);
     }
 
     .form-control::placeholder {
@@ -319,7 +316,7 @@
     /* Standardized Buttons */
     .submit-btn {
       width: 100%;
-      background: var(--charcoal);
+      background: var(--text-1);
       color: white;
       border: none;
       padding: 16px 28px;
@@ -341,8 +338,8 @@
 
     .submit-btn:hover:not(:disabled) {
       transform: translateY(-2px);
-      background: var(--charcoal-2);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+      opacity: 0.9;
+      box-shadow: 0 12px 24px rgba(16, 42, 35, 0.12);
     }
 
     .submit-btn:disabled {
@@ -429,8 +426,8 @@
     .step-num {
       width: 32px;
       height: 32px;
-      background: var(--yellow-lt);
-      color: var(--charcoal);
+      background: var(--beige);
+      color: var(--text-1);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -456,7 +453,7 @@
     }
 
     .email-card {
-      background: var(--charcoal);
+      background: var(--text-1);
       border-radius: 24px;
       padding: 28px;
       text-align: center;
@@ -525,7 +522,7 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--charcoal);
+      background: var(--text-1);
       padding: 48px 0 36px;
       color: white;
     }
@@ -555,7 +552,7 @@
       justify-content: center;
       font-size: 11px;
       font-weight: 800;
-      color: var(--charcoal);
+      color: var(--text-1);
     }
 
     .footer-logo-wrap em { color: var(--yellow); font-style: normal; }
@@ -610,8 +607,8 @@
 
       <div class="nav-links">
         <a href="index.html#home">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
+        <a href="index.html#reports">Reports</a>
+        <a href="index.html#leads">Lead Generation</a>
         <a href="contact.html" class="active">Contact</a>
       </div>
 
@@ -700,6 +697,9 @@
                   <option value="Competitor Report">Competitor Report</option>
                   <option value="Keyword Visibility Report">Keyword Visibility Report</option>
                   <option value="Business Intelligence Dashboard">Business Intelligence Dashboard</option>
+                  <option value="Google Ads Management">Google Ads Management</option>
+                  <option value="Facebook Ads Management">Facebook Ads Management</option>
+                  <option value="Other Digital Marketing Service">Other Digital Marketing Service</option>
                 </select>
               </div>
             </div>
@@ -768,7 +768,7 @@
             </a>
           </div>
 
-          <div class="email-card" style="background: var(--charcoal-2);">
+          <div class="email-card" style="background: #1a2838;">
             <p>WhatsApp</p>
             <a href="https://wa.me/917829036211" target="_blank" rel="noopener">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
@@ -783,16 +783,20 @@
             <h4>Services Available</h4>
             <div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#F5C518;"></div>
+                <div class="sp-dot" style="background:#F4B400;"></div>
                 Competitor Report
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#E0B010;"></div>
+                <div class="sp-dot" style="background:#D9A000;"></div>
                 Keyword Report
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#1A1A1A;"></div>
+                <div class="sp-dot" style="background:#102A23;"></div>
                 Dashboard
+              </div>
+              <div class="service-pill">
+                <div class="sp-dot" style="background:#F4B400;opacity:0.6;"></div>
+                Google &amp; Facebook Ads
               </div>
             </div>
           </div>
@@ -892,8 +896,8 @@
               Open that inbox (check spam), click the link once, then come back and submit again.<br><br>
               Or reach me directly:</p>
               <p style="margin-top:16px;">
-                <a href="mailto:thippesh@digitalyesmarketing.com" style="font-weight:700;color:var(--charcoal);">thippesh@digitalyesmarketing.com</a><br>
-                <a href="https://wa.me/917829036211" target="_blank" rel="noopener" style="font-weight:700;color:var(--charcoal);">WhatsApp +91 7829036211</a>
+                <a href="mailto:thippesh@digitalyesmarketing.com" style="font-weight:700;color:var(--text-1);">thippesh@digitalyesmarketing.com</a><br>
+                <a href="https://wa.me/917829036211" target="_blank" rel="noopener" style="font-weight:700;color:var(--text-1);">WhatsApp +91 7829036211</a>
               </p>
             </div>
           `;

@@ -35,7 +35,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $allowed_services = [
     'Competitor Report',
     'Keyword Visibility Report',
-    'Business Intelligence Dashboard'
+    'Business Intelligence Dashboard',
+    'Google Ads Management',
+    'Facebook Ads Management',
+    'Other Digital Marketing Service'
 ];
 if (!in_array($service, $allowed_services)) {
     echo json_encode(['success' => false, 'message' => 'Invalid service selection.']);
