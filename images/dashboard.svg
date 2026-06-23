@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="520" viewBox="0 0 400 520">
+  <rect width="400" height="520" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="400" height="48" fill="#0F1720"/>
+  <text x="20" y="30" fill="#ffffff" font-family="Arial,sans-serif" font-size="13" font-weight="700">Business Intelligence Dashboard</text>
+  <rect x="16" y="64" width="110" height="72" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="28" y="88" fill="#8A9A94" font-family="Arial,sans-serif" font-size="9" font-weight="600">PROFILE VIEWS</text>
+  <text x="28" y="116" fill="#102A23" font-family="Arial,sans-serif" font-size="20" font-weight="800">2,847</text>
+  <rect x="138" y="64" width="110" height="72" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="150" y="88" fill="#8A9A94" font-family="Arial,sans-serif" font-size="9" font-weight="600">DIRECTIONS</text>
+  <text x="150" y="116" fill="#102A23" font-family="Arial,sans-serif" font-size="20" font-weight="800">412</text>
+  <rect x="260" y="64" width="124" height="72" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="272" y="88" fill="#8A9A94" font-family="Arial,sans-serif" font-size="9" font-weight="600">PHONE CALLS</text>
+  <text x="272" y="116" fill="#102A23" font-family="Arial,sans-serif" font-size="20" font-weight="800">89</text>
+  <rect x="16" y="152" width="368" height="180" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="28" y="176" fill="#102A23" font-family="Arial,sans-serif" font-size="11" font-weight="700">Monthly Performance</text>
+  <rect x="40" y="260" width="28" height="52" fill="#E8E1CC" rx="3"/>
+  <rect x="80" y="230" width="28" height="82" fill="#F4B400" rx="3" opacity="0.5"/>
+  <rect x="120" y="210" width="28" height="102" fill="#F4B400" rx="3" opacity="0.7"/>
+  <rect x="160" y="190" width="28" height="122" fill="#F4B400" rx="3"/>
+  <rect x="200" y="220" width="28" height="92" fill="#F4B400" rx="3" opacity="0.8"/>
+  <rect x="240" y="200" width="28" height="112" fill="#F4B400" rx="3" opacity="0.9"/>
+  <rect x="280" y="180" width="28" height="132" fill="#F4B400" rx="3"/>
+  <rect x="320" y="205" width="28" height="107" fill="#F4B400" rx="3" opacity="0.75"/>
+  <rect x="16" y="348" width="176" height="140" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="28" y="372" fill="#102A23" font-family="Arial,sans-serif" font-size="11" font-weight="700">Top Keywords</text>
+  <rect x="28" y="386" width="140" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="28" y="404" width="120" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="28" y="422" width="100" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="28" y="440" width="80" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="204" y="348" width="180" height="140" fill="#ffffff" stroke="#E8E1CC" rx="8"/>
+  <text x="216" y="372" fill="#102A23" font-family="Arial,sans-serif" font-size="11" font-weight="700">Competitor Gap</text>
+  <circle cx="294" cy="420" r="48" fill="none" stroke="#E8E1CC" stroke-width="12"/>
+  <circle cx="294" cy="420" r="48" fill="none" stroke="#F4B400" stroke-width="12" stroke-dasharray="180 120" transform="rotate(-90 294 420)"/>
+</svg>

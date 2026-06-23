@@ -46,7 +46,7 @@ if (!in_array($service, $allowed_services)) {
 }
 
 // ── Build the email
-$to      = 'thippesh@digitalyesmarketing.com';
+$to      = 'support@digitalyesmarketing.com';
 $subject = "New Enquiry: $service — DigitalYes Marketing";
 
 $body = "

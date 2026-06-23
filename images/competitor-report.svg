@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="520" viewBox="0 0 400 520">
+  <rect width="400" height="520" fill="#ffffff"/>
+  <rect x="0" y="0" width="400" height="56" fill="#102A23"/>
+  <text x="24" y="36" fill="#F4B400" font-family="Arial,sans-serif" font-size="14" font-weight="700">Competitor Analysis Report</text>
+  <text x="24" y="88" fill="#102A23" font-family="Arial,sans-serif" font-size="11" font-weight="700">Nearby Competitors  Overview</text>
+  <rect x="24" y="100" width="352" height="28" fill="#F7F0DD" rx="4"/>
+  <text x="36" y="118" fill="#5C6F69" font-family="Arial,sans-serif" font-size="10" font-weight="600">Business</text>
+  <text x="180" y="118" fill="#5C6F69" font-family="Arial,sans-serif" font-size="10" font-weight="600">Rating</text>
+  <text x="260" y="118" fill="#5C6F69" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reviews</text>
+  <text x="330" y="118" fill="#5C6F69" font-family="Arial,sans-serif" font-size="10" font-weight="600">Rank</text>
+  <rect x="24" y="132" width="352" height="32" fill="#FFFDF7" stroke="#E8E1CC"/>
+  <rect x="24" y="168" width="352" height="32" fill="#ffffff" stroke="#E8E1CC"/>
+  <rect x="24" y="204" width="352" height="32" fill="#FFFDF7" stroke="#E8E1CC"/>
+  <rect x="24" y="240" width="352" height="32" fill="#ffffff" stroke="#E8E1CC"/>
+  <rect x="24" y="276" width="352" height="32" fill="#FFFDF7" stroke="#E8E1CC"/>
+  <text x="36" y="152" fill="#102A23" font-family="Arial,sans-serif" font-size="10">Competitor A</text>
+  <text x="180" y="152" fill="#102A23" font-family="Arial,sans-serif" font-size="10">4.6</text>
+  <text x="260" y="152" fill="#102A23" font-family="Arial,sans-serif" font-size="10">284</text>
+  <text x="330" y="152" fill="#F4B400" font-family="Arial,sans-serif" font-size="10" font-weight="700">#1</text>
+  <text x="36" y="188" fill="#102A23" font-family="Arial,sans-serif" font-size="10">Competitor B</text>
+  <text x="180" y="188" fill="#102A23" font-family="Arial,sans-serif" font-size="10">4.4</text>
+  <text x="260" y="188" fill="#102A23" font-family="Arial,sans-serif" font-size="10">156</text>
+  <text x="330" y="188" fill="#102A23" font-family="Arial,sans-serif" font-size="10">#2</text>
+  <text x="36" y="224" fill="#102A23" font-family="Arial,sans-serif" font-size="10" font-weight="700">Your Business</text>
+  <text x="180" y="224" fill="#102A23" font-family="Arial,sans-serif" font-size="10" font-weight="700">4.2</text>
+  <text x="260" y="224" fill="#102A23" font-family="Arial,sans-serif" font-size="10" font-weight="700">98</text>
+  <text x="330" y="224" fill="#102A23" font-family="Arial,sans-serif" font-size="10" font-weight="700">#3</text>
+  <text x="24" y="340" fill="#102A23" font-family="Arial,sans-serif" font-size="11" font-weight="700">Ranking Opportunities</text>
+  <rect x="24" y="352" width="280" height="10" fill="#E8E1CC" rx="5"/>
+  <rect x="24" y="352" width="196" height="10" fill="#F4B400" rx="5"/>
+  <rect x="24" y="374" width="240" height="10" fill="#E8E1CC" rx="5"/>
+  <rect x="24" y="374" width="144" height="10" fill="#F4B400" rx="5"/>
+  <rect x="24" y="396" width="200" height="10" fill="#E8E1CC" rx="5"/>
+  <rect x="24" y="396" width="120" height="10" fill="#F4B400" rx="5"/>
+  <text x="24" y="440" fill="#8A9A94" font-family="Arial,sans-serif" font-size="9">Digital Yes Marketing · Confidential</text>
+</svg>
