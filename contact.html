@@ -12,28 +12,26 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F8FBFF;
-      --bg-blue: #EFF6FC;
-      --seafoam: #E8F4FD;
-      --seafoam-2: #F0F8FF;
+      --cream: #FAF8F4;
+      --yellow: #F5C518;
+      --yellow-dark: #E0B010;
+      --yellow-lt: #FFF8E1;
+      --charcoal: #1A1A1A;
+      --charcoal-2: #2A2A2A;
+      --bg: #FAF8F4;
       --surface: #FFFFFF;
-      --dark: #2C4A63;
-      --dark-2: #1E3A52;
-      --green: #5BABE8;
-      --green-dark: #3D96D9;
-      --green-lt: #E8F4FD;
-      --border: #D4E8F7;
-      --border-light: #E3F0FA;
-      --text-1: #1A2B3C;
-      --text-2: #3D5568;
-      --text-3: #5C7386;
-      --text-4: #8AA3B5;
+      --border: #E8E4DC;
+      --border-light: #F0ECE4;
+      --text-1: #1A1A1A;
+      --text-2: #4A4A4A;
+      --text-3: #6B6B6B;
+      --text-4: #9A9A9A;
       --error: #EF4444;
       --success: #22C55E;
       --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     }
 
-    html { scroll-behavior: smooth; cursor: none; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font);
@@ -44,35 +42,9 @@
       overflow-x: hidden;
     }
 
-    /* --- Custom Cursor --- */
-    .cursor-dot, .cursor-circle {
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 10000;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
-    }
-    .cursor-dot { width: 6px; height: 6px; background: var(--green); }
-    .cursor-circle {
-      width: 32px; height: 32px;
-      border: 1.5px solid var(--green);
-      opacity: 0.5;
-    }
-    .cursor-active .cursor-circle {
-      width: 60px; height: 60px;
-      background: rgba(91, 171, 232, 0.1);
-      border-color: var(--green);
-    }
-    .cursor-active .cursor-dot { transform: translate(-50%, -50%) scale(0.5); }
-
-    @media (max-width: 900px) {
-      .cursor-dot, .cursor-circle { display: none; }
-      html { cursor: auto; }
-    }
-
     a { text-decoration: none; color: inherit; }
+
+    .wa-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
     .container {
       max-width: 1160px;
@@ -85,21 +57,20 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 20px rgba(91, 171, 232, 0.08);
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
     }
 
     .nav-container {
-      max-width: 1160px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 32px;
       height: 72px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
     }
 
     .nav-logo {
@@ -112,25 +83,16 @@
       letter-spacing: -0.4px;
     }
 
+    .nav-logo { justify-self: start; }
+
     .nav-logo-mark {
-      width: 36px;
-      height: 36px;
-      background: var(--green);
-      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      background: var(--charcoal);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-logo-mark::after {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 14px; height: 14px;
-      background: var(--green);
-      border-radius: 0 0 0 8px;
     }
 
     .nav-logo-mark span {
@@ -142,12 +104,13 @@
       z-index: 1;
     }
 
-    .nav-logo em { color: var(--green-dark); font-style: normal; }
+    .nav-logo em { color: var(--yellow); font-style: normal; }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 36px;
+      justify-self: center;
     }
 
     .nav-links a {
@@ -158,23 +121,23 @@
     }
 
     .nav-links a:hover { color: var(--text-1); }
-    .nav-links a.active { color: var(--green); }
+    .nav-links a.active { color: var(--charcoal); font-weight: 700; }
 
     .nav-cta {
       display: inline-flex;
       align-items: center;
-      background: var(--green);
+      gap: 10px;
+      background: var(--charcoal);
       color: white !important;
       border-radius: 50px;
-      padding: 6px 6px 6px 20px;
+      padding: 10px 20px 10px 22px;
       font-size: 14px;
       font-weight: 700;
-      gap: 10px;
       transition: all 0.2s;
-      box-shadow: 0 4px 15px rgba(91, 171, 232, 0.25);
+      justify-self: end;
     }
 
-    .nav-cta:hover { transform: translateY(-1px); background: var(--green-dark); }
+    .nav-cta:hover { background: var(--charcoal-2); }
 
     .mobile-menu-btn {
       display: none;
@@ -188,10 +151,10 @@
     #mobile-menu {
       display: none;
       flex-direction: column;
-      gap: 16px;
-      background: var(--seafoam-2);
+      gap: 14px;
+      background: var(--cream);
       border-top: 1px solid var(--border);
-      padding: 20px 28px;
+      padding: 20px 32px;
     }
 
     #mobile-menu a {
@@ -203,36 +166,20 @@
     /* ─── PAGE HEADER ─── */
     .page-header {
       padding: 120px 0 60px;
-      background: linear-gradient(150deg, #E8F4FD 0%, #F0F8FF 60%, #FFFFFF 100%);
+      background: var(--cream);
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
 
     .ph-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(37,45,53,0.12);
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--charcoal);
       padding: 7px 16px;
       border-radius: 50px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--green-dark);
       margin-bottom: 24px;
-    }
-
-    .ph-tag-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: blink 2s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
     }
 
     .page-header h1 {
@@ -256,7 +203,7 @@
     /* ─── CONTACT SECTION ─── */
     .contact-section {
       padding: 72px 0 96px;
-      background: var(--bg-blue);
+      background: var(--cream);
     }
 
     .contact-grid {
@@ -324,9 +271,9 @@
     }
 
     .form-control:focus {
-      border-color: var(--green);
+      border-color: var(--yellow-dark);
       background: white;
-      box-shadow: 0 0 0 3px rgba(91, 171, 232, 0.12);
+      box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
     }
 
     .form-control::placeholder {
@@ -372,7 +319,7 @@
     /* Standardized Buttons */
     .submit-btn {
       width: 100%;
-      background: var(--green);
+      background: var(--charcoal);
       color: white;
       border: none;
       padding: 16px 28px;
@@ -393,9 +340,9 @@
     }
 
     .submit-btn:hover:not(:disabled) {
-      transform: translateY(-3px) scale(1.02);
-      background: var(--green-dark);
-      box-shadow: 0 15px 30px rgba(91, 171, 232, 0.3);
+      transform: translateY(-2px);
+      background: var(--charcoal-2);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
     }
 
     .submit-btn:disabled {
@@ -482,8 +429,8 @@
     .step-num {
       width: 32px;
       height: 32px;
-      background: var(--green-lt);
-      color: var(--green-dark);
+      background: var(--yellow-lt);
+      color: var(--charcoal);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -509,7 +456,7 @@
     }
 
     .email-card {
-      background: var(--green);
+      background: var(--charcoal);
       border-radius: 24px;
       padding: 28px;
       text-align: center;
@@ -537,7 +484,7 @@
       transition: color 0.2s;
     }
 
-    .email-card a:hover { color: #D4EBFA; }
+    .email-card a:hover { color: var(--yellow); }
 
     .services-badge {
       background: var(--bg);
@@ -578,10 +525,9 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
+      background: var(--charcoal);
       padding: 48px 0 36px;
-      color: var(--text-1);
+      color: white;
     }
 
     .footer-simple {
@@ -596,44 +542,44 @@
       gap: 10px;
       font-size: 16px;
       font-weight: 800;
-      color: var(--text-1);
+      color: white;
     }
 
     .footer-logo-mark {
       width: 30px;
       height: 30px;
-      background: var(--green);
+      background: var(--yellow);
       border-radius: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       font-weight: 800;
-      color: white;
+      color: var(--charcoal);
     }
 
-    .footer-logo-wrap em { color: var(--green-dark); font-style: normal; }
+    .footer-logo-wrap em { color: var(--yellow); font-style: normal; }
 
     .footer-copy {
       font-size: 13px;
-      color: var(--text-4);
+      color: rgba(255,255,255,0.35);
       font-weight: 500;
     }
 
     .footer-back a {
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-3);
+      color: rgba(255,255,255,0.55);
       transition: color 0.2s;
     }
 
-    .footer-back a:hover { color: var(--green-dark); }
+    .footer-back a:hover { color: white; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .mobile-menu-btn { display: block; }
+      .nav-container { grid-template-columns: 1fr auto; }
+      .nav-links, .nav-cta { display: none; }
+      .mobile-menu-btn { display: block; justify-self: end; }
 
       .contact-grid { grid-template-columns: 1fr; }
       .form-card { padding: 28px 22px; }
@@ -654,9 +600,6 @@
   <script defer src="https://cloud.umami.is/script.js" data-website-id="3a1aca4d-18f7-47f1-aba2-35dbbecfd51e"></script>
 </head>
 <body>
-  <div class="cursor-dot"></div>
-  <div class="cursor-circle"></div>
-
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
@@ -666,14 +609,15 @@
       </a>
 
       <div class="nav-links">
+        <a href="index.html#home">Home</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#about">About</a>
         <a href="contact.html" class="active">Contact</a>
       </div>
 
-      <a href="contact.html" class="nav-cta">
+      <a href="https://wa.me/917829036211" target="_blank" rel="noopener" class="nav-cta">
         Let's Talk
-        <div class="cta-icon">↗</div>
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </a>
 
       <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
@@ -692,10 +636,7 @@
 
   <!-- Page Header -->
   <div class="page-header">
-    <div class="ph-tag">
-      <span class="ph-tag-dot"></span>
-      I respond within 24 hours
-    </div>
+    <div class="ph-tag">I respond within 24 hours</div>
     <h1>Let's Work Together</h1>
     <p>Tell me about your business and I'll help you improve visibility, understand competitors or generate more leads.</p>
   </div>
@@ -827,7 +768,7 @@
             </a>
           </div>
 
-          <div class="email-card" style="background: var(--green-dark);">
+          <div class="email-card" style="background: var(--charcoal-2);">
             <p>WhatsApp</p>
             <a href="https://wa.me/917829036211" target="_blank" rel="noopener">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
@@ -842,15 +783,15 @@
             <h4>Services Available</h4>
             <div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#5BABE8;"></div>
+                <div class="sp-dot" style="background:#F5C518;"></div>
                 Competitor Report
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#3D96D9;"></div>
+                <div class="sp-dot" style="background:#E0B010;"></div>
                 Keyword Report
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#7EC0F0;"></div>
+                <div class="sp-dot" style="background:#1A1A1A;"></div>
                 Dashboard
               </div>
             </div>
@@ -966,33 +907,6 @@
       el.addEventListener('input', () => el.classList.remove('error'));
     });
 
-    // Custom Cursor
-    const dot = document.querySelector('.cursor-dot');
-    const circle = document.querySelector('.cursor-circle');
-    
-    let mX = 0, mY = 0; // Mouse Pos
-    let cX = 0, cY = 0; // Circle Pos
-    let dX = 0, dY = 0; // Dot Pos
-    
-    window.addEventListener('mousemove', (e) => {
-      mX = e.clientX;
-      mY = e.clientY;
-    });
-    
-    function animateCursor() {
-      dX = mX; dY = mY;
-      cX += (mX - cX) * 0.15;
-      cY += (mY - cY) * 0.15;
-      dot.style.transform = `translate(${dX}px, ${dY}px)`;
-      circle.style.transform = `translate(${cX}px, ${cY}px)`;
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    
-    document.querySelectorAll('a, button, input, textarea, select').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
-    });
   </script>
 </body>
 </html>
