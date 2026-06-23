@@ -12,21 +12,22 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F2F7F7;
-      --seafoam: #C8DEDE;
-      --seafoam-2: #E4F0F0;
+      --bg: #F8FBFF;
+      --bg-blue: #EFF6FC;
+      --seafoam: #E8F4FD;
+      --seafoam-2: #F0F8FF;
       --surface: #FFFFFF;
-      --dark: #252D35;
-      --dark-2: #1A2229;
-      --green: #5A8888;
-      --green-dark: #3D6666;
-      --green-lt: #EEF5F5;
-      --border: #D5E4E4;
-      --border-light: #E4EEEE;
-      --text-1: #0F1923;
-      --text-2: #3D4F56;
-      --text-3: #6B7B80;
-      --text-4: #9AABAF;
+      --dark: #2C4A63;
+      --dark-2: #1E3A52;
+      --green: #5BABE8;
+      --green-dark: #3D96D9;
+      --green-lt: #E8F4FD;
+      --border: #D4E8F7;
+      --border-light: #E3F0FA;
+      --text-1: #1A2B3C;
+      --text-2: #3D5568;
+      --text-3: #5C7386;
+      --text-4: #8AA3B5;
       --error: #EF4444;
       --success: #22C55E;
       --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -61,7 +62,7 @@
     }
     .cursor-active .cursor-circle {
       width: 60px; height: 60px;
-      background: rgba(90,136,136,0.1);
+      background: rgba(91, 171, 232, 0.1);
       border-color: var(--green);
     }
     .cursor-active .cursor-dot { transform: translate(-50%, -50%) scale(0.5); }
@@ -84,11 +85,11 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(228, 240, 240, 0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 1px 20px rgba(91, 171, 232, 0.08);
     }
 
     .nav-container {
@@ -114,7 +115,7 @@
     .nav-logo-mark {
       width: 36px;
       height: 36px;
-      background: var(--text-1);
+      background: var(--green);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -141,7 +142,7 @@
       z-index: 1;
     }
 
-    .nav-logo em { color: var(--dark); font-style: normal; }
+    .nav-logo em { color: var(--green-dark); font-style: normal; }
 
     .nav-links {
       display: flex;
@@ -162,7 +163,7 @@
     .nav-cta {
       display: inline-flex;
       align-items: center;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      background: var(--green);
       color: white !important;
       border-radius: 50px;
       padding: 6px 6px 6px 20px;
@@ -170,9 +171,10 @@
       font-weight: 700;
       gap: 10px;
       transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(91, 171, 232, 0.25);
     }
 
-    .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.1); }
+    .nav-cta:hover { transform: translateY(-1px); background: var(--green-dark); }
 
     .mobile-menu-btn {
       display: none;
@@ -201,7 +203,7 @@
     /* ─── PAGE HEADER ─── */
     .page-header {
       padding: 120px 0 60px;
-      background: linear-gradient(150deg, var(--seafoam) 0%, var(--seafoam-2) 60%, #EEF6F6 100%);
+      background: linear-gradient(150deg, #E8F4FD 0%, #F0F8FF 60%, #FFFFFF 100%);
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
@@ -216,7 +218,7 @@
       border-radius: 50px;
       font-size: 13px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--green-dark);
       margin-bottom: 24px;
     }
 
@@ -254,6 +256,7 @@
     /* ─── CONTACT SECTION ─── */
     .contact-section {
       padding: 72px 0 96px;
+      background: var(--bg-blue);
     }
 
     .contact-grid {
@@ -323,7 +326,7 @@
     .form-control:focus {
       border-color: var(--green);
       background: white;
-      box-shadow: 0 0 0 3px rgba(90,136,136,0.1);
+      box-shadow: 0 0 0 3px rgba(91, 171, 232, 0.12);
     }
 
     .form-control::placeholder {
@@ -369,7 +372,7 @@
     /* Standardized Buttons */
     .submit-btn {
       width: 100%;
-      background: #1B3B3B;
+      background: var(--green);
       color: white;
       border: none;
       padding: 16px 28px;
@@ -386,12 +389,13 @@
       justify-content: center;
       gap: 12px;
       border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(91, 171, 232, 0.25);
     }
 
     .submit-btn:hover:not(:disabled) {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 15px 30px rgba(90,136,136,0.25);
+      background: var(--green-dark);
+      box-shadow: 0 15px 30px rgba(91, 171, 232, 0.3);
     }
 
     .submit-btn:disabled {
@@ -438,7 +442,7 @@
       margin-top: 20px;
       font-size: 14px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--green-dark);
     }
 
     /* ─── INFO SIDEBAR ─── */
@@ -478,8 +482,8 @@
     .step-num {
       width: 32px;
       height: 32px;
-      background: rgba(245,183,48,0.12);
-      color: var(--dark);
+      background: var(--green-lt);
+      color: var(--green-dark);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -505,7 +509,7 @@
     }
 
     .email-card {
-      background: var(--dark);
+      background: var(--green);
       border-radius: 24px;
       padding: 28px;
       text-align: center;
@@ -533,7 +537,7 @@
       transition: color 0.2s;
     }
 
-    .email-card a:hover { color: #A8D67A; }
+    .email-card a:hover { color: #D4EBFA; }
 
     .services-badge {
       background: var(--bg);
@@ -574,9 +578,10 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--dark-2);
+      background: var(--surface);
+      border-top: 1px solid var(--border);
       padding: 48px 0 36px;
-      color: white;
+      color: var(--text-1);
     }
 
     .footer-simple {
@@ -591,38 +596,38 @@
       gap: 10px;
       font-size: 16px;
       font-weight: 800;
-      color: white;
+      color: var(--text-1);
     }
 
     .footer-logo-mark {
       width: 30px;
       height: 30px;
-      background: var(--amber);
+      background: var(--green);
       border-radius: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
       font-weight: 800;
-      color: var(--dark);
+      color: white;
     }
 
-    .footer-logo-wrap em { color: var(--amber); font-style: normal; }
+    .footer-logo-wrap em { color: var(--green-dark); font-style: normal; }
 
     .footer-copy {
       font-size: 13px;
-      color: rgba(255,255,255,0.25);
+      color: var(--text-4);
       font-weight: 500;
     }
 
     .footer-back a {
       font-size: 13px;
       font-weight: 600;
-      color: rgba(255,255,255,0.5);
+      color: var(--text-3);
       transition: color 0.2s;
     }
 
-    .footer-back a:hover { color: white; }
+    .footer-back a:hover { color: var(--green-dark); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
@@ -843,15 +848,15 @@
             <h4>Services Available</h4>
             <div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#5A8888;"></div>
+                <div class="sp-dot" style="background:#5BABE8;"></div>
                 GBP Reports
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#252D35;"></div>
+                <div class="sp-dot" style="background:#3D96D9;"></div>
                 Competitor Insights
               </div>
               <div class="service-pill">
-                <div class="sp-dot" style="background:#1B3B3B;"></div>
+                <div class="sp-dot" style="background:#7EC0F0;"></div>
                 Google &amp; Facebook Ads
               </div>
             </div>

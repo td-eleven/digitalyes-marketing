@@ -12,23 +12,24 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --seafoam:   #D4E8E8;
-      --seafoam-2: #E4F0F0;
-      --seafoam-3: #EEF5F5;
-      --bg:        #F4F8F8;
+      --seafoam:   #E8F4FD;
+      --seafoam-2: #F0F8FF;
+      --seafoam-3: #F5FAFF;
+      --bg:        #F8FBFF;
+      --bg-blue:   #EFF6FC;
       --surface:   #FFFFFF;
-      --dark:      #252D35;
-      --dark-2:    #1A2229;
-      --green:     #5A8888;    /* teal-muted (matches "Built with Modern Tech" dim text) */
-      --green-dark:#3D6666;    /* hover / darker teal */
-      --green-lt:  #EEF5F5;    /* light teal tint for tags, icons, bullets */
-      --border:    #D8E6E6;
-      --border-2:  #E8F0F0;
-      --text-1:    #0F1923;
-      --text-2:    #3D4F56;
-      --text-3:    #6B7B80;
-      --text-4:    #9AABAF;
-      --text-muted:#7A9A9A;
+      --dark:      #2C4A63;
+      --dark-2:    #1E3A52;
+      --green:     #5BABE8;
+      --green-dark:#3D96D9;
+      --green-lt:  #E8F4FD;
+      --border:    #D4E8F7;
+      --border-2:  #E3F0FA;
+      --text-1:    #1A2B3C;
+      --text-2:    #3D5568;
+      --text-3:    #5C7386;
+      --text-4:    #8AA3B5;
+      --text-muted:#6B9BB8;
       --font:      'Plus Jakarta Sans', system-ui, sans-serif;
     }
 
@@ -62,7 +63,7 @@
     }
     .cursor-active .cursor-circle {
       width: 60px; height: 60px;
-      background: rgba(90,136,136,0.1);
+      background: rgba(91, 171, 232, 0.1);
       border-color: var(--green);
     }
     .cursor-active .cursor-dot { transform: translate(-50%, -50%) scale(0.5); }
@@ -84,7 +85,7 @@
     #navbar {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(196, 218, 218, 0.82);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
       border-bottom: 1px solid transparent;
@@ -92,7 +93,7 @@
     }
 
     #navbar.scrolled {
-      background: rgba(244, 248, 248, 0.96);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom-color: var(--border);
       box-shadow: 0 1px 20px rgba(0,0,0,0.05);
     }
@@ -109,7 +110,7 @@
 
     .nav-logo-mark {
       width: 36px; height: 36px;
-      background: var(--dark);
+      background: var(--green);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
@@ -127,7 +128,7 @@
       position: relative; z-index: 1;
     }
 
-    .nav-logo em { color: var(--dark); font-style: normal; }
+    .nav-logo em { color: var(--green-dark); font-style: normal; }
 
     .nav-links { display: flex; align-items: center; gap: 32px; }
 
@@ -136,15 +137,15 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--dark); }
+    .nav-links a:hover { color: var(--green-dark); }
 
     .nav-cta {
       display: inline-flex; align-items: center;
-      background: #1B3B3B; 
+      background: var(--green);
       color: white !important;
       border-radius: 12px; padding: 6px 6px 6px 20px;
       font-size: 15px; font-weight: 800; gap: 10px; transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(91, 171, 232, 0.25);
     }
 
     .nav-cta-icon {
@@ -153,7 +154,7 @@
       color: white; font-size: 14px; flex-shrink: 0; transition: transform 0.2s;
     }
 
-    .nav-cta:hover { background: #264646; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .nav-cta:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(91, 171, 232, 0.3); }
 
     .mobile-menu-btn {
       display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--text-1);
@@ -174,14 +175,14 @@
     /* ─── HERO ─── */
     .hero {
       padding: 110px 0 80px;
-      background: linear-gradient(150deg, #DAEAEA 0%, #E8F2F2 45%, #F0F7F7 100%);
+      background: linear-gradient(150deg, #E8F4FD 0%, #F0F8FF 45%, #FFFFFF 100%);
       position: relative; overflow: hidden;
     }
 
     .hero::before {
       content: ''; position: absolute; top: -60px; right: -100px;
       width: 440px; height: 440px;
-      background: radial-gradient(circle, rgba(125,178,66,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(91, 171, 232, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -240,19 +241,19 @@
     /* Standardized Buttons */
     .btn-amber {
       display: inline-flex; align-items: center;
-      background: #1B3B3B; 
+      background: var(--green);
       border-radius: 12px;
       padding: 14px 28px;
       font-size: 15px; font-weight: 800; color: white;
       gap: 12px; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
       border: none; cursor: pointer; font-family: var(--font);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(91, 171, 232, 0.25);
     }
 
     .btn-amber:hover { 
-      background: #264646;
+      background: var(--green-dark);
       transform: translateY(-3px) scale(1.02); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+      box-shadow: 0 15px 30px rgba(91, 171, 232, 0.3); 
     }
 
     .link-cta {
@@ -266,7 +267,7 @@
       font-size: 13px; color: var(--green); transition: all 0.2s;
     }
 
-    .link-cta:hover { gap: 12px; color: var(--dark); }
+    .link-cta:hover { gap: 12px; color: var(--green-dark); }
     .link-cta:hover .diag-arrow { background: var(--green); color: white; }
 
     /* ── Metrics strip ── */
@@ -307,10 +308,10 @@
     .hv-img-wrap {
       position: relative;
       width: 100%;
-      background: linear-gradient(145deg, #BDD0D0 0%, #C8D8D8 100%);
+      background: linear-gradient(145deg, #D4EBFA 0%, #E3F0FA 100%);
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 28px 60px rgba(37,45,53,0.13);
+      box-shadow: 0 28px 60px rgba(91, 171, 232, 0.12);
       animation: hv-float 5s ease-in-out infinite;
     }
 
@@ -349,19 +350,19 @@
       top: 14px; right: 14px;
       animation: badge-float-1 4s ease-in-out infinite;
     }
-    .hv-badge-1 .hv-badge-icon { background: rgba(90,136,136,0.12); }
+    .hv-badge-1 .hv-badge-icon { background: rgba(91, 171, 232, 0.15); }
 
     .hv-badge-2 {
       bottom: 76px; left: 14px;
       animation: badge-float-2 5s ease-in-out infinite;
     }
-    .hv-badge-2 .hv-badge-icon { background: rgba(90,136,136,0.12); }
+    .hv-badge-2 .hv-badge-icon { background: rgba(91, 171, 232, 0.15); }
 
     .hv-badge-3 {
       bottom: 14px; right: 14px;
       animation: badge-float-3 4.5s ease-in-out infinite;
     }
-    .hv-badge-3 .hv-badge-icon { background: rgba(90,136,136,0.12); }
+    .hv-badge-3 .hv-badge-icon { background: rgba(91, 171, 232, 0.15); }
 
     @keyframes badge-float-1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
     @keyframes badge-float-2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
@@ -370,13 +371,19 @@
     /* ─── SERVICES SECTION (LIGHT) ─── */
     #services {
       padding: 88px 0 100px;
-      background: #F9FCFC;
+      background: var(--surface);
       border-top: 1px solid var(--border-2);
     }
 
     #lead-generation {
       padding: 88px 0 100px;
-      background: var(--bg);
+      background: var(--bg-blue);
+      border-top: 1px solid var(--border-2);
+    }
+
+    #coming-soon {
+      padding: 88px 0 100px;
+      background: var(--surface);
       border-top: 1px solid var(--border-2);
     }
 
@@ -421,17 +428,17 @@
     }
 
     /* Service Card Themes - Varied Greens */
-    .svc-card:nth-child(1) { background: #F0FDF4; border-color: #DCFCE7; }
-    .svc-card:nth-child(2) { background: #ECF9F9; border-color: #D1EDED; }
-    .svc-card:nth-child(3) { background: #F2F7F2; border-color: #E2E8E2; }
-    .svc-card:nth-child(4) { background: #F5F9F5; border-color: #E2EBE2; }
-    .svc-card:nth-child(5) { background: #EDF6F6; border-color: #D5EBEB; }
+    .svc-card:nth-child(1) { background: #F8FCFF; border-color: #D4EBFA; }
+    .svc-card:nth-child(2) { background: #F0F8FF; border-color: #C8E3F8; }
+    .svc-card:nth-child(3) { background: #F5FAFF; border-color: #D8EBF8; }
+    .svc-card:nth-child(4) { background: #EDF6FD; border-color: #C5DFF5; }
+    .svc-card:nth-child(5) { background: #F8FBFF; border-color: #D4E8F7; }
     
-    .svc-card:nth-child(1) .price-btn { background: #86EFAC; color: #064E3B; }
-    .svc-card:nth-child(2) .price-btn { background: #99F6E4; color: #042F2E; }
-    .svc-card:nth-child(3) .price-btn { background: #CBD5E1; color: #1E293B; }
-    .svc-card:nth-child(4) .price-btn { background: #A7D8D8; color: #042F2E; }
-    .svc-card:nth-child(5) .price-btn { background: #B8D4D4; color: #1A3333; }
+    .svc-card:nth-child(1) .price-btn { background: #B8DBF5; color: #1E4A6E; }
+    .svc-card:nth-child(2) .price-btn { background: #A8D4F2; color: #1A4266; }
+    .svc-card:nth-child(3) .price-btn { background: #C5E3F7; color: #2C4A63; }
+    .svc-card:nth-child(4) .price-btn { background: #9FCCF0; color: #1A4266; }
+    .svc-card:nth-child(5) .price-btn { background: #B0D5F4; color: #1E4A6E; }
 
     .svc-card.coming-soon { opacity: 0.92; }
     .svc-card.coming-soon .price-amount { font-size: 18px; color: var(--text-3); }
@@ -447,7 +454,7 @@
     /* ─── ABOUT ─── */
     #about {
       padding: 88px 0;
-      background: var(--bg);
+      background: var(--bg-blue);
       border-top: 1px solid var(--border-2);
     }
 
@@ -550,7 +557,7 @@
 
     .tag-dark {
       display: inline-block;
-      background: rgba(37,45,53,0.07); color: var(--dark);
+      background: rgba(91, 171, 232, 0.12); color: var(--green-dark);
       padding: 5px 14px; border-radius: 50px;
       font-size: 12px; font-weight: 800;
       text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px;
@@ -726,7 +733,7 @@
 
     /* ─── FOOTER (LIGHT) ─── */
     footer {
-      background: var(--surface);
+      background: var(--bg-blue);
       border-top: 1px solid var(--border);
       padding: 60px 0 36px;
       color: var(--text-1);
@@ -966,8 +973,8 @@
         <div class="svc-card reveal">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="7" stroke="#5A8888" stroke-width="2"/>
-              <path d="M21 21l-4.35-4.35" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="11" cy="11" r="7" stroke="#5BABE8" stroke-width="2"/>
+              <path d="M21 21l-4.35-4.35" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Keyword Visibility Report</h3>
@@ -982,8 +989,8 @@
         <div class="svc-card reveal d1">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M3 3v18h18" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
-              <path d="M7 14l4-4 3 3 5-6" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 3v18h18" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 14l4-4 3 3 5-6" stroke="#5BABE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <h3>Competitor Report</h3>
@@ -998,8 +1005,8 @@
         <div class="svc-card reveal d2">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#5A8888" stroke-width="2"/>
-              <path d="M3 9h18M9 21V9" stroke="#5A8888" stroke-width="2"/>
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#5BABE8" stroke-width="2"/>
+              <path d="M3 9h18M9 21V9" stroke="#5BABE8" stroke-width="2"/>
             </svg>
           </div>
           <h3>Business Intelligence Dashboard</h3>
@@ -1013,8 +1020,8 @@
         <div class="svc-card reveal d3">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5A8888" stroke-width="2"/>
-              <circle cx="12" cy="9" r="2.5" stroke="#5A8888" stroke-width="2"/>
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5BABE8" stroke-width="2"/>
+              <circle cx="12" cy="9" r="2.5" stroke="#5BABE8" stroke-width="2"/>
             </svg>
           </div>
           <h3>GBP Setup &amp; Optimization</h3>
@@ -1028,7 +1035,7 @@
         <div class="svc-card reveal d4">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Monthly GBP Management</h3>
@@ -1058,7 +1065,7 @@
         <div class="svc-card reveal">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#5BABE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <h3>Google Ads Management</h3>
@@ -1071,8 +1078,8 @@
         <div class="svc-card reveal d1">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#5A8888" stroke-width="2"/>
-              <path d="M16 8.5h.01M12 16.5v-5M8.5 12H12" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#5BABE8" stroke-width="2"/>
+              <path d="M16 8.5h.01M12 16.5v-5M8.5 12H12" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>Facebook Ads Management</h3>
@@ -1087,7 +1094,7 @@
   </section>
 
   <!-- ── COMING SOON ── -->
-  <section id="coming-soon" style="padding: 88px 0 100px; background: #F9FCFC; border-top: 1px solid var(--border-2);">
+  <section id="coming-soon">
     <div class="container">
 
       <div class="services-header reveal">
@@ -1101,8 +1108,8 @@
         <div class="svc-card coming-soon reveal">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5A8888" stroke-width="2"/>
-              <circle cx="12" cy="9" r="2.5" stroke="#5A8888" stroke-width="2"/>
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5BABE8" stroke-width="2"/>
+              <circle cx="12" cy="9" r="2.5" stroke="#5BABE8" stroke-width="2"/>
             </svg>
           </div>
           <h3>Local Maps Tracker</h3>
@@ -1114,8 +1121,8 @@
         <div class="svc-card coming-soon reveal d1">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <rect x="3" y="4" width="18" height="16" rx="2" stroke="#5A8888" stroke-width="2"/>
-              <path d="M8 12h8M8 8h5" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <rect x="3" y="4" width="18" height="16" rx="2" stroke="#5BABE8" stroke-width="2"/>
+              <path d="M8 12h8M8 8h5" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>PageAuditAI</h3>
@@ -1127,7 +1134,7 @@
         <div class="svc-card coming-soon reveal d2">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 5v14M5 12h14" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 5v14M5 12h14" stroke="#5BABE8" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
           <h3>More Tools</h3>
