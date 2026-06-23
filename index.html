@@ -495,15 +495,37 @@
     }
 
     .svc-card {
-      background: white;
       border-radius: 20px;
       padding: 36px 28px 32px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-      border: 1px solid var(--border);
       display: flex; flex-direction: column;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .svc-card--competitor {
+      background: #FFF9E6;
+      border: 1px solid #F5E6B8;
+    }
+
+    .svc-card--competitor .svc-icon { background: #FFEFC2; }
+    .svc-card--competitor .svc-btn { background: #F5C518; }
+
+    .svc-card--keyword {
+      background: #EEF5FF;
+      border: 1px solid #C8DFF5;
+    }
+
+    .svc-card--keyword .svc-icon { background: #D6EBFA; }
+    .svc-card--keyword .svc-btn { background: #7EC0F0; color: #1A3A52; }
+
+    .svc-card--dashboard {
+      background: #F0FAF4;
+      border: 1px solid #C8E8D4;
+    }
+
+    .svc-card--dashboard .svc-icon { background: #D4F0E0; }
+    .svc-card--dashboard .svc-btn { background: #6BC49A; color: #1A3D2E; }
 
     .svc-card:hover {
       transform: translateY(-6px);
@@ -894,7 +916,7 @@
 
       <div class="services-grid">
 
-        <div class="svc-card reveal">
+        <div class="svc-card svc-card--competitor reveal">
           <div class="svc-icon">
             <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
               <circle cx="11" cy="11" r="7" stroke="#F5C518" stroke-width="2"/>
@@ -910,7 +932,7 @@
           <a href="contact.html" class="svc-btn">Get Started →</a>
         </div>
 
-        <div class="svc-card reveal d1">
+        <div class="svc-card svc-card--keyword reveal d1">
           <div class="svc-icon">
             <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
               <path d="M3 3v18h18" stroke="#F5C518" stroke-width="2" stroke-linecap="round"/>
@@ -921,12 +943,12 @@
           <p class="svc-desc">Discover where your business ranks for important keywords and find opportunities to improve.</p>
           <div class="svc-price-block">
             <div class="price-label">Starting at</div>
-            <div class="price-amount">₹699</div>
+            <div class="price-amount">₹499</div>
           </div>
           <a href="contact.html" class="svc-btn">Get Started →</a>
         </div>
 
-        <div class="svc-card reveal d2">
+        <div class="svc-card svc-card--dashboard reveal d2">
           <div class="svc-icon">
             <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
               <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="#F5C518" stroke-width="2"/>
