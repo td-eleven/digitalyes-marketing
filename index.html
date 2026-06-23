@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigitalYes Marketing — Thippesh A | AI Web Design & Development</title>
-  <meta name="description" content="Thippesh A — Certified Digital Marketer with 4+ years of experience. I build AI-powered websites and web applications that solve real business problems.">
+  <title>DigitalYes Marketing — Thippesh A | Reports, Insights & Lead Generation</title>
+  <meta name="description" content="Thippesh A — Digital Marketer with 4+ years of experience. Helping local businesses improve Google visibility, understand competitors and generate more leads.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -374,6 +374,12 @@
       border-top: 1px solid var(--border-2);
     }
 
+    #lead-generation {
+      padding: 88px 0 100px;
+      background: var(--bg);
+      border-top: 1px solid var(--border-2);
+    }
+
     .services-header { margin-bottom: 52px; }
 
     .tag-amber {
@@ -418,10 +424,43 @@
     .svc-card:nth-child(1) { background: #F0FDF4; border-color: #DCFCE7; }
     .svc-card:nth-child(2) { background: #ECF9F9; border-color: #D1EDED; }
     .svc-card:nth-child(3) { background: #F2F7F2; border-color: #E2E8E2; }
+    .svc-card:nth-child(4) { background: #F5F9F5; border-color: #E2EBE2; }
+    .svc-card:nth-child(5) { background: #EDF6F6; border-color: #D5EBEB; }
     
     .svc-card:nth-child(1) .price-btn { background: #86EFAC; color: #064E3B; }
     .svc-card:nth-child(2) .price-btn { background: #99F6E4; color: #042F2E; }
     .svc-card:nth-child(3) .price-btn { background: #CBD5E1; color: #1E293B; }
+    .svc-card:nth-child(4) .price-btn { background: #A7D8D8; color: #042F2E; }
+    .svc-card:nth-child(5) .price-btn { background: #B8D4D4; color: #1A3333; }
+
+    .svc-card.coming-soon { opacity: 0.92; }
+    .svc-card.coming-soon .price-amount { font-size: 18px; color: var(--text-3); }
+
+    .svc-desc {
+      font-size: 15px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 88px 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border-2);
+    }
+
+    .about-inner {
+      max-width: 720px;
+    }
+
+    .about-inner p {
+      font-size: 17px;
+      color: var(--text-2);
+      font-weight: 500;
+      line-height: 1.8;
+    }
 
     .svc-card:hover {
       transform: translateY(-12px);
@@ -796,8 +835,9 @@
       </a>
 
       <div class="nav-links">
-        <a href="#services">My Services</a>
-        <a href="#portfolio">My Work</a>
+        <a href="#services">Services</a>
+        <a href="#lead-generation">Lead Generation</a>
+        <a href="#about">About</a>
         <a href="contact.html">Contact</a>
       </div>
 
@@ -814,8 +854,9 @@
     </div>
 
     <div id="mobile-menu">
-      <a href="#services" onclick="closeMenu()">My Services</a>
-      <a href="#portfolio" onclick="closeMenu()">My Work</a>
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#lead-generation" onclick="closeMenu()">Lead Generation</a>
+      <a href="#about" onclick="closeMenu()">About</a>
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="mobile-cta">Let's Talk ↗</a>
     </div>
@@ -831,25 +872,25 @@
 
           <div class="hero-name-tag reveal">
             <span class="name-dot"></span>
-            Thippesh A &nbsp;·&nbsp; Certified Digital Marketer &nbsp;·&nbsp; 4+ Years
+            Thippesh A &nbsp;·&nbsp; Digital Marketer &nbsp;·&nbsp; 4+ Years
           </div>
 
           <h1 class="hero-title reveal d1">
-            Need a website?<br>
-            I can build it using<br>
-            <em>WordPress</em> or <em>AI tools.</em>
+            Grow Your Business with<br>
+            <em>Reports, Insights</em> &amp;<br>
+            <span class="dim">Lead Generation</span>
           </h1>
 
           <p class="hero-sub reveal d2">
-            Websites and web tools designed to turn your visitors into customers.
+            Helping local businesses improve Google visibility, understand competitors and generate more leads.
           </p>
 
           <div class="hero-actions reveal d3">
-            <a href="#portfolio" class="btn-amber">
-              View My Work
+            <a href="contact.html" class="btn-amber">
+              Get Started
             </a>
             <a href="contact.html" class="link-cta">
-              Let's Talk
+              Contact Me
               <div class="diag-arrow">↗</div>
             </a>
           </div>
@@ -859,11 +900,11 @@
         <!-- Right: Hero illustration -->
         <div class="hero-visual reveal d2">
           <div class="hv-img-wrap">
-            <img src="hero-visual.png" alt="AI Web Design & Development — Digital workspace illustration" class="hero-img">
+            <img src="hero-visual.png" alt="Digital marketing reports and lead generation — Digital workspace illustration" class="hero-img">
 
             <!-- Floating achievement badges -->
             <div class="hv-badge hv-badge-1">
-              <div class="hv-badge-icon">⚡</div>
+              <div class="hv-badge-icon">📊</div>
               <div>
                 <div class="hv-badge-title">4+ Years</div>
                 <div class="hv-badge-sub">Experience</div>
@@ -871,18 +912,18 @@
             </div>
 
             <div class="hv-badge hv-badge-2">
-              <div class="hv-badge-icon">🚀</div>
+              <div class="hv-badge-icon">📍</div>
               <div>
-                <div class="hv-badge-title">2 Live AI Products</div>
-                <div class="hv-badge-sub">Built & Launched</div>
+                <div class="hv-badge-title">GBP &amp; Local SEO</div>
+                <div class="hv-badge-sub">Reports &amp; Insights</div>
               </div>
             </div>
 
             <div class="hv-badge hv-badge-3">
               <div class="hv-badge-icon">✓</div>
               <div>
-                <div class="hv-badge-title">AI-Integrated</div>
-                <div class="hv-badge-sub">All Projects</div>
+                <div class="hv-badge-title">Lead Generation</div>
+                <div class="hv-badge-sub">Paid Advertising</div>
               </div>
             </div>
           </div>
@@ -903,8 +944,8 @@
         </div>
         <div class="metric-sep"></div>
         <div class="metric">
-          <div class="metric-value" data-target="2">0<span class="sup">+</span></div>
-          <div class="metric-label">Live AI Products</div>
+          <div class="metric-value" data-target="5">0<span class="sup">+</span></div>
+          <div class="metric-label">GBP Services</div>
         </div>
       </div>
     </div>
@@ -915,83 +956,85 @@
     <div class="container">
 
       <div class="services-header reveal">
-        <div class="tag-amber">My Services</div>
-        <h2 class="section-title">What I <em>Do</em></h2>
-        <p class="section-sub">I use AI to build professional websites faster and more affordably.</p>
+        <div class="tag-amber">Services</div>
+        <h2 class="section-title">Google Business Profile <em>Services</em></h2>
+        <p class="section-sub">Reports and services designed to help local businesses understand and improve their Google Maps presence.</p>
       </div>
 
-      <div class="services-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+      <div class="services-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
 
-        <!-- Card 1: WordPress Design -->
         <div class="svc-card reveal">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.58.07-1.14.19-1.68l4.81 12.19C7.81 21.05 10.3 22 12 22s4.19-.95 4.19-2.51V18s0-2.31-2.94-2.31h-.35v-1.6c1.19 0 2.22-.64 2.22-1.68 0-.9-.76-1.55-1.78-1.55h-3.34v7.14h3.34c1.1 0 1.99.71 1.99 1.58C15.28 17.06 14.39 18 13.29 18h-4.3v-4.86L4.19 13.14C4.07 12.75 4 12.38 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 2.45-.11 4.8-.11 4.8L12 20z" fill="#5A8888"/>
+              <circle cx="11" cy="11" r="7" stroke="#5A8888" stroke-width="2"/>
+              <path d="M21 21l-4.35-4.35" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>WordPress Websites Built on <em>Professional Themes</em></h3>
-          <p style="font-size: 15px; color: var(--text-3); font-weight: 500; margin-bottom: 8px;">Professional websites you can easily manage</p>
-          <ul class="svc-bullets">
-            <li>Custom design based on your brand</li>
-            <li>Works perfectly on mobile & desktop</li>
-            <li>SEO & security setup included</li>
-            <li>Fast, secure, and reliable</li>
-            <li>You can update content anytime</li>
-          </ul>
+          <h3>Keyword Visibility Report</h3>
+          <p class="svc-desc">Shows where a business ranks for important keywords and highlights opportunities.</p>
           <div class="svc-price-row">
             <div class="price-label">Starting at</div>
-            <div class="price-amount">₹15k - 30k</div>
+            <div class="price-amount">₹699</div>
             <a href="contact.html" class="price-btn">Get Started →</a>
           </div>
         </div>
 
-        <!-- Card 2: AI Web Design -->
         <div class="svc-card reveal d1">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" stroke="#5A8888" stroke-width="2"/>
-              <path d="M2 18h20M9 21h6" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
-              <path d="M7 9l3 3-3 3" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13 15h3" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <path d="M3 3v18h18" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 14l4-4 3 3 5-6" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Websites Built with <em>Advanced AI Tools</em></h3>
-          <p style="font-size: 15px; color: var(--text-3); font-weight: 500; margin-bottom: 8px;">Modern, high-speed websites built using AI</p>
-          <ul class="svc-bullets">
-            <li>Super fast and smooth performance</li>
-            <li>Helps with content and SEO</li>
-            <li>Smart features that improve user experience</li>
-            <li>Designed to convert visitors into customers</li>
-            <li>Premium design focused on results</li>
-          </ul>
+          <h3>Competitor Report</h3>
+          <p class="svc-desc">Compare competitors, reviews and ranking opportunities.</p>
           <div class="svc-price-row">
             <div class="price-label">Starting at</div>
-            <div class="price-amount">₹15k - 30k</div>
+            <div class="price-amount">₹999</div>
             <a href="contact.html" class="price-btn">Get Started →</a>
           </div>
         </div>
 
-        <!-- Card 3: AI Web App Dev -->
         <div class="svc-card reveal d2">
           <div class="svc-icon">
             <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-              <polyline points="16 18 22 12 16 6" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="8 6 2 12 8 18" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 3v18" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="#5A8888" stroke-width="2"/>
+              <path d="M3 9h18M9 21V9" stroke="#5A8888" stroke-width="2"/>
             </svg>
           </div>
-          <h3>Web Applications with <em>AI Assistance</em></h3>
-          <p style="font-size: 15px; color: var(--text-3); font-weight: 500; margin-bottom: 8px;">Custom tools to automate and grow your business</p>
-          <ul class="svc-bullets">
-            <li>Build tools or platforms for your business</li>
-            <li>Automate repetitive tasks</li>
-            <li>Manage data and workflows easily</li>
-            <li>Scalable as your business grows</li>
-            <li>Clean and user-friendly design</li>
-          </ul>
+          <h3>Business Intelligence Dashboard</h3>
+          <p class="svc-desc">Track rankings and business performance over time.</p>
           <div class="svc-price-row">
-            <div class="price-label">Starting at</div>
-            <div class="price-amount">₹50k - 5 Lakhs</div>
+            <div class="price-amount">Monthly service</div>
+            <a href="contact.html" class="price-btn">Get Started →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal d3">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5A8888" stroke-width="2"/>
+              <circle cx="12" cy="9" r="2.5" stroke="#5A8888" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>GBP Setup &amp; Optimization</h3>
+          <p class="svc-desc">Complete setup and optimization for businesses.</p>
+          <div class="svc-price-row">
+            <div class="price-amount">One-time service</div>
+            <a href="contact.html" class="price-btn">Get Started →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal d4">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Monthly GBP Management</h3>
+          <p class="svc-desc">Ongoing optimization and monitoring.</p>
+          <div class="svc-price-row">
+            <div class="price-amount">Monthly service</div>
             <a href="contact.html" class="price-btn">Get Started →</a>
           </div>
         </div>
@@ -1000,123 +1043,118 @@
     </div>
   </section>
 
-  <!-- ── PORTFOLIO ── -->
-  <section id="portfolio">
+  <!-- ── LEAD GENERATION ── -->
+  <section id="lead-generation">
     <div class="container">
 
-      <div class="portfolio-header reveal">
-        <div class="tag-dark">My Work</div>
-        <h2 class="section-title">Projects<br><em>I've Built</em></h2>
-        <p class="section-sub">Live products that solve real business problems — and demonstrate what I can build for you.</p>
+      <div class="services-header reveal">
+        <div class="tag-amber">Lead Generation</div>
+        <h2 class="section-title">Lead Generation <em>Services</em></h2>
+        <p class="section-sub">Generate more enquiries and customers using paid advertising.</p>
       </div>
 
-      <div class="portfolio-note reveal">
-        <div class="note-icon">💡</div>
-        <p>
-          <strong>Both of these projects were built by me to solve real, specific business problems</strong> —
-          and they also serve as live proof of my AI-integrated design and development capabilities.
-          They are fully functional products, not just mockups.
-        </p>
-      </div>
+      <div class="services-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 760px;">
 
-      <!-- Project 1: PageAuditAI -->
-      <div class="portfolio-item reveal">
-                  <div class="mockup-wrap">
-            <div class="mockup-glow glow-orange"></div>
-            <div class="video-mockup-wrap">
-              <div class="video-mockup-inner">
-                <div class="glare-effect"></div>
-                <video class="video-mockup-video" autoplay muted loop playsinline>
-                  <source src="videos/pageauditai.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="macbook-base"></div>
-            </div>
+        <div class="svc-card reveal">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#5A8888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-        <div class="portfolio-info">
-          <div class="port-tag">
-            <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-            SaaS · AI Web Audit
+          <h3>Google Ads Management</h3>
+          <p class="svc-desc">Run search campaigns to generate quality leads.</p>
+          <div class="svc-price-row">
+            <a href="contact.html" class="price-btn">Get Started →</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal d1">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="#5A8888" stroke-width="2"/>
+              <path d="M16 8.5h.01M12 16.5v-5M8.5 12H12" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Facebook Ads Management</h3>
+          <p class="svc-desc">Generate enquiries using Meta advertising.</p>
+          <div class="svc-price-row">
+            <a href="contact.html" class="price-btn">Get Started →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMING SOON ── -->
+  <section id="coming-soon" style="padding: 88px 0 100px; background: #F9FCFC; border-top: 1px solid var(--border-2);">
+    <div class="container">
+
+      <div class="services-header reveal">
+        <div class="tag-dark">Coming Soon</div>
+        <h2 class="section-title">Tools Under <em>Development</em></h2>
+        <p class="section-sub">New tools are being built to help businesses understand performance and improve visibility.</p>
+      </div>
+
+      <div class="services-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+        <div class="svc-card coming-soon reveal">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#5A8888" stroke-width="2"/>
+              <circle cx="12" cy="9" r="2.5" stroke="#5A8888" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Local Maps Tracker</h3>
+          <div class="svc-price-row">
+            <div class="price-amount">Coming Soon</div>
+          </div>
+        </div>
+
+        <div class="svc-card coming-soon reveal d1">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="16" rx="2" stroke="#5A8888" stroke-width="2"/>
+              <path d="M8 12h8M8 8h5" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
           <h3>PageAuditAI</h3>
-          <p>An AI-powered platform built to solve a real problem: businesses couldn't tell WHY their landing pages weren't converting. Analyzes any page against specific business goals — delivering a 20-point vision audit, competitor benchmarks, and a PDF action plan.</p>
-          <ul class="port-bullets">
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Design:</strong> Warm off-white with vibrant orange accents and glassmorphism card effects</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Animations:</strong> Floating AI badges, animated battery loading, Framer Motion transitions</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Stack:</strong> Next.js + Google Gemini Vision AI with Razorpay payment integration</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Output:</strong> Downloadable PDF with goal-specific, prioritized conversion fixes</span></li>
-          </ul>
-          <a href="https://pageauditai.com" target="_blank" class="port-link">View Project →</a>
+          <div class="svc-price-row">
+            <div class="price-amount">Coming Soon</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Project 2: SEO Tool -->
-      <div class="portfolio-item flip reveal">
-          <div class="mockup-wrap">
-            <div class="mockup-glow glow-rose"></div>
-            <div class="video-mockup-wrap">
-              <div class="video-mockup-inner">
-                <div class="glare-effect"></div>
-                <video class="video-mockup-video" autoplay muted loop playsinline>
-                  <source src="videos/seo.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="macbook-base"></div>
-            </div>
+        <div class="svc-card coming-soon reveal d2">
+          <div class="svc-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+              <path d="M12 5v14M5 12h14" stroke="#5A8888" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
-        <div class="portfolio-info">
-          <div class="port-tag">
-            <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-            SaaS · SEO & Keyword Tool
+          <h3>More Tools</h3>
+          <div class="svc-price-row">
+            <div class="price-amount">Coming Soon</div>
           </div>
-          <h3>SEO & Traffic Analyzer</h3>
-          <p>Built to solve a common problem: website owners didn't know why they weren't getting traffic. This tool analyzes SERP data to surface the most probable, easy-to-rank keywords — revealing exactly where you can realistically compete.</p>
-          <ul class="port-bullets">
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Design:</strong> Clean minimal white with rose/red accents and tiered pricing UI</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Animations:</strong> Step-by-step scan progress with live counter and smooth transitions</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Intelligence:</strong> SERP-based keyword difficulty scoring and competitor traffic gap analysis</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#B07D10" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Stack:</strong> Next.js + Free technical scan + ₹2,000 manual keyword research</span></li>
-          </ul>
-          <a href="https://gettraffic.site" target="_blank" class="port-link">View Project →</a>
         </div>
-      </div>
 
-      <!-- Project 3: Medical Portfolio -->
-      <div class="portfolio-item reveal">
-        <div class="mockup-wrap">
-          <div class="mockup-glow glow-orange" style="background: radial-gradient(circle at 50% 50%, rgba(90,136,136,0.15), transparent 70%);"></div>
-          <div class="video-mockup-wrap">
-            <div class="video-mockup-inner">
-              <div class="glare-effect"></div>
-              <video class="video-mockup-video" autoplay muted loop playsinline>
-                <source src="videos/Draadithya.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="macbook-base"></div>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="port-tag">
-            <svg width="10" height="10" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-            WordPress · Health Portfolio
-          </div>
-          <h3>Professional Website of a plastic surgeon</h3>
-          <p>A website built on a professional theme for a plastic surgeon, designed to build patient trust and provide easy access to the doctor.</p>
-          <ul class="port-bullets">
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#5A8888" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Design:</strong> Based on a Professional WordPress template</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#5A8888" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Animations:</strong> Clean, integrated animations built into the template</span></li>
-            <li><div class="bullet-check"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="#5A8888" stroke-width="2.5"><polyline points="1.5 5 4 7.5 8.5 2.5"/></svg></div><span><strong>Stack:</strong> WordPress</span></li>
-          </ul>
-          <a href="https://draadithyaplasticsurgeon.com/" target="_blank" class="port-link">View Live Site →</a>
-        </div>
       </div>
+    </div>
+  </section>
 
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner reveal">
+        <div class="tag-amber">About</div>
+        <h2 class="section-title">About Digital Yes <em>Marketing</em></h2>
+        <p>Digital Yes Marketing helps businesses improve visibility, understand competitors and generate more leads using reports, insights and paid advertising.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact-cta" class="reveal" style="padding: 100px 0; text-align: center; background: white; position: relative;">
     <div class="container">
-      <h2 style="font-size: 42px; font-weight: 800; margin-bottom: 24px;">Ready to start your <em>Project?</em></h2>
-      <a href="contact.html" class="btn-amber" style="max-width: 240px; margin: 0 auto; display: inline-flex;">Get in Touch →</a>
+      <h2 style="font-size: 42px; font-weight: 800; margin-bottom: 24px;">Ready to grow your <em>business?</em></h2>
+      <a href="contact.html" class="btn-amber" style="max-width: 240px; margin: 0 auto; display: inline-flex;">Get Started →</a>
     </div>
   </section>
 
@@ -1129,28 +1167,30 @@
             <div class="footer-logo-mark">DY</div>
             Digital<em>Yes</em>
           </div>
-          <p>I build AI-powered websites and web applications that solve real business problems. Certified digital marketer based in India.</p>
+          <p>Helping local businesses improve Google visibility, understand competitors and generate more leads through reports, insights and paid advertising.</p>
         </div>
         <div class="footer-col">
           <h4>Navigate</h4>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">My Services</a></li>
-            <li><a href="#portfolio">My Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#lead-generation">Lead Generation</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get In Touch</h4>
           <ul>
-            <li><a href="mailto:thippeshdigital@gmail.com">thippeshdigital@gmail.com</a></li>
-            <li><a href="contact.html">Request a Quote →</a></li>
+            <li><a href="mailto:thippesh@digitalyesmarketing.com">thippesh@digitalyesmarketing.com</a></li>
+            <li><a href="https://wa.me/917829036211" target="_blank" rel="noopener">WhatsApp: +91 7829036211</a></li>
+            <li><a href="contact.html">Send a Message →</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2025 DigitalYes Marketing · Thippesh A. All rights reserved.</p>
-        <p class="footer-copy">AI Web Design · Web App Development</p>
+        <p class="footer-copy">Reports · Insights · Lead Generation</p>
       </div>
     </div>
   </footer>
@@ -1184,7 +1224,7 @@
     animateCursor();
     
     // Hover interactions
-    const interactive = document.querySelectorAll('a, button, .svc-card, .video-mockup-wrap, .portfolio-item');
+    const interactive = document.querySelectorAll('a, button, .svc-card');
     interactive.forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
@@ -1244,6 +1284,9 @@
     function toggleMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+    function closeMenu() {
+      document.getElementById('mobile-menu').style.display = 'none';
     }
   </script>
 </body>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Let's Work Together — Thippesh A | DigitalYes Marketing</title>
-  <meta name="description" content="Get in touch with Thippesh A — AI web design and web application development. Select a service, share your details, and I'll respond within 24 hours.">
+  <title>Contact — Thippesh A | DigitalYes Marketing</title>
+  <meta name="description" content="Get in touch with Thippesh A — Google Business Profile reports, competitor insights and lead generation services for local businesses.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -662,7 +662,8 @@
 
       <div class="nav-links">
         <a href="index.html#services">Services</a>
-        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#lead-generation">Lead Generation</a>
+        <a href="index.html#about">About</a>
         <a href="contact.html" class="active">Contact</a>
       </div>
 
@@ -680,7 +681,8 @@
 
     <div id="mobile-menu">
       <a href="index.html#services">Services</a>
-      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#lead-generation">Lead Generation</a>
+      <a href="index.html#about">About</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
@@ -692,7 +694,7 @@
       I respond within 24 hours
     </div>
     <h1>Let's Work Together</h1>
-    <p>Tell me what you need and I'll put together a plan that fits your business and budget.</p>
+    <p>Tell me about your business and I'll help you improve visibility, understand competitors or generate more leads.</p>
   </div>
 
   <!-- Contact Section -->
@@ -751,9 +753,13 @@
               <div class="select-wrap">
                 <select id="service" name="service" class="form-control" required>
                   <option value="" disabled selected>Select a service...</option>
-                  <option value="WordPress website built on a professional theme">WordPress website built on a professional theme</option>
-                  <option value="Websites Built with Advanced AI Tools">Websites Built with Advanced AI Tools</option>
-                  <option value="Web Applications with AI Assistance">Web Applications with AI Assistance</option>
+                  <option value="Keyword Visibility Report">Keyword Visibility Report</option>
+                  <option value="Competitor Report">Competitor Report</option>
+                  <option value="Business Intelligence Dashboard">Business Intelligence Dashboard</option>
+                  <option value="GBP Setup & Optimization">GBP Setup &amp; Optimization</option>
+                  <option value="Monthly GBP Management">Monthly GBP Management</option>
+                  <option value="Google Ads Management">Google Ads Management</option>
+                  <option value="Facebook Ads Management">Facebook Ads Management</option>
                 </select>
               </div>
             </div>
@@ -765,7 +771,7 @@
                 name="message"
                 class="form-control"
                 rows="4"
-                placeholder="Tell me briefly about your project, goals, or any questions you have..."
+                placeholder="Tell me briefly about your business, goals, or any questions you have..."
               ></textarea>
             </div>
 
@@ -813,12 +819,22 @@
           <!-- Direct email -->
           <div class="email-card">
             <p>Or email me directly</p>
-            <a href="mailto:thippeshdigital@gmail.com">
+            <a href="mailto:thippesh@digitalyesmarketing.com">
               <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/>
                 <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round"/>
               </svg>
-              thippeshdigital@gmail.com
+              thippesh@digitalyesmarketing.com
+            </a>
+          </div>
+
+          <div class="email-card" style="background: var(--green-dark);">
+            <p>WhatsApp</p>
+            <a href="https://wa.me/917829036211" target="_blank" rel="noopener">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              +91 7829036211
             </a>
           </div>
 
@@ -828,15 +844,15 @@
             <div>
               <div class="service-pill">
                 <div class="sp-dot" style="background:#5A8888;"></div>
-                WordPress Websites
+                GBP Reports
               </div>
               <div class="service-pill">
                 <div class="sp-dot" style="background:#252D35;"></div>
-                AI Web Design
+                Competitor Insights
               </div>
               <div class="service-pill">
                 <div class="sp-dot" style="background:#1B3B3B;"></div>
-                AI Web Applications
+                Google &amp; Facebook Ads
               </div>
             </div>
           </div>
@@ -914,7 +930,7 @@
           _subject: "New Lead: " + name + " - DigitalYes"
         };
 
-        const res = await fetch('https://formsubmit.co/ajax/thippeshdigital@gmail.com', { 
+        const res = await fetch('https://formsubmit.co/ajax/thippesh@digitalyesmarketing.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -942,7 +958,7 @@
       } catch (err) {
         btn.textContent = 'Send Message →';
         btn.disabled = false;
-        showError('Network error. Please email us directly at thippeshdigital@gmail.com');
+        showError('Network error. Please email us directly at thippesh@digitalyesmarketing.com');
       }
     });
 

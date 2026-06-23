@@ -32,14 +32,22 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // ── Validate service is one of the allowed options
-$allowed_services = ['Professional WordPress Design', 'AI Web Design', 'AI Web Application Development'];
+$allowed_services = [
+    'Keyword Visibility Report',
+    'Competitor Report',
+    'Business Intelligence Dashboard',
+    'GBP Setup & Optimization',
+    'Monthly GBP Management',
+    'Google Ads Management',
+    'Facebook Ads Management'
+];
 if (!in_array($service, $allowed_services)) {
     echo json_encode(['success' => false, 'message' => 'Invalid service selection.']);
     exit;
 }
 
 // ── Build the email
-$to      = 'thippeshdigital@gmail.com';
+$to      = 'thippesh@digitalyesmarketing.com';
 $subject = "New Enquiry: $service — DigitalYes Marketing";
 
 $body = "
