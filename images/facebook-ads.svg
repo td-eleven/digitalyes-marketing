@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280">
+  <rect width="400" height="280" fill="#F0F2F5"/>
+  <rect x="20" y="20" width="360" height="240" fill="#ffffff" stroke="#E8E1CC" rx="12"/>
+  <rect x="36" y="36" width="32" height="32" fill="#1877F2" rx="16"/>
+  <rect x="80" y="40" width="120" height="10" fill="#E8E1CC" rx="5"/>
+  <rect x="80" y="56" width="80" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="36" y="84" width="328" height="140" fill="#102A23" rx="8"/>
+  <text x="52" y="120" fill="#F4B400" font-family="Arial,sans-serif" font-size="16" font-weight="700">Get More Enquiries</text>
+  <text x="52" y="144" fill="#ffffff" font-family="Arial,sans-serif" font-size="11">Reach local customers on Facebook &amp; Instagram.</text>
+  <rect x="52" y="168" width="100" height="28" fill="#F4B400" rx="14"/>
+  <text x="68" y="186" fill="#102A23" font-family="Arial,sans-serif" font-size="10" font-weight="700">Learn More</text>
+  <rect x="36" y="236" width="60" height="8" fill="#E8E1CC" rx="4"/>
+  <rect x="104" y="236" width="40" height="8" fill="#E8E1CC" rx="4"/>
+</svg>

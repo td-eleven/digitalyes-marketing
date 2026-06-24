@@ -186,6 +186,17 @@
       margin-bottom: 16px;
     }
 
+    .hero-badge {
+      display: inline-flex;
+      font-size: 12px; font-weight: 700;
+      color: var(--text-2);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+    }
+
     .hero-sub {
       font-size: 16px; color: var(--text-3);
       max-width: 440px; margin-bottom: 28px;
@@ -300,11 +311,12 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 28px 24px;
+      padding: 0 24px 28px;
       box-shadow: var(--shadow);
       display: flex; flex-direction: column;
-      min-height: 280px;
+      min-height: 320px;
       transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
     }
 
     .card:hover {
@@ -323,6 +335,22 @@
     }
 
     .card-icon svg { width: 22px; height: 22px; }
+
+    .card-preview {
+      margin: 0 -24px 20px;
+      height: 128px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: var(--beige);
+    }
+
+    .card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
 
     .card h3 {
       font-size: 18px; font-weight: 800;
@@ -375,6 +403,31 @@
     }
 
     .sample-link:hover { color: var(--yellow-dk); }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h3 {
+      font-size: 16px; font-weight: 800;
+      margin-bottom: 8px; letter-spacing: -0.2px;
+    }
+
+    .faq-item p {
+      font-size: 14px; color: var(--text-3);
+      font-weight: 500; line-height: 1.65;
+    }
 
     /* How it works */
     .steps-grid {
@@ -599,14 +652,12 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
+          <div class="hero-badge reveal">Reports · Insights · Lead Generation</div>
           <h1 class="reveal">Understand Your Google Visibility.<br>Get More Customers.</h1>
           <p class="hero-sub reveal d1">Reports and marketing services designed for local businesses.</p>
           <div class="hero-actions reveal d2">
-            <a href="contact.html" class="btn-primary">Get a Report</a>
-            <a href="https://wa.me/917829036211?text=Hi%2C%20I%27d%20like%20to%20request%20a%20sample%20report." target="_blank" rel="noopener" class="btn-secondary">
-              Request Sample Report
-              <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
+            <a href="https://wa.me/917829036211?text=Hi%2C%20I%27d%20like%20to%20request%20a%20sample%20report." target="_blank" rel="noopener" class="btn-primary">View Sample Report</a>
+            <a href="contact.html" class="btn-secondary">Get Started</a>
           </div>
           <div class="hero-trust reveal d2">
             <span>Local businesses</span>
@@ -626,7 +677,7 @@
           </div>
           <div class="shot shot-3">
             <img src="images/dashboard.svg" alt="Business dashboard preview" width="340" height="442" loading="eager">
-            <div class="shot-label">Business Dashboard</div>
+            <div class="shot-label">Business Intelligence Dashboard</div>
           </div>
         </div>
       </div>
@@ -642,6 +693,9 @@
 
       <div class="cards-grid cards-grid--3">
         <div class="card reveal">
+          <div class="card-preview">
+            <img src="images/competitor-report.svg" alt="Competitor report preview">
+          </div>
           <div class="card-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="3" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21" y2="12"/>
@@ -651,10 +705,13 @@
           <p>Compare nearby competitors and ranking opportunities.</p>
           <div class="card-meta">One-time report</div>
           <div class="card-actions">
-            <a href="contact.html" class="btn-yellow" style="width:100%;">Get Details →</a>
+            <a href="competitor-report/" class="btn-yellow" style="width:100%;">Get Details →</a>
           </div>
         </div>
         <div class="card reveal d1">
+          <div class="card-preview">
+            <img src="images/keyword-report.svg" alt="Keyword visibility report preview">
+          </div>
           <div class="card-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/>
@@ -664,25 +721,28 @@
           <p>See where your business ranks.</p>
           <div class="card-meta">One-time report</div>
           <div class="card-actions">
-            <a href="contact.html" class="btn-yellow" style="width:100%;">Get Details →</a>
+            <a href="keyword-report/" class="btn-yellow" style="width:100%;">Get Details →</a>
           </div>
         </div>
         <div class="card reveal d2">
+          <div class="card-preview">
+            <img src="images/dashboard.svg" alt="Business intelligence dashboard preview">
+          </div>
           <div class="card-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="4" width="4" height="17" rx="1"/>
             </svg>
           </div>
-          <h3>Business Dashboard</h3>
+          <h3>Business Intelligence Dashboard</h3>
           <p>Monthly tracking and insights.</p>
           <div class="card-meta">Monthly service</div>
           <div class="card-actions">
-            <a href="contact.html" class="btn-ghost" style="width:100%;">Learn More →</a>
+            <a href="business-dashboard/" class="btn-ghost" style="width:100%;">Learn More →</a>
           </div>
         </div>
       </div>
 
-      <div class="sample-block reveal">
+      <div id="sample-reports" class="sample-block reveal">
         <div>
           <h3>Sample Reports</h3>
           <p>Want to see exactly what you'll receive?</p>
@@ -700,6 +760,9 @@
 
       <div class="cards-grid cards-grid--2">
         <div class="card reveal">
+          <div class="card-preview">
+            <img src="images/google-ads.svg" alt="Google Ads preview">
+          </div>
           <div class="card-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/>
@@ -708,10 +771,13 @@
           <h3>Google Ads</h3>
           <p>Generate leads through Google Search campaigns targeting people actively looking for your services.</p>
           <div class="card-actions">
-            <a href="contact.html" class="btn-yellow" style="width:100%;">Request Quote →</a>
+            <a href="google-ads/" class="btn-yellow" style="width:100%;">Request Quote →</a>
           </div>
         </div>
         <div class="card reveal d1">
+          <div class="card-preview">
+            <img src="images/facebook-ads.svg" alt="Facebook Ads preview">
+          </div>
           <div class="card-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
               <rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/>
@@ -720,7 +786,7 @@
           <h3>Facebook Ads</h3>
           <p>Generate enquiries using Meta advertising on Facebook and Instagram.</p>
           <div class="card-actions">
-            <a href="contact.html" class="btn-yellow" style="width:100%;">Request Quote →</a>
+            <a href="facebook-ads/" class="btn-yellow" style="width:100%;">Request Quote →</a>
           </div>
         </div>
       </div>
@@ -772,6 +838,34 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-label reveal">FAQ</div>
+      <h2 class="section-title reveal">Common questions</h2>
+      <p class="section-sub reveal d1">Quick answers before you reach out.</p>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h3>What do I receive?</h3>
+          <p>A detailed report delivered as PDF (or monthly dashboard access for ongoing services). You'll see rankings, competitor data and clear recommendations — not generic marketing fluff.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>How long does the report take?</h3>
+          <p>Most one-time reports are delivered within 2–3 business days after I have your business name and location.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>Which businesses is this for?</h3>
+          <p>Local businesses with a Google Business Profile — clinics, dentists, salons, restaurants, and other service businesses that rely on local customers.</p>
+        </div>
+        <div class="faq-item reveal d2">
+          <h3>How do I order?</h3>
+          <p>Message on WhatsApp, fill out the contact form, or email me. Share your business details and I'll confirm what's included before you commit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Tools Coming Soon -->
   <section id="tools" class="section">
     <div class="container">
@@ -793,11 +887,11 @@
         </div>
         <div class="footer-col">
           <h5>Services</h5>
-          <a href="#reports">Competitor Report</a>
-          <a href="#reports">Keyword Visibility Report</a>
-          <a href="#reports">Business Dashboard</a>
-          <a href="#leads">Google Ads</a>
-          <a href="#leads">Facebook Ads</a>
+          <a href="competitor-report/">Competitor Report</a>
+          <a href="keyword-report/">Keyword Visibility Report</a>
+          <a href="business-dashboard/">Business Intelligence Dashboard</a>
+          <a href="google-ads/">Google Ads</a>
+          <a href="facebook-ads/">Facebook Ads</a>
         </div>
         <div class="footer-col footer-contact">
           <h5>Contact</h5>
