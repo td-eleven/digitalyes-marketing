@@ -36,8 +36,6 @@ $allowed_services = [
     'Competitor Report',
     'Keyword Visibility Report',
     'Business Intelligence Dashboard',
-    'Google Ads Management',
-    'Facebook Ads Management',
     'Other Digital Marketing Service'
 ];
 if (!in_array($service, $allowed_services)) {
