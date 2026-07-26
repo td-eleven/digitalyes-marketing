@@ -194,9 +194,14 @@
       font-weight: 500;
     }
 
-    .hero-sub span {
+    .hero-sub > span {
       display: block;
     }
+
+    .hero-sub .hl-web { color: #047857; font-weight: 700; }
+    .hero-sub .hl-fb { color: #0369A1; font-weight: 700; }
+    .hero-sub .hl-gads { color: #B45309; font-weight: 700; }
+    .hero-sub .hl-else { color: #3730A3; font-weight: 700; }
 
     .hero-support {
       font-size: 17px;
@@ -214,117 +219,184 @@
       flex-wrap: wrap;
     }
 
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .hero-trust span {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-2);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #FFFFFF;
-      border: 1.5px solid var(--border);
-      border-radius: 50px;
-      padding: 9px 14px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-trust span::before {
-      content: '✓';
-      color: var(--ok);
-      font-weight: 800;
-    }
-
-    .hero-journey {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+    .hero-visual {
       padding: 8px 0;
     }
 
-    .journey-step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      align-items: center;
+    .confused-panel {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
     }
 
-    .journey-node {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+    .confused-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(245, 158, 11, 0.12), transparent 40%),
+        radial-gradient(circle at 10% 100%, rgba(8, 145, 178, 0.1), transparent 42%);
+      pointer-events: none;
+    }
+
+    .confused-panel > * { position: relative; z-index: 1; }
+
+    .owner-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .owner-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #FEF3C7, #FDE68A);
+      border: 1.5px solid #F59E0B;
+      color: #B45309;
+      font-size: 22px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
-      font-weight: 800;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      color: var(--text-1);
-      position: relative;
-      z-index: 1;
+      flex-shrink: 0;
+      animation: float-y 3.6s ease-in-out infinite;
     }
 
-    .journey-node.is-muted {
-      background: #FEF3C7;
-      color: #B45309;
-      font-weight: 700;
-      box-shadow: none;
-    }
-
-    .journey-node.is-focus {
-      background: var(--primary);
-      color: white;
-    }
-
-    .journey-node.is-success {
-      background: var(--ok);
-      color: white;
-    }
-
-    .journey-card {
-      background: #FFFFFF;
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .journey-card strong {
+    .owner-card strong {
       display: block;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
       letter-spacing: -0.2px;
       margin-bottom: 2px;
     }
 
-    .journey-card span {
+    .owner-card span {
+      display: block;
       font-size: 14px;
       color: var(--text-3);
       font-weight: 500;
+      line-height: 1.45;
     }
 
-    .journey-card.is-muted {
+    .confused-label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #B45309;
+      margin-bottom: 12px;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .choice-tile {
       background: #FFFFFF;
-      box-shadow: var(--shadow);
-      border-style: solid;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 12px;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.3;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: float-y 4.2s ease-in-out infinite;
     }
 
-    .journey-card.is-success {
-      background: #FFFFFF;
+    .choice-tile:nth-child(2) { animation-delay: 0.25s; }
+    .choice-tile:nth-child(3) { animation-delay: 0.5s; }
+    .choice-tile:nth-child(4) { animation-delay: 0.75s; }
+
+    .choice-tile::after {
+      content: '?';
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      opacity: 0.55;
     }
 
-    .journey-connector {
-      width: 2px;
-      height: 22px;
-      background: var(--border);
-      margin-left: 23px;
+    .choice-tile.web {
+      background: #ECFDF5;
+      border-color: #6EE7B7;
+      color: #047857;
+    }
+
+    .choice-tile.fb {
+      background: #E0F2FE;
+      border-color: #7DD3FC;
+      color: #0369A1;
+    }
+
+    .choice-tile.gads {
+      background: #FEF3C7;
+      border-color: #FCD34D;
+      color: #B45309;
+    }
+
+    .choice-tile.other {
+      background: #EEF2FF;
+      border-color: #A5B4FC;
+      color: #3730A3;
+    }
+
+    .choice-tile small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      opacity: 0.75;
+    }
+
+    .confused-bridge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--text-4);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .confused-bridge .dots {
+      letter-spacing: 3px;
+      color: #F59E0B;
+      font-weight: 800;
+    }
+
+    .clarity-card {
+      background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(16, 185, 129, 0.1));
+      border: 1.5px solid var(--primary);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+
+    .clarity-card strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      color: #0E7490;
+      margin-bottom: 2px;
+    }
+
+    .clarity-card span {
+      font-size: 13px;
+      color: var(--text-2);
+      font-weight: 500;
     }
 
     /* ─── MOTION & COLOR ─── */
@@ -337,7 +409,7 @@
       50% { box-shadow: 0 0 0 10px rgba(8, 145, 178, 0); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .journey-node, .biz-chip, .btn-primary.pulse { animation: none !important; }
+      .owner-avatar, .choice-tile, .biz-chip, .btn-primary.pulse { animation: none !important; }
     }
 
     .biz-strip {
@@ -477,10 +549,23 @@
       animation: pulse-soft 2.8s ease-in-out infinite;
     }
 
-    .journey-node { animation: float-y 3.8s ease-in-out infinite; }
-    .journey-step:nth-child(3) .journey-node { animation-delay: 0.3s; }
-    .journey-step:nth-child(5) .journey-node { animation-delay: 0.6s; }
-    .journey-step:nth-child(7) .journey-node { animation-delay: 0.9s; }
+    .help-card.accent-teal .why-box {
+      background: #ECFDF5;
+      border-color: #6EE7B7;
+    }
+    .help-card.accent-teal .why-box h4 { color: #047857; }
+
+    .help-card.accent-amber .why-box {
+      background: #FEF3C7;
+      border-color: #FCD34D;
+    }
+    .help-card.accent-amber .why-box h4 { color: #B45309; }
+
+    .help-card.accent-green .why-box {
+      background: #E0F2FE;
+      border-color: #7DD3FC;
+    }
+    .help-card.accent-green .why-box h4 { color: #0369A1; }
 
     /* ─── SECTIONS ─── */
     .section { padding: 112px 0; }
@@ -1069,7 +1154,7 @@
       .nav-links, .nav-cta { display: none; }
       .mobile-menu-btn { display: block; }
       .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero-journey { max-width: 440px; }
+      .hero-visual { max-width: 440px; }
       .footer-inner { grid-template-columns: 1fr; }
       .help-card, .talk-card { padding: 28px 24px; }
     }
@@ -1120,10 +1205,10 @@
         <div class="hero-content">
           <h1 class="reveal">Confused About Digital Marketing? Start Here.</h1>
           <p class="hero-sub reveal d1">
-            <span>Don't know whether to build a website,</span>
-            <span>or to run Facebook Ads,</span>
-            <span>or invest in Google Ads,</span>
-            <span>or focus somewhere else?</span>
+            <span>Don't know whether to build a <span class="hl-web">website</span>,</span>
+            <span>or to run <span class="hl-fb">Facebook Ads</span>,</span>
+            <span>or invest in <span class="hl-gads">Google Ads</span>,</span>
+            <span>or focus <span class="hl-else">somewhere else</span>?</span>
           </p>
           <p class="hero-support reveal d1">We'll help you understand what your business actually needs based on your goals and budget—without confusing marketing jargon.</p>
           <div class="hero-actions reveal d2">
@@ -1133,11 +1218,6 @@
             </a>
             <a href="#guide" class="btn-secondary">See Marketing Guide</a>
           </div>
-          <div class="hero-trust reveal d2">
-            <span>Beginner Friendly</span>
-            <span>Budget Based Advice</span>
-            <span>No Marketing Jargon</span>
-          </div>
           <div class="biz-strip reveal d2">
             <span class="biz-chip"><span class="biz-dot teal"></span> Websites from ₹10,000</span>
             <span class="biz-chip"><span class="biz-dot amber"></span> Ads that bring enquiries</span>
@@ -1146,36 +1226,30 @@
           </div>
         </div>
 
-        <div class="hero-journey reveal d1" aria-hidden="true">
-          <div class="journey-step">
-            <div class="journey-node">1</div>
-            <div class="journey-card">
-              <strong>Business Owner</strong>
-              <span>You want more customers online</span>
+        <div class="hero-visual reveal d1" aria-hidden="true">
+          <div class="confused-panel">
+            <div class="owner-card">
+              <div class="owner-avatar">?</div>
+              <div>
+                <strong>Business Owner</strong>
+                <span>Wants more customers — but which option is right?</span>
+              </div>
             </div>
-          </div>
-          <div class="journey-connector"></div>
-          <div class="journey-step">
-            <div class="journey-node is-muted">?</div>
-            <div class="journey-card is-muted">
-              <strong>Confused</strong>
-              <span>Website? Ads? Where to start?</span>
+            <p class="confused-label">Stuck choosing between</p>
+            <div class="choice-grid">
+              <div class="choice-tile web">Website<small>Look professional</small></div>
+              <div class="choice-tile fb">Facebook Ads<small>Fast enquiries</small></div>
+              <div class="choice-tile gads">Google Ads<small>Search demand</small></div>
+              <div class="choice-tile other">Something else?<small>SEO, Instagram…</small></div>
             </div>
-          </div>
-          <div class="journey-connector"></div>
-          <div class="journey-step">
-            <div class="journey-node is-focus">✓</div>
-            <div class="journey-card">
-              <strong>Gets Clarity</strong>
-              <span>Clear steps based on your budget</span>
+            <div class="confused-bridge">
+              <span class="dots">· · ·</span>
+              Too many options
+              <span class="dots">· · ·</span>
             </div>
-          </div>
-          <div class="journey-connector"></div>
-          <div class="journey-step">
-            <div class="journey-node is-success">→</div>
-            <div class="journey-card is-success">
-              <strong>Gets Customers</strong>
-              <span>Spend only on what actually fits</span>
+            <div class="clarity-card">
+              <strong>Get clear advice</strong>
+              <span>We’ll tell you what fits your goal &amp; budget</span>
             </div>
           </div>
         </div>
