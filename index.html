@@ -13,9 +13,7 @@
 
     :root {
       --bg:        #FFFFFF;
-      --bg-2:      #FAFBFC;
-      --bg-3:      #F8FAFC;
-      --bg-4:      #F6F8FB;
+      --bg-blue:   #EAF6FF;
       --surface:   #FFFFFF;
       --text-1:    #0F172A;
       --text-2:    #334155;
@@ -23,6 +21,7 @@
       --text-4:    #94A3B8;
       --accent:    #0F172A;
       --ok:        #16A34A;
+      --primary:   #0891B2;
       --border:    #E2E8F0;
       --footer:    #0B1220;
       --shadow:    0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04);
@@ -148,7 +147,7 @@
 
     .btn-soft {
       display: inline-flex; align-items: center; justify-content: center;
-      background: var(--bg-4); color: var(--text-1);
+      background: var(--bg-blue); color: var(--text-1);
       border-radius: 50px; padding: 11px 18px;
       font-size: 13px; font-weight: 700;
       transition: all 0.25s;
@@ -161,7 +160,7 @@
     .hero {
       padding: 136px 0 100px;
       background:
-        radial-gradient(ellipse 70% 45% at 80% 10%, rgba(148, 163, 184, 0.12), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 80% 10%, rgba(8, 145, 178, 0.08), transparent 55%),
         var(--bg);
     }
 
@@ -220,7 +219,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--bg-2);
+      background: var(--bg-blue);
       border-radius: 50px;
       padding: 9px 14px;
     }
@@ -262,7 +261,7 @@
     }
 
     .journey-node.is-muted {
-      background: var(--bg-3);
+      background: var(--bg-blue);
       color: var(--text-3);
       font-weight: 700;
       box-shadow: none;
@@ -319,9 +318,9 @@
     /* ─── SECTIONS ─── */
     .section { padding: 112px 0; }
     .section--a { background: var(--bg); }
-    .section--b { background: var(--bg-2); }
-    .section--c { background: var(--bg-3); }
-    .section--d { background: var(--bg-4); }
+    .section--b {
+      background: linear-gradient(180deg, #D4EFF6 0%, #EAF6FF 45%, #F0FAFC 100%);
+    }
 
     .section-title {
       font-size: clamp(28px, 3.4vw, 40px);
@@ -366,7 +365,7 @@
     .situation-num {
       width: 36px; height: 36px;
       border-radius: 10px;
-      background: var(--bg-4);
+      background: var(--bg-blue);
       display: flex; align-items: center; justify-content: center;
       font-size: 14px; font-weight: 800;
       margin-bottom: 20px;
@@ -419,7 +418,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--text-4);
-      background: var(--bg-2);
+      background: var(--bg-blue);
     }
 
     .compare-table tr:last-child td { border-bottom: none; }
@@ -654,7 +653,7 @@
     .support-note {
       margin-top: 18px;
       padding: 14px 16px;
-      background: var(--bg-3);
+      background: var(--bg-blue);
       border-radius: 14px;
       font-size: 14px;
       font-weight: 600;
@@ -664,7 +663,7 @@
     .support-note span { font-weight: 800; color: var(--text-1); }
 
     .why-box {
-      background: var(--bg-2);
+      background: var(--bg-blue);
       border-radius: 18px;
       padding: 22px;
     }
@@ -1040,7 +1039,7 @@
   </section>
 
   <!-- Section 3 -->
-  <section id="roadmaps" class="section section--c">
+  <section id="roadmaps" class="section section--b">
     <div class="container">
       <h2 class="section-title reveal">Marketing Roadmaps</h2>
       <p class="section-sub reveal d1">Practical guidance — not technical jargon. Start where you are.</p>
@@ -1119,7 +1118,7 @@
   </section>
 
   <!-- Section 4 -->
-  <section id="help" class="section section--d">
+  <section id="help" class="section section--a">
     <div class="container">
       <h2 class="section-title reveal">How I Can Help</h2>
       <p class="section-sub reveal d1">I don't offer ten services. I offer three clear options — so you always know what you're paying for.</p>
@@ -1236,7 +1235,7 @@
   </section>
 
   <!-- Section 5 -->
-  <section id="talk" class="section section--a">
+  <section id="talk" class="section section--b">
     <div class="container">
       <div class="talk-card reveal">
         <h2>Let's Talk About Your Business</h2>
@@ -1269,7 +1268,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section section--b">
+  <section id="faq" class="section section--a">
     <div class="container">
       <h2 class="section-title reveal">Frequently Asked Questions</h2>
       <p class="section-sub reveal d1">Honest answers to the questions business owners actually ask.</p>
