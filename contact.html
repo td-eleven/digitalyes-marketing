@@ -752,18 +752,6 @@
             </div>
           </div>
 
-          <!-- Direct email -->
-          <div class="email-card">
-            <p>Or email me directly</p>
-            <a href="mailto:thippesh@digitalyesmarketing.com">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/>
-                <polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              thippesh@digitalyesmarketing.com
-            </a>
-          </div>
-
           <div class="email-card" style="background: #1a2838;">
             <p>WhatsApp</p>
             <a href="https://wa.me/918095355524" target="_blank" rel="noopener">
@@ -884,12 +872,9 @@
             <div class="success-state">
               <div class="success-icon" style="background:#FFF8E1;border-color:#F5E6B8;color:#E0B010;">✉</div>
               <h3>Almost there — one quick step</h3>
-              <p>FormSubmit sent an <strong>Activate Form</strong> link to <strong>support@digitalyesmarketing.com</strong>.<br><br>
-              Open that inbox (check spam), click the link once, then come back and submit again.<br><br>
-              Or reach me directly:</p>
+              <p>The contact form needs a one-time activation on our side.<br><br>
+              Please message on WhatsApp instead and I’ll reply quickly.</p>
               <p style="margin-top:16px;">
-                <a href="mailto:thippesh@digitalyesmarketing.com" style="font-weight:700;color:var(--text-1);">thippesh@digitalyesmarketing.com</a><br>
-                <a href="mailto:support@digitalyesmarketing.com" style="font-weight:700;color:var(--text-1);">support@digitalyesmarketing.com</a><br>
                 <a href="https://wa.me/918095355524" target="_blank" rel="noopener" style="font-weight:700;color:var(--text-1);">WhatsApp +91 8095355524</a>
               </p>
             </div>
@@ -910,12 +895,12 @@
         } else {
           btn.textContent = 'Send Message →';
           btn.disabled = false;
-          showError(data.message || 'Something went wrong. Please try again or email us directly.');
+          showError(data.message || 'Something went wrong. Please try WhatsApp instead.');
         }
       } catch (err) {
         btn.textContent = 'Send Message →';
         btn.disabled = false;
-        showError('Network error. Please email us at support@digitalyesmarketing.com');
+        showError('Network error. Please message on WhatsApp: +91 8095355524');
       }
     });
 

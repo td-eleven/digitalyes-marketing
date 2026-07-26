@@ -227,10 +227,11 @@
       background: #FFFFFF;
       border: 1.5px solid var(--border);
       border-radius: 24px;
-      padding: 28px 24px;
+      padding: 24px 22px 26px;
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
+      min-height: 560px;
     }
 
     .confused-panel::before {
@@ -245,42 +246,73 @@
 
     .confused-panel > * { position: relative; z-index: 1; }
 
-    .owner-card {
+    .owner-scene {
+      position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
-    .owner-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(145deg, #FEF3C7, #FDE68A);
+    .owner-art {
+      width: 168px;
+      height: 210px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #F8FAFC;
+    }
+
+    .think-bubble {
+      position: absolute;
+      top: 8px;
+      right: 18%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      pointer-events: none;
+    }
+
+    .think-cloud {
+      background: #FFFFFF;
       border: 1.5px solid #F59E0B;
+      border-radius: 18px;
+      padding: 8px 12px;
+      font-size: 18px;
+      font-weight: 800;
       color: #B45309;
-      font-size: 22px;
-      font-weight: 800;
+      box-shadow: var(--shadow);
+      animation: wonder-bob 2.4s ease-in-out infinite;
+    }
+
+    .think-dots {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      animation: float-y 3.6s ease-in-out infinite;
+      gap: 5px;
+      margin-top: 2px;
     }
 
-    .owner-card strong {
-      display: block;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-      margin-bottom: 2px;
+    .think-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #F59E0B;
+      opacity: 0.35;
+      animation: think-dot 1.4s ease-in-out infinite;
     }
 
-    .owner-card span {
-      display: block;
+    .think-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .think-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    .owner-caption {
+      margin-top: 12px;
+      text-align: center;
       font-size: 14px;
+      font-weight: 600;
       color: var(--text-3);
-      font-weight: 500;
+      max-width: 260px;
       line-height: 1.45;
     }
 
@@ -291,6 +323,7 @@
       letter-spacing: 0.6px;
       color: #B45309;
       margin-bottom: 12px;
+      text-align: center;
     }
 
     .choice-grid {
@@ -399,6 +432,16 @@
       font-weight: 500;
     }
 
+    @keyframes wonder-bob {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-7px) rotate(2deg); }
+    }
+
+    @keyframes think-dot {
+      0%, 80%, 100% { opacity: 0.3; transform: translateY(0); }
+      40% { opacity: 1; transform: translateY(-3px); }
+    }
+
     /* ─── MOTION & COLOR ─── */
     @keyframes float-y {
       0%, 100% { transform: translateY(0); }
@@ -409,7 +452,7 @@
       50% { box-shadow: 0 0 0 10px rgba(8, 145, 178, 0); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .owner-avatar, .choice-tile, .biz-chip, .btn-primary.pulse { animation: none !important; }
+      .think-cloud, .think-dots span, .choice-tile, .biz-chip, .btn-primary.pulse { animation: none !important; }
     }
 
     .biz-strip {
@@ -1154,7 +1197,8 @@
       .nav-links, .nav-cta { display: none; }
       .mobile-menu-btn { display: block; }
       .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero-visual { max-width: 440px; }
+      .confused-panel { min-height: 0; }
+      .owner-art { width: 148px; height: 186px; }
       .footer-inner { grid-template-columns: 1fr; }
       .help-card, .talk-card { padding: 28px 24px; }
     }
@@ -1228,12 +1272,13 @@
 
         <div class="hero-visual reveal d1" aria-hidden="true">
           <div class="confused-panel">
-            <div class="owner-card">
-              <div class="owner-avatar">?</div>
-              <div>
-                <strong>Business Owner</strong>
-                <span>Wants more customers — but which option is right?</span>
+            <div class="owner-scene">
+              <img class="owner-art" src="images/thinking-business-owner.png" alt="" width="168" height="210">
+              <div class="think-bubble">
+                <div class="think-cloud">?</div>
+                <div class="think-dots"><span></span><span></span><span></span></div>
               </div>
+              <p class="owner-caption">Wondering which marketing option actually fits…</p>
             </div>
             <p class="confused-label">Stuck choosing between</p>
             <div class="choice-grid">
@@ -1489,11 +1534,10 @@
             <div class="help-block">
               <h4>Includes</h4>
               <ul>
-                <li>Campaign setup</li>
-                <li>Basic audience targeting</li>
-                <li>Ad creative guidance</li>
-                <li>Monitoring for 2 months</li>
-                <li>Simple monthly update</li>
+                <li>Research into your business and audience</li>
+                <li>Landing page creation for your ads</li>
+                <li>Two different lead generation campaigns</li>
+                <li>Monitoring and fine-tuning for 2 months</li>
               </ul>
             </div>
             <div class="why-box">
@@ -1522,11 +1566,10 @@
             <div class="help-block">
               <h4>Includes</h4>
               <ul>
-                <li>Campaign setup</li>
-                <li>Basic keyword targeting</li>
-                <li>Ad copy setup</li>
-                <li>Monitoring for 2 months</li>
-                <li>Simple monthly update</li>
+                <li>Research into your business and keywords</li>
+                <li>Landing page creation for your ads</li>
+                <li>Two different lead generation campaigns</li>
+                <li>Monitoring and fine-tuning for 2 months</li>
               </ul>
             </div>
             <div class="why-box">
@@ -1643,8 +1686,6 @@
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
-          <a href="mailto:thippesh@digitalyesmarketing.com">thippesh@digitalyesmarketing.com</a>
-          <a href="mailto:support@digitalyesmarketing.com">support@digitalyesmarketing.com</a>
           <a href="https://wa.me/918095355524" target="_blank" rel="noopener">WhatsApp: +91 8095355524</a>
         </div>
       </div>
