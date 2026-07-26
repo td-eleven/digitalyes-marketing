@@ -102,67 +102,13 @@
 
     .nav-cta {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--text-1); color: white !important;
-      border-radius: 50px; padding: 8px 16px 8px 10px;
+      border-radius: 50px; padding: 10px 18px;
       font-size: 14px; font-weight: 700;
-      justify-self: end; transition: opacity 0.2s;
+      justify-self: end;
+      transition: transform 0.2s, filter 0.2s;
     }
 
-    .nav-cta:hover { opacity: 0.88; }
-
-    .cta-mascot {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      flex-shrink: 0;
-      animation: wave-hello 1.6s ease-in-out infinite;
-      transform-origin: 70% 80%;
-    }
-
-    .cta-with-mascot {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .advice-nudge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      flex-shrink: 0;
-    }
-
-    .advice-nudge img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      animation: wave-hello 1.6s ease-in-out infinite;
-      transform-origin: 70% 85%;
-      filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.12));
-    }
-
-    .advice-nudge span {
-      font-size: 12px;
-      font-weight: 800;
-      color: #B45309;
-      letter-spacing: 0.2px;
-      animation: nudge-bob 1.8s ease-in-out infinite;
-    }
-
-    @keyframes wave-hello {
-      0%, 100% { transform: rotate(0deg); }
-      20% { transform: rotate(14deg); }
-      40% { transform: rotate(-8deg); }
-      60% { transform: rotate(10deg); }
-      80% { transform: rotate(-4deg); }
-    }
-
-    @keyframes nudge-bob {
-      0%, 100% { transform: translateY(0); opacity: 0.85; }
-      50% { transform: translateY(-3px); opacity: 1; }
-    }
+    .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.06); }
 
     .mobile-menu-btn {
       display: none; background: none; border: none;
@@ -177,7 +123,6 @@
 
     #mobile-menu a { font-size: 16px; font-weight: 600; color: var(--text-2); }
     #mobile-menu .mobile-cta {
-      background: var(--text-1); color: white;
       padding: 12px 18px; border-radius: 50px; text-align: center;
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     }
@@ -189,9 +134,41 @@
       border-radius: 50px; padding: 14px 26px;
       font-size: 15px; font-weight: 700;
       transition: all 0.25s;
+      border: none;
     }
 
     .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .rainbow-cta {
+      background-image: linear-gradient(
+        110deg,
+        #ef4444 0%,
+        #f97316 14%,
+        #eab308 28%,
+        #22c55e 42%,
+        #06b6d4 56%,
+        #3b82f6 70%,
+        #8b5cf6 84%,
+        #ef4444 100%
+      ) !important;
+      background-size: 220% 100% !important;
+      background-color: transparent !important;
+      color: #fff !important;
+      animation: rainbow-sweep 2.8s linear infinite !important;
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.28);
+      text-shadow: 0 1px 1px rgba(15, 23, 42, 0.25);
+    }
+
+    .rainbow-cta:hover {
+      opacity: 1 !important;
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    @keyframes rainbow-sweep {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
 
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 8px;
@@ -507,8 +484,12 @@
       50% { box-shadow: 0 0 0 10px rgba(8, 145, 178, 0); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .think-cloud, .think-dots span, .choice-tile, .biz-chip, .btn-primary.pulse,
-      .cta-mascot, .advice-nudge img, .advice-nudge span { animation: none !important; }
+      .think-cloud, .think-dots span, .choice-tile, .biz-chip,
+      .rainbow-cta { animation: none !important; }
+      .rainbow-cta {
+        background-image: linear-gradient(110deg, #0891B2, #3b82f6) !important;
+        background-size: 100% 100% !important;
+      }
     }
 
     .biz-strip {
@@ -643,10 +624,6 @@
     .opt-pill.web { background: #D1FAE5; color: #047857; }
     .opt-pill.seo { background: #E0E7FF; color: #3730A3; }
     .opt-pill.ig { background: #FCE7F3; color: #BE185D; }
-
-    .btn-primary.pulse {
-      animation: pulse-soft 2.8s ease-in-out infinite;
-    }
 
     .help-card.accent-teal .why-box {
       background: #ECFDF5;
@@ -1282,8 +1259,7 @@
         <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
-      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="nav-cta">
-        <img class="cta-mascot" src="images/advice-mascot.png" alt="" width="28" height="28">
+      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="nav-cta rainbow-cta">
         Get Free Advice
       </a>
       <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">
@@ -1295,8 +1271,7 @@
       <a href="#help" onclick="closeMenu()">How I Help</a>
       <a href="#faq" onclick="closeMenu()">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="mobile-cta">
-        <img class="cta-mascot" src="images/advice-mascot.png" alt="" width="28" height="28">
+      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="mobile-cta rainbow-cta">
         Get Free Advice
       </a>
     </div>
@@ -1316,16 +1291,10 @@
           </p>
           <p class="hero-support reveal d1">We'll help you understand what your business actually needs based on your goals and budget—without confusing marketing jargon.</p>
           <div class="hero-actions reveal d2">
-            <div class="cta-with-mascot">
-              <div class="advice-nudge" aria-hidden="true">
-                <img src="images/advice-mascot.png" alt="" width="56" height="56">
-                <span>Click here!</span>
-              </div>
-              <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary pulse">
-                Get Free Advice on WhatsApp
-                <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </a>
-            </div>
+            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary pulse rainbow-cta">
+              Get Free Advice on WhatsApp
+              <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
             <a href="#guide" class="btn-secondary">See Marketing Guide</a>
           </div>
           <div class="biz-strip reveal d2">
@@ -1690,7 +1659,7 @@
             </select>
           </div>
           <div class="lead-field full">
-            <button type="submit" class="btn-primary lead-submit" id="lead-submit">Submit — Get Free Advice</button>
+            <button type="submit" class="btn-primary lead-submit rainbow-cta" id="lead-submit">Submit — Get Free Advice</button>
           </div>
           <p id="lead-msg" class="lead-msg" role="status"></p>
         </form>
