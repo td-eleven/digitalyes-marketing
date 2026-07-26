@@ -22,7 +22,7 @@
       --accent:    #0F172A;
       --ok:        #16A34A;
       --primary:   #0891B2;
-      --border:    #E2E8F0;
+      --border:    #94A3B8;
       --footer:    #0B1220;
       --shadow:    0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04);
       --shadow-lg: 0 4px 6px rgba(15, 23, 42, 0.03), 0 16px 40px rgba(15, 23, 42, 0.06);
@@ -136,7 +136,7 @@
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--surface); color: var(--text-1);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 50px; padding: 13px 24px;
       font-size: 14px; font-weight: 700;
       transition: all 0.25s;
@@ -185,8 +185,12 @@
       color: var(--text-2);
       max-width: 540px;
       margin-bottom: 16px;
-      line-height: 1.7;
+      line-height: 1.55;
       font-weight: 500;
+    }
+
+    .hero-sub span {
+      display: block;
     }
 
     .hero-support {
@@ -220,7 +224,7 @@
       align-items: center;
       gap: 6px;
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 50px;
       padding: 9px 14px;
       box-shadow: var(--shadow);
@@ -281,7 +285,7 @@
 
     .journey-card {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 18px;
       padding: 18px 20px;
       box-shadow: var(--shadow);
@@ -353,7 +357,7 @@
       display: flex;
       flex-direction: column;
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 24px;
       padding: 32px;
       box-shadow: var(--shadow);
@@ -398,7 +402,7 @@
       overflow-x: auto;
       border-radius: 24px;
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       box-shadow: var(--shadow);
     }
 
@@ -462,7 +466,7 @@
 
     .roadmap-card {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 24px;
       padding: 32px;
       box-shadow: var(--shadow);
@@ -560,7 +564,7 @@
 
     .help-card {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 28px;
       padding: 40px;
       box-shadow: var(--shadow);
@@ -661,7 +665,7 @@
       margin-top: 18px;
       padding: 14px 16px;
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
       font-size: 14px;
       font-weight: 600;
@@ -672,7 +676,7 @@
 
     .why-box {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 18px;
       padding: 22px;
     }
@@ -702,7 +706,7 @@
     /* Talk CTA */
     .talk-card {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 28px;
       padding: 48px;
       box-shadow: var(--shadow);
@@ -725,47 +729,89 @@
       max-width: 520px;
     }
 
-    .talk-cols {
+    .lead-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 32px;
+      gap: 16px;
     }
 
-    .talk-col h4 {
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-4);
-      margin-bottom: 12px;
-    }
-
-    .talk-col ul {
-      list-style: none;
+    .lead-field {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .talk-col li {
+    .lead-field.full { grid-column: 1 / -1; }
+
+    .lead-field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-2);
+    }
+
+    .lead-field input,
+    .lead-field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-family: var(--font);
       font-size: 15px;
       font-weight: 500;
-      color: var(--text-2);
-      padding-left: 18px;
-      position: relative;
+      color: var(--text-1);
+      background: #FFFFFF;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    .talk-col.send li::before {
-      content: '•';
-      position: absolute; left: 4px;
-      color: var(--text-4);
+    .lead-field input:focus,
+    .lead-field select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
     }
 
-    .talk-col.get li::before {
-      content: '✓';
-      position: absolute; left: 0;
-      color: var(--ok); font-weight: 800;
+    .lead-field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+
+    .lead-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      justify-content: center;
+    }
+
+    .lead-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .lead-msg {
+      display: none;
+      grid-column: 1 / -1;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      padding: 12px 14px;
+      border-radius: 12px;
+    }
+
+    .lead-msg.ok {
+      display: block;
+      background: #F0FDF4;
+      color: #166534;
+      border: 1px solid #BBF7D0;
+    }
+
+    .lead-msg.err {
+      display: block;
+      background: #FEF2F2;
+      color: #B91C1C;
+      border: 1px solid #FECACA;
     }
 
     /* FAQ */
@@ -777,7 +823,7 @@
 
     .faq-item {
       background: #FFFFFF;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 18px;
       padding: 22px 24px;
       box-shadow: var(--shadow);
@@ -853,7 +899,7 @@
 
     @media (max-width: 960px) {
       .situation-grid, .roadmap-grid { grid-template-columns: 1fr; }
-      .help-body, .talk-cols { grid-template-columns: 1fr; }
+      .help-body, .lead-form { grid-template-columns: 1fr; }
       .help-price { text-align: left; }
       .help-price .meta { margin-left: 0; }
     }
@@ -913,7 +959,12 @@
       <div class="hero-grid">
         <div class="hero-content">
           <h1 class="reveal">Confused About Digital Marketing? Start Here.</h1>
-          <p class="hero-sub reveal d1">Don't know whether to build a website, run Facebook Ads, invest in Google Ads, or focus somewhere else?</p>
+          <p class="hero-sub reveal d1">
+            <span>Don't know whether to build a website,</span>
+            <span>or to run Facebook Ads,</span>
+            <span>or invest in Google Ads,</span>
+            <span>or focus somewhere else?</span>
+          </p>
           <p class="hero-support reveal d1">We'll help you understand what your business actually needs based on your goals and budget—without confusing marketing jargon.</p>
           <div class="hero-actions reveal d2">
             <a href="https://wa.me/917829036211?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary">
@@ -1250,30 +1301,43 @@
     <div class="container">
       <div class="talk-card reveal">
         <h2>Let's Talk About Your Business</h2>
-        <p>Every business is different. Instead of selling you everything, I'll suggest what actually makes sense for your business.</p>
+        <p>Tell me what you need and your budget. I'll reply on WhatsApp with clear next steps.</p>
 
-        <div class="talk-cols">
-          <div class="talk-col send">
-            <h4>Send me</h4>
-            <ul>
-              <li>Your business name</li>
-              <li>What you sell</li>
-              <li>Your city</li>
-              <li>Approximate monthly budget</li>
-            </ul>
+        <form id="lead-form" class="lead-form" novalidate>
+          <div class="lead-field">
+            <label for="lead-name">Your Name</label>
+            <input id="lead-name" name="name" type="text" placeholder="e.g. Ravi" required autocomplete="name">
           </div>
-          <div class="talk-col get">
-            <h4>I'll tell you</h4>
-            <ul>
-              <li>What to do first</li>
-              <li>What can wait</li>
-              <li>Which marketing channel suits you</li>
-              <li>Approximate investment</li>
-            </ul>
+          <div class="lead-field">
+            <label for="lead-whatsapp">WhatsApp Number</label>
+            <input id="lead-whatsapp" name="whatsapp" type="tel" placeholder="+91 98765 43210" required autocomplete="tel">
           </div>
-        </div>
-
-        <a href="https://wa.me/917829036211?text=Hi%2C%20I%27d%20like%20advice%20for%20my%20business.%0A%0ABusiness%20name%3A%20%0AWhat%20I%20sell%3A%20%0ACity%3A%20%0AMonthly%20budget%3A%20" target="_blank" rel="noopener" class="btn-primary">Chat on WhatsApp</a>
+          <div class="lead-field">
+            <label for="lead-service">Service You Need</label>
+            <select id="lead-service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Website Development">Website Development</option>
+              <option value="Facebook Lead Generation">Facebook Lead Generation</option>
+              <option value="Google Ads Lead Generation">Google Ads Lead Generation</option>
+              <option value="Not sure — need advice">Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="lead-field">
+            <label for="lead-budget">Your Monthly Budget</label>
+            <select id="lead-budget" name="budget" required>
+              <option value="" disabled selected>Select your budget</option>
+              <option value="Under ₹10,000">Under ₹10,000</option>
+              <option value="₹10,000 – ₹20,000">₹10,000 – ₹20,000</option>
+              <option value="₹20,000 – ₹50,000">₹20,000 – ₹50,000</option>
+              <option value="₹50,000+">₹50,000+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="lead-field full">
+            <button type="submit" class="btn-primary lead-submit" id="lead-submit">Submit — Get Free Advice</button>
+          </div>
+          <p id="lead-msg" class="lead-msg" role="status"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -1357,6 +1421,63 @@
     }
     function closeMenu() {
       document.getElementById('mobile-menu').style.display = 'none';
+    }
+
+    const leadForm = document.getElementById('lead-form');
+    if (leadForm) {
+      leadForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg = document.getElementById('lead-msg');
+        const btn = document.getElementById('lead-submit');
+        const name = document.getElementById('lead-name').value.trim();
+        const whatsapp = document.getElementById('lead-whatsapp').value.trim();
+        const service = document.getElementById('lead-service').value;
+        const budget = document.getElementById('lead-budget').value;
+
+        msg.className = 'lead-msg';
+        msg.textContent = '';
+
+        if (!name || !whatsapp || !service || !budget) {
+          msg.className = 'lead-msg err';
+          msg.textContent = 'Please fill in all fields.';
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+          const res = await fetch('https://formsubmit.co/ajax/support@digitalyesmarketing.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name,
+              whatsapp,
+              service,
+              budget,
+              _subject: 'New lead from DigitalYes Marketing',
+              _template: 'table'
+            })
+          });
+          const data = await res.json().catch(() => ({}));
+          if (res.ok) {
+            msg.className = 'lead-msg ok';
+            msg.textContent = 'Thanks! I’ll reply on WhatsApp soon.';
+            leadForm.reset();
+          } else {
+            throw new Error(data.message || 'Could not send. Please try WhatsApp.');
+          }
+        } catch (err) {
+          msg.className = 'lead-msg err';
+          msg.textContent = err.message || 'Something went wrong. Please message on WhatsApp.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Submit — Get Free Advice';
+        }
+      });
     }
   </script>
 </body>
