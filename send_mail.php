@@ -34,7 +34,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // ── Validate service is one of the allowed options
 $allowed_services = [
     'Website Development',
-    'Meta Lead Generation',
+    'Facebook Lead Generation',
     'Google Ads Lead Generation',
     'Not sure — need advice'
 ];
