@@ -341,252 +341,457 @@
 
     /* ─── SECTIONS ─── */
     .section {
-      padding: 120px 0;
+      padding: 100px 0;
     }
 
     .section--alt { background: var(--beige); }
-
-    .section-label {
-      font-size: 11px; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 1px;
-      color: var(--text-4); margin-bottom: 8px;
-    }
+    .section--white { background: var(--bg); }
 
     .section-title {
-      font-size: clamp(24px, 2.8vw, 32px);
-      font-weight: 800; letter-spacing: -0.8px;
-      margin-bottom: 8px;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      line-height: 1.15;
     }
 
     .section-sub {
-      font-size: 15px; color: var(--text-3);
-      font-weight: 500; line-height: 1.65;
-      max-width: 520px; margin-bottom: 32px;
+      font-size: 16px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 40px;
     }
 
-    .cards-grid {
+    /* Situation cards */
+    .situation-grid {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .situation-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      min-height: 200px;
+    }
+
+    .situation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(16, 42, 35, 0.08);
+      border-color: rgba(16, 42, 35, 0.15);
+    }
+
+    .situation-emoji {
+      font-size: 28px;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .situation-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+    }
+
+    .situation-card p {
+      font-size: 15px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    .situation-card .btn-ghost,
+    .situation-card .btn-yellow {
+      align-self: flex-start;
+    }
+
+    /* Comparison table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      text-align: left;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .compare-table th {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-4);
+      background: var(--beige);
+    }
+
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    .compare-table td:first-child {
+      font-weight: 700;
+      color: var(--text-1);
+      white-space: nowrap;
+    }
+
+    .compare-table td {
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    /* Budget roadmap cards */
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .cards-grid--3 { grid-template-columns: repeat(3, 1fr); }
-    .cards-grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
-
-    .card {
+    .budget-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 0 24px 28px;
+      padding: 28px;
       box-shadow: var(--shadow);
-      display: flex; flex-direction: column;
-      min-height: 320px;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.25s, box-shadow 0.25s;
-      overflow: hidden;
     }
 
-    .card:hover {
+    .budget-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(16, 42, 35, 0.08);
+    }
+
+    .budget-card.is-featured {
+      border-color: rgba(244, 180, 0, 0.55);
+      background: linear-gradient(180deg, #FFFDF0 0%, #FFFFFF 40%);
+    }
+
+    .budget-range {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-4);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 8px;
+    }
+
+    .budget-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .budget-block {
+      margin-bottom: 18px;
+    }
+
+    .budget-block h4 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-4);
+      margin-bottom: 10px;
+    }
+
+    .budget-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .budget-block li {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-2);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.45;
+    }
+
+    .budget-block.yes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--yellow-dk);
+      font-weight: 800;
+    }
+
+    .budget-block.no li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-4);
+      font-weight: 800;
+    }
+
+    .budget-result {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .budget-result strong {
+      display: block;
+      color: var(--text-1);
+      font-weight: 800;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Mistake cards */
+    .mistake-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .mistake-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .mistake-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 24px rgba(16, 42, 35, 0.08);
+      box-shadow: 0 8px 24px rgba(16, 42, 35, 0.08);
     }
 
-    .card-icon {
-      width: 44px; height: 44px;
+    .mistake-x {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .mistake-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .mistake-meta {
+      font-size: 13px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .mistake-meta strong {
+      display: block;
+      color: var(--text-4);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .mistake-instead {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-2);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .mistake-instead strong {
+      display: block;
+      color: var(--yellow-dk);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    /* Service cards */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(16, 42, 35, 0.08);
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
       background: var(--beige);
       border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 18px;
-      color: var(--text-1);
-    }
-
-    .card-icon svg { width: 22px; height: 22px; }
-
-    .card-preview {
-      margin: 0 -24px 20px;
-      height: 128px;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-      background: var(--beige);
-    }
-
-    .card-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    .card h3 {
-      font-size: 18px; font-weight: 800;
-      margin-bottom: 10px; letter-spacing: -0.3px;
-    }
-
-    .card p {
-      font-size: 14px; color: var(--text-3);
-      font-weight: 500; line-height: 1.65;
-      flex: 1; margin-bottom: 20px;
-    }
-
-    .card-meta {
-      font-size: 12px; font-weight: 700;
-      color: var(--text-2); margin-bottom: 16px;
-    }
-
-    .card-actions { margin-top: auto; }
-
-    /* Sample reports CTA */
-    .sample-block {
-      margin-top: 28px;
-      padding: 28px 32px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+    }
+
+    .service-detail {
+      font-size: 13px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .service-detail strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-4);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+
+    /* Guidance CTA */
+    .guide-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+    }
+
+    .guide-cta h2 {
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 14px;
+    }
+
+    .guide-cta > p {
+      font-size: 16px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    .guide-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-bottom: 28px;
+    }
+
+    .guide-list li {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-2);
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .guide-list li::before {
+      content: '•';
+      position: absolute;
+      left: 6px;
+      color: var(--yellow-dk);
+      font-weight: 800;
+    }
+
+    .guide-actions {
+      display: flex;
       flex-wrap: wrap;
+      gap: 12px;
     }
-
-    .sample-block h3 {
-      font-size: 18px; font-weight: 800;
-      margin-bottom: 6px; letter-spacing: -0.3px;
-    }
-
-    .sample-block p {
-      font-size: 14px; color: var(--text-3);
-      font-weight: 500; margin: 0;
-    }
-
-    .sample-link {
-      font-size: 14px; font-weight: 800;
-      color: var(--text-1);
-      white-space: nowrap;
-      transition: color 0.2s;
-    }
-
-    .sample-link:hover { color: var(--yellow-dk); }
 
     /* FAQ */
     .faq-grid {
       display: grid;
       gap: 14px;
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .faq-item {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 22px 24px;
       box-shadow: var(--shadow);
+      transition: transform 0.2s;
     }
 
+    .faq-item:hover { transform: translateY(-2px); }
+
     .faq-item h3 {
-      font-size: 16px; font-weight: 800;
-      margin-bottom: 8px; letter-spacing: -0.2px;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
     }
 
     .faq-item p {
-      font-size: 14px; color: var(--text-3);
-      font-weight: 500; line-height: 1.65;
-    }
-
-    /* How it works */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr auto 1fr;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .step-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 28px 24px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .step-num {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: var(--text-1);
-      color: white;
-      font-size: 13px; font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 14px;
-    }
-
-    .step-card h3 {
-      font-size: 17px; font-weight: 800;
-      margin-bottom: 8px; letter-spacing: -0.3px;
-    }
-
-    .step-card p {
-      font-size: 14px; color: var(--text-3);
-      font-weight: 500; line-height: 1.6;
-    }
-
-    .step-arrow {
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-4); font-size: 20px; font-weight: 300;
-      padding-top: 24px;
-    }
-
-    /* Wide CTA card */
-    .wide-cta {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 36px 40px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    .wide-cta h3 {
-      font-size: 22px; font-weight: 800;
-      letter-spacing: -0.4px; margin-bottom: 8px;
-    }
-
-    .wide-cta p {
-      font-size: 15px; color: var(--text-3);
-      font-weight: 500; line-height: 1.65;
-      max-width: 560px;
-    }
-
-    /* Tools coming soon */
-  .tools-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 36px 40px;
-      box-shadow: var(--shadow);
-      max-width: 720px;
-    }
-
-    .tools-block p {
-      font-size: 15px; color: var(--text-3);
-      font-weight: 500; line-height: 1.7;
-      margin-top: 8px;
-    }
-
-    .tools-badge {
-      display: inline-block;
-      margin-top: 16px;
-      font-size: 12px; font-weight: 700;
-      color: var(--text-2);
-      background: var(--beige);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 6px 14px;
+      font-size: 14px;
+      color: var(--text-3);
+      font-weight: 500;
+      line-height: 1.65;
     }
 
     /* ─── FOOTER ─── */
@@ -594,7 +799,7 @@
       background: var(--footer);
       padding: 40px 0 28px;
       color: white;
-      margin-top: 12px;
+      margin-top: 0;
     }
 
     .footer-inner {
@@ -656,6 +861,11 @@
     .reveal.d2 { transition-delay: 0.16s; }
 
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 1000px) {
+      .budget-grid, .mistake-grid { grid-template-columns: 1fr 1fr; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+    }
+
     @media (max-width: 900px) {
       .nav-container { grid-template-columns: 1fr auto; }
       .nav-links, .nav-cta { display: none; }
@@ -664,18 +874,20 @@
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-journey { max-width: 420px; }
 
-      .cards-grid--3, .cards-grid--2 { grid-template-columns: 1fr; max-width: 420px; }
-      .steps-grid { grid-template-columns: 1fr; max-width: 420px; }
-      .step-arrow { display: flex; padding: 0; transform: rotate(90deg); }
+      .situation-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
-      .wide-cta { flex-direction: column; align-items: flex-start; }
+      .guide-list { grid-template-columns: 1fr; }
+      .guide-cta { padding: 32px 24px; }
     }
 
     @media (max-width: 600px) {
       .hero { padding: 108px 0 64px; }
       .hero-actions { flex-direction: column; width: 100%; }
       .hero-actions a { width: 100%; justify-content: center; }
-      .wide-cta, .tools-block, .sample-block { padding: 28px 24px; }
+      .section { padding: 72px 0; }
+      .budget-grid, .mistake-grid, .service-grid { grid-template-columns: 1fr; }
+      .guide-actions { flex-direction: column; }
+      .guide-actions a { width: 100%; justify-content: center; }
     }
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="3a1aca4d-18f7-47f1-aba2-35dbbecfd51e"></script>
@@ -689,8 +901,8 @@
         Digital<em>Yes</em>
       </a>
       <div class="nav-links">
-        <a href="#reports">Roadmaps</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#roadmaps">Roadmaps</a>
+        <a href="#roadmaps">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -702,8 +914,8 @@
       </button>
     </div>
     <div id="mobile-menu">
-      <a href="#reports" onclick="closeMenu()">Roadmaps</a>
-      <a href="#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="#roadmaps" onclick="closeMenu()">Roadmaps</a>
+      <a href="#roadmaps" onclick="closeMenu()">Pricing</a>
       <a href="#faq" onclick="closeMenu()">FAQ</a>
       <a href="contact.html">Contact</a>
       <a href="https://wa.me/917829036211?text=Hi%2C%20I%27m%20not%20sure%20where%20to%20spend%20my%20marketing%20budget.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="mobile-cta">Get Free Advice</a>
@@ -727,7 +939,7 @@
               Get Free Advice on WhatsApp
               <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-            <a href="#reports" class="btn-secondary">See Marketing Roadmaps</a>
+            <a href="#roadmaps" class="btn-secondary">See Marketing Roadmaps</a>
           </div>
           <div class="hero-trust reveal d2">
             <span>Beginner Friendly</span>
@@ -773,154 +985,375 @@
     </div>
   </section>
 
-  <!-- GBP Reports -->
-  <section id="reports" class="section section--alt">
+  <!-- Section 1: Where are you -->
+  <section id="start" class="section section--alt">
     <div class="container">
-      <div class="section-label reveal">Google Business Profile Services</div>
-      <h2 class="section-title reveal">Google Maps Reports</h2>
-      <p class="section-sub reveal d1">Simple reports to understand your Google Maps performance.</p>
+      <h2 class="section-title reveal">Where Are You Right Now?</h2>
+      <p class="section-sub reveal d1">Every business is different. Choose the situation that best describes you.</p>
 
-      <div class="cards-grid cards-grid--3">
-        <div class="card reveal">
-          <div class="card-preview">
-            <img src="images/competitor-report.svg" alt="Competitor report preview">
-          </div>
-          <div class="card-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="3" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21" y2="12"/>
-            </svg>
-          </div>
-          <h3>Competitor Report</h3>
-          <p>Compare nearby competitors and ranking opportunities.</p>
-          <div class="card-meta">One-time report</div>
-          <div class="card-actions">
-            <a href="competitor-report/" class="btn-yellow" style="width:100%;">Get Details →</a>
-          </div>
-        </div>
-        <div class="card reveal d1">
-          <div class="card-preview">
-            <img src="images/keyword-report.svg" alt="Keyword visibility report preview">
-          </div>
-          <div class="card-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="3 17 9 11 13 15 21 7"/><polyline points="14 7 21 7 21 14"/>
-            </svg>
-          </div>
-          <h3>Keyword Visibility Report</h3>
-          <p>See where your business ranks.</p>
-          <div class="card-meta">One-time report</div>
-          <div class="card-actions">
-            <a href="keyword-report/" class="btn-yellow" style="width:100%;">Get Details →</a>
-          </div>
-        </div>
-        <div class="card reveal d2">
-          <div class="card-preview">
-            <img src="images/dashboard.svg" alt="Business intelligence dashboard preview">
-          </div>
-          <div class="card-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="4" width="4" height="17" rx="1"/>
-            </svg>
-          </div>
-          <h3>Business Intelligence Dashboard</h3>
-          <p>Monthly tracking and insights.</p>
-          <div class="card-meta">Monthly service</div>
-          <div class="card-actions">
-            <a href="business-dashboard/" class="btn-ghost" style="width:100%;">Learn More →</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="sample-reports" class="sample-block reveal">
-        <div>
-          <h3>Sample Reports</h3>
-          <p>Want to see exactly what you'll receive?</p>
-        </div>
-        <a href="https://wa.me/917829036211?text=Hi%2C%20I%27d%20like%20to%20request%20a%20sample%20report." target="_blank" rel="noopener" class="sample-link">Request a sample report on WhatsApp →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works" class="section section--alt">
-    <div class="container">
-      <div class="section-label reveal">How It Works</div>
-      <h2 class="section-title reveal">Simple process, clear results</h2>
-      <p class="section-sub reveal d1">Three steps from first contact to taking action on your visibility.</p>
-
-      <div class="steps-grid">
-        <div class="step-card reveal">
-          <div class="step-num">1</div>
-          <h3>Contact</h3>
-          <p>Tell me about your business.</p>
-        </div>
-        <div class="step-arrow reveal">→</div>
-        <div class="step-card reveal d1">
-          <div class="step-num">2</div>
-          <h3>Receive Insights</h3>
-          <p>Get reports or recommendations.</p>
-        </div>
-        <div class="step-arrow reveal d1">→</div>
-        <div class="step-card reveal d2">
-          <div class="step-num">3</div>
-          <h3>Take Action</h3>
-          <p>Improve visibility and generate leads.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Need something else -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="wide-cta reveal">
-        <div>
-          <h3>Need Something Else?</h3>
-          <p>Need website design, SEO, landing pages or any other digital marketing service? Mention your requirement while contacting and I'll let you know if I can help.</p>
-        </div>
-        <a href="https://wa.me/917829036211" target="_blank" rel="noopener" class="btn-primary">
-          Contact on WhatsApp
-          <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <div class="situation-grid">
+        <a href="#roadmaps" class="situation-card reveal">
+          <div class="situation-emoji">🚀</div>
+          <h3>I'm Starting a Business</h3>
+          <p>I have little or no online presence.</p>
+          <span class="btn-yellow">See My Roadmap</span>
+        </a>
+        <a href="#roadmaps" class="situation-card reveal d1">
+          <div class="situation-emoji">📈</div>
+          <h3>I Want More Customers</h3>
+          <p>My business is running but I need more enquiries.</p>
+          <span class="btn-ghost">See My Roadmap</span>
+        </a>
+        <a href="#services" class="situation-card reveal">
+          <div class="situation-emoji">💻</div>
+          <h3>I Need a Professional Online Presence</h3>
+          <p>I need a website, branding and social media.</p>
+          <span class="btn-ghost">See My Roadmap</span>
+        </a>
+        <a href="#roadmaps" class="situation-card reveal d1">
+          <div class="situation-emoji">🎯</div>
+          <h3>I Want to Grow Faster</h3>
+          <p>I'm ready to invest in ads and scale my business.</p>
+          <span class="btn-ghost">See My Roadmap</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
+  <!-- Section 2: What to invest in -->
+  <section id="invest" class="section section--white">
     <div class="container">
-      <div class="section-label reveal">FAQ</div>
-      <h2 class="section-title reveal">Common questions</h2>
-      <p class="section-sub reveal d1">Quick answers before you reach out.</p>
+      <h2 class="section-title reveal">What Should You Invest In?</h2>
+      <p class="section-sub reveal d1">Most businesses don't need every marketing service. They just need the right ones at the right time.</p>
 
-      <div class="faq-grid">
-        <div class="faq-item reveal">
-          <h3>What do I receive?</h3>
-          <p>A detailed report delivered as PDF (or monthly dashboard access for ongoing services). You'll see rankings, competitor data and clear recommendations — not generic marketing fluff.</p>
+      <div class="table-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>When you need it</th>
+              <th>Typical Budget</th>
+              <th>Expected Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Website</td>
+              <td>When people ask for your details or you want to look professional</td>
+              <td>₹8,000 – ₹40,000 one-time</td>
+              <td>A place customers trust and can contact you from</td>
+            </tr>
+            <tr>
+              <td>Instagram</td>
+              <td>When your customers scroll social media daily</td>
+              <td>₹0 – ₹15,000/month</td>
+              <td>Awareness and messages from local people</td>
+            </tr>
+            <tr>
+              <td>Google Business Profile</td>
+              <td>If customers search “near me” for your service</td>
+              <td>₹0 – ₹5,000/month</td>
+              <td>Calls, directions and map visibility</td>
+            </tr>
+            <tr>
+              <td>Facebook / Meta Ads</td>
+              <td>When you have a clear offer and want faster enquiries</td>
+              <td>₹5,000 – ₹30,000+/month</td>
+              <td>More leads if your offer and page are ready</td>
+            </tr>
+            <tr>
+              <td>Google Ads</td>
+              <td>When people already search for what you sell</td>
+              <td>₹10,000 – ₹50,000+/month</td>
+              <td>High-intent calls and form fills</td>
+            </tr>
+            <tr>
+              <td>SEO</td>
+              <td>When you want long-term free traffic from Google</td>
+              <td>₹8,000 – ₹25,000/month</td>
+              <td>Slow but lasting search visibility</td>
+            </tr>
+            <tr>
+              <td>Landing Pages</td>
+              <td>When running ads and need one clear page to convert</td>
+              <td>₹5,000 – ₹20,000 one-time</td>
+              <td>Higher conversion from ad traffic</td>
+            </tr>
+            <tr>
+              <td>Email Marketing</td>
+              <td>When you have a customer list to stay in touch with</td>
+              <td>₹2,000 – ₹10,000/month</td>
+              <td>Repeat purchases and reminders</td>
+            </tr>
+            <tr>
+              <td>CRM / Automation</td>
+              <td>When leads are slipping through the cracks</td>
+              <td>₹3,000 – ₹15,000/month</td>
+              <td>Faster follow-ups and fewer missed enquiries</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Marketing Roadmaps by Budget -->
+  <section id="roadmaps" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title reveal">Marketing Roadmaps by Budget</h2>
+      <p class="section-sub reveal d1">You don't need to spend a fortune. Start where you are.</p>
+
+      <div class="budget-grid">
+        <div class="budget-card reveal">
+          <div class="budget-range">Starter</div>
+          <h3>₹0 – ₹5,000/month</h3>
+          <div class="budget-block yes">
+            <h4>Recommended</h4>
+            <ul>
+              <li>Instagram</li>
+              <li>Google Business Profile (if applicable)</li>
+              <li>Basic Website</li>
+              <li>Good Branding</li>
+            </ul>
+          </div>
+          <div class="budget-block no">
+            <h4>Not Recommended Yet</h4>
+            <ul>
+              <li>Running paid ads immediately</li>
+              <li>Complex SEO packages</li>
+              <li>Heavy automation tools</li>
+            </ul>
+          </div>
+          <div class="budget-result">
+            <strong>Expected Results</strong>
+            A clean online presence people can find and trust — without wasting money on ads too early.
+          </div>
         </div>
-        <div class="faq-item reveal d1">
-          <h3>How long does the report take?</h3>
-          <p>Most one-time reports are delivered within 2–3 business days after I have your business name and location.</p>
+
+        <div class="budget-card is-featured reveal d1">
+          <div class="budget-range">Growth</div>
+          <h3>₹5,000 – ₹20,000/month</h3>
+          <div class="budget-block yes">
+            <h4>Recommended</h4>
+            <ul>
+              <li>Website</li>
+              <li>Instagram Content</li>
+              <li>Meta Ads</li>
+              <li>Landing Pages</li>
+              <li>Review Generation</li>
+            </ul>
+          </div>
+          <div class="budget-block no">
+            <h4>Not Recommended Yet</h4>
+            <ul>
+              <li>Running every ad platform at once</li>
+              <li>Expensive brand films</li>
+            </ul>
+          </div>
+          <div class="budget-result">
+            <strong>Expected Results</strong>
+            Steady enquiries from social ads plus a stronger website that converts visitors into customers.
+          </div>
         </div>
-        <div class="faq-item reveal d1">
-          <h3>Which businesses is this for?</h3>
-          <p>Local businesses with a Google Business Profile — clinics, dentists, salons, restaurants, and other service businesses that rely on local customers.</p>
-        </div>
-        <div class="faq-item reveal d2">
-          <h3>How do I order?</h3>
-          <p>Message on WhatsApp, fill out the contact form, or email me. Share your business details and I'll confirm what's included before you commit.</p>
+
+        <div class="budget-card reveal d2">
+          <div class="budget-range">Scale</div>
+          <h3>₹20,000+/month</h3>
+          <div class="budget-block yes">
+            <h4>Recommended</h4>
+            <ul>
+              <li>Meta Ads</li>
+              <li>Google Ads</li>
+              <li>SEO</li>
+              <li>Remarketing</li>
+              <li>Analytics</li>
+              <li>Automation</li>
+            </ul>
+          </div>
+          <div class="budget-block no">
+            <h4>Not Recommended Yet</h4>
+            <ul>
+              <li>Guesswork — track everything</li>
+              <li>Skipping follow-up systems</li>
+            </ul>
+          </div>
+          <div class="budget-result">
+            <strong>Expected Results</strong>
+            Faster growth with paid channels, better tracking, and systems that don't rely on luck.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tools Coming Soon -->
-  <section id="tools" class="section">
+  <!-- Section 4: Mistakes -->
+  <section id="mistakes" class="section section--white">
     <div class="container">
-      <div class="tools-block reveal">
-        <div class="section-label">Tools Coming Soon</div>
-        <p>I'm building simple tools to help local businesses understand rankings, competitors and performance.</p>
-        <span class="tools-badge">Launching soon.</span>
+      <h2 class="section-title reveal">The Biggest Mistakes Business Owners Make</h2>
+      <p class="section-sub reveal d1">Avoid these and you'll save months of time and money.</p>
+
+      <div class="mistake-grid">
+        <div class="mistake-card reveal">
+          <div class="mistake-x">❌</div>
+          <h3>Spending on ads before having a proper website</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>Ads feel faster than building a website.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Get a simple, clear website or landing page first — then run ads to it.</div>
+        </div>
+        <div class="mistake-card reveal d1">
+          <div class="mistake-x">❌</div>
+          <h3>Posting randomly on Instagram</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>It feels productive to post something every day.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Post with a purpose — offers, proof, and clear ways to contact you.</div>
+        </div>
+        <div class="mistake-card reveal d2">
+          <div class="mistake-x">❌</div>
+          <h3>Ignoring Google Reviews</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>Reviews seem secondary compared to ads and posts.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Ask happy customers for reviews. They build trust faster than most ads.</div>
+        </div>
+        <div class="mistake-card reveal">
+          <div class="mistake-x">❌</div>
+          <h3>Trying every marketing strategy at once</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>Fear of missing out — everyone sells a different “must-have”.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Pick 1–2 channels that fit your budget and do them well.</div>
+        </div>
+        <div class="mistake-card reveal d1">
+          <div class="mistake-x">❌</div>
+          <h3>Hiring the cheapest freelancer</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>Marketing feels expensive, so the lowest quote wins.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Pay for clarity and results — cheap work often costs more later.</div>
+        </div>
+        <div class="mistake-card reveal d2">
+          <div class="mistake-x">❌</div>
+          <h3>Expecting results in one week</h3>
+          <div class="mistake-meta"><strong>Why it happens</strong>Ads and agencies promise overnight success.</div>
+          <div class="mistake-instead"><strong>What to do instead</strong>Give a channel 30–90 days with clear tracking before judging it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Services -->
+  <section id="services" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title reveal">Our Services</h2>
+      <p class="section-sub reveal d1">Once you know what you need, here's how we can help — only what's useful for your stage.</p>
+
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">🌐</div>
+          <h3>Website Development</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Businesses that need a professional online home</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹8,000 – ₹40,000</div>
+          <div class="service-detail"><strong>Timeline</strong>1 – 3 weeks</div>
+        </div>
+        <div class="service-card reveal d1">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Management</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Owners who want consistent Instagram presence</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹8,000 – ₹20,000/month</div>
+          <div class="service-detail"><strong>Timeline</strong>Ongoing monthly</div>
+        </div>
+        <div class="service-card reveal d2">
+          <div class="service-icon">📢</div>
+          <h3>Meta Ads</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Businesses ready to generate enquiries faster</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹5,000 – ₹30,000+/month ad spend</div>
+          <div class="service-detail"><strong>Timeline</strong>Results often in 2 – 4 weeks</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">🔍</div>
+          <h3>Google Ads</h3>
+          <div class="service-detail"><strong>Who it's for</strong>When people already search for your service</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹10,000 – ₹50,000+/month ad spend</div>
+          <div class="service-detail"><strong>Timeline</strong>Early signals in 1 – 2 weeks</div>
+        </div>
+        <div class="service-card reveal d1">
+          <div class="service-icon">📈</div>
+          <h3>SEO</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Owners who want long-term Google visibility</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹8,000 – ₹25,000/month</div>
+          <div class="service-detail"><strong>Timeline</strong>3 – 6 months for meaningful gains</div>
+        </div>
+        <div class="service-card reveal d2">
+          <div class="service-icon">📄</div>
+          <h3>Landing Pages</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Anyone running ads who needs better conversions</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹5,000 – ₹20,000</div>
+          <div class="service-detail"><strong>Timeline</strong>3 – 7 days</div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">✨</div>
+          <h3>Branding</h3>
+          <div class="service-detail"><strong>Who it's for</strong>New or rebranding businesses that need a clear look</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹5,000 – ₹25,000</div>
+          <div class="service-detail"><strong>Timeline</strong>1 – 2 weeks</div>
+        </div>
+        <div class="service-card reveal d1">
+          <div class="service-icon">📍</div>
+          <h3>Google Business Profile</h3>
+          <div class="service-detail"><strong>Who it's for</strong>Local businesses that want more map calls</div>
+          <div class="service-detail"><strong>Typical budget</strong>₹3,000 – ₹12,000/month</div>
+          <div class="service-detail"><strong>Timeline</strong>Setup in days · growth over weeks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Guidance CTA -->
+  <section id="advice" class="section section--white">
+    <div class="container">
+      <div class="guide-cta reveal">
+        <h2>Not Sure What You Actually Need?</h2>
+        <p>Tell us about your business on WhatsApp. We'll suggest:</p>
+        <ul class="guide-list">
+          <li>What to do first</li>
+          <li>What can wait</li>
+          <li>Approximate budget</li>
+          <li>Which marketing channels make sense</li>
+        </ul>
+        <div class="guide-actions">
+          <a href="https://wa.me/917829036211?text=Hi%2C%20I%27m%20not%20sure%20what%20my%20business%20needs.%20Can%20you%20help%20me%20figure%20it%20out%3F" target="_blank" rel="noopener" class="btn-primary">
+            Chat on WhatsApp
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://wa.me/917829036211?text=Hi%2C%20I%27d%20like%20a%20marketing%20roadmap%20for%20my%20business." target="_blank" rel="noopener" class="btn-secondary">Request a Marketing Roadmap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--alt">
+    <div class="container">
+      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+      <p class="section-sub reveal d1">Simple answers for business owners who are still figuring things out.</p>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h3>Do I need a website?</h3>
+          <p>If customers ask for your details, compare options, or find you on Google — yes, even a simple website helps. If you're brand new and still testing your offer, Instagram + WhatsApp can work for a short while.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>Should I run Meta Ads?</h3>
+          <p>Only when you have a clear offer and a place to send people (website or landing page). Running ads too early usually wastes budget.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Is SEO worth it?</h3>
+          <p>Yes — if you can wait. SEO is slower than ads but can bring free customers for years. Best when you're also doing other marketing, not as your only move on day one.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>How much should I spend?</h3>
+          <p>Start with what you can sustain for 3 months. ₹0–₹5,000 builds foundations. ₹5,000–₹20,000 starts generating enquiries. ₹20,000+ can scale faster with ads and systems.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Can I do marketing myself?</h3>
+          <p>Yes for basics — Google Business Profile, simple Instagram posts, asking for reviews. Once ads and tracking get involved, guidance usually saves money.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>How long before I see results?</h3>
+          <p>Ads can show signals in 1–4 weeks. SEO takes months. Branding and websites pay off when people start trusting and contacting you — often immediately once they're live.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -931,13 +1364,14 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <h4>Digital <em>Yes</em> Marketing</h4>
-          <p class="footer-tagline">Reports · Insights</p>
+          <p class="footer-tagline">Practical marketing advice for business owners</p>
         </div>
         <div class="footer-col">
-          <h5>Services</h5>
-          <a href="competitor-report/">Competitor Report</a>
-          <a href="keyword-report/">Keyword Visibility Report</a>
-          <a href="business-dashboard/">Business Intelligence Dashboard</a>
+          <h5>Explore</h5>
+          <a href="#start">Where You Are</a>
+          <a href="#roadmaps">Roadmaps</a>
+          <a href="#services">Services</a>
+          <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col footer-contact">
           <h5>Contact</h5>
