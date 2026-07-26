@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigitalYes Marketing — Confused About Digital Marketing? Start Here.</title>
+  <title>DigitalYes Marketing — Confused About Digital Marketing? We'll Help You Choose the Right Strategy.</title>
   <meta name="description" content="Simple guidance for business owners. Understand whether you need a website, Facebook Ads, or Google Ads — then choose what actually fits your budget.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -299,7 +299,7 @@
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
-      min-height: 560px;
+      min-height: 0;
     }
 
     .confused-panel::before {
@@ -1251,7 +1251,7 @@
     .reveal.d2 { transition-delay: 0.16s; }
 
     @media (max-width: 960px) {
-      .situation-grid, .roadmap-grid { grid-template-columns: 1fr; }
+      .situation-grid, .roadmap-grid, .strategy-grid { grid-template-columns: 1fr; }
       .help-body, .lead-form { grid-template-columns: 1fr; }
       .help-price { text-align: left; }
       .help-price .meta { margin-left: 0; }
@@ -1274,6 +1274,147 @@
       .hero-actions { flex-direction: column; width: 100%; }
       .hero-actions a { width: 100%; justify-content: center; }
     }
+
+    /* Strategy scan cards */
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .strategy-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .strategy-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .strategy-card .s-icon { font-size: 32px; margin-bottom: 14px; line-height: 1; }
+    .strategy-card h3 {
+      font-size: 19px; font-weight: 800; letter-spacing: -0.3px;
+      margin-bottom: 14px; line-height: 1.3; color: var(--text-1);
+    }
+    .strategy-card .s-pick {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 16px; font-weight: 800; margin-bottom: 12px;
+      padding: 8px 14px; border-radius: 50px;
+    }
+    .strategy-card.fb .s-pick { background: #E0F2FE; color: #0369A1; }
+    .strategy-card.gads .s-pick { background: #FEF3C7; color: #B45309; }
+    .strategy-card.web .s-pick { background: #D1FAE5; color: #047857; }
+    .strategy-card .s-time {
+      font-size: 15px; color: var(--text-2); font-weight: 600; line-height: 1.5;
+    }
+    .strategy-card.fb { border-top: 4px solid #0EA5E9; }
+    .strategy-card.gads { border-top: 4px solid var(--amber); }
+    .strategy-card.web { border-top: 4px solid var(--emerald); }
+
+    /* Hero story flow */
+    .story-flow { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .story-arrow {
+      color: var(--text-4); font-size: 18px; font-weight: 800; line-height: 1;
+    }
+    .story-question {
+      background: #FEF3C7; border: 1.5px solid #F59E0B; color: #B45309;
+      border-radius: 50px; padding: 10px 18px; font-size: 14px; font-weight: 800;
+      text-align: center;
+    }
+    .story-options {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; width: 100%;
+    }
+    .story-options .choice-tile {
+      flex: 1 1 30%; min-width: 90px; padding: 12px 8px; font-size: 13px;
+    }
+    .story-options .choice-tile::after { display: none; }
+    .story-or {
+      font-size: 11px; font-weight: 700; color: var(--text-4);
+      align-self: center; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .story-outcome {
+      background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(8,145,178,0.12));
+      border: 1.5px solid var(--emerald);
+      border-radius: 16px; padding: 14px 18px; text-align: center; width: 100%;
+    }
+    .story-outcome strong {
+      display: block; font-size: 16px; font-weight: 800; color: #047857; margin-bottom: 2px;
+    }
+    .story-outcome span { font-size: 13px; color: var(--text-2); font-weight: 500; }
+
+    /* Fit box (Is this right for you?) */
+    .fit-box { display: grid; gap: 14px; }
+    .fit-box h4 {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-bottom: 0;
+    }
+    .fit-col h5 {
+      font-size: 13px; font-weight: 800; margin-bottom: 8px;
+    }
+    .fit-col.yes h5 { color: #047857; }
+    .fit-col.no h5 { color: #B91C1C; }
+    .fit-col ul { list-style: none; display: grid; gap: 6px; }
+    .fit-col li {
+      font-size: 15px; font-weight: 500; color: var(--text-2); line-height: 1.45;
+      padding-left: 22px; position: relative;
+    }
+    .fit-col.yes li::before { content: '✅'; position: absolute; left: 0; font-size: 12px; top: 2px; }
+    .fit-col.no li::before { content: '❌'; position: absolute; left: 0; font-size: 12px; top: 2px; }
+
+    /* Business types */
+    .biz-type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .biz-type {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 14px;
+      text-align: center;
+      font-size: 15px; font-weight: 700; color: var(--text-1);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .biz-type:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .biz-type .bt-icon { display: block; font-size: 28px; margin-bottom: 8px; line-height: 1; }
+    .biz-type-note {
+      margin-top: 28px; text-align: center;
+      background: #FFFFFF; border: 1.5px dashed var(--border);
+      border-radius: 18px; padding: 22px 20px;
+    }
+    .biz-type-note strong { display: block; font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .biz-type-note span { font-size: 16px; color: var(--text-3); font-weight: 500; }
+
+    /* Talk value lists */
+    .talk-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      margin-bottom: 28px;
+    }
+    .talk-panel {
+      background: #F8FAFC; border: 1.5px solid #E2E8F0;
+      border-radius: 16px; padding: 18px 20px;
+    }
+    .talk-panel h3 {
+      font-size: 14px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.4px; color: var(--text-3); margin-bottom: 12px;
+    }
+    .talk-panel ul { list-style: none; display: grid; gap: 8px; }
+    .talk-panel li {
+      font-size: 15px; font-weight: 600; color: var(--text-1);
+      padding-left: 22px; position: relative;
+    }
+    .talk-panel.you li::before { content: '✔'; position: absolute; left: 0; color: var(--primary); font-weight: 800; }
+    .talk-panel.get li::before { content: '✔'; position: absolute; left: 0; color: var(--ok); font-weight: 800; }
+
+    @media (max-width: 900px) {
+      .strategy-grid, .biz-type-grid, .talk-split { grid-template-columns: 1fr; }
+      .biz-type-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .biz-type-grid { grid-template-columns: 1fr 1fr; }
+    }
+
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="3a1aca4d-18f7-47f1-aba2-35dbbecfd51e"></script>
 </head>
@@ -1287,7 +1428,7 @@
       </a>
       <div class="nav-links">
         <a href="#guide">Guide</a>
-        <a href="#help">How I Help</a>
+        <a href="#help">Services</a>
         <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -1300,7 +1441,7 @@
     </div>
     <div id="mobile-menu">
       <a href="#guide" onclick="closeMenu()">Guide</a>
-      <a href="#help" onclick="closeMenu()">How I Help</a>
+      <a href="#help" onclick="closeMenu()">Services</a>
       <a href="#faq" onclick="closeMenu()">FAQ</a>
       <a href="contact.html">Contact</a>
       <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="mobile-cta burn-cta">
@@ -1314,20 +1455,19 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1 class="reveal">Confused About Digital Marketing? Start Here.</h1>
+          <h1 class="reveal">Confused About Digital Marketing? We'll Help You Choose the Right Strategy.</h1>
           <p class="hero-sub reveal d1">
-            <span>Don't know whether to build a <span class="hl-web">website</span>,</span>
-            <span>or to run <span class="hl-fb">Facebook Ads</span>,</span>
-            <span>or invest in <span class="hl-gads">Google Ads</span>,</span>
-            <span>or focus <span class="hl-else">somewhere else</span>?</span>
+            <span>Clear guidance on <span class="hl-web">Website</span>,</span>
+            <span><span class="hl-fb">Facebook Ads</span>, and</span>
+            <span><span class="hl-gads">Google Ads</span> — based on your goal and budget.</span>
           </p>
-          <p class="hero-support reveal d1">We'll help you understand what your business actually needs based on your goals and budget—without confusing marketing jargon.</p>
+          <p class="hero-support reveal d1">No jargon. No pressure to buy everything. Just the next right step for your business.</p>
           <div class="hero-actions reveal d2">
             <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary pulse burn-cta">
               Get Free Advice on WhatsApp
               <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-            <a href="#guide" class="btn-secondary">See Marketing Guide</a>
+            <a href="#guide" class="btn-secondary">See What Fits You</a>
           </div>
           <div class="biz-strip reveal d2">
             <span class="biz-chip"><span class="biz-dot teal"></span> Websites from ₹10,000</span>
@@ -1339,29 +1479,28 @@
 
         <div class="hero-visual reveal d1" aria-hidden="true">
           <div class="confused-panel">
-            <div class="owner-scene">
-              <img class="owner-art" src="images/thinking-business-owner.png" alt="" width="168" height="210">
-              <div class="think-bubble">
-                <div class="think-cloud">?</div>
-                <div class="think-dots"><span></span><span></span><span></span></div>
+            <div class="story-flow">
+              <div class="owner-scene" style="margin-bottom:0;">
+                <img class="owner-art" src="images/thinking-business-owner.png" alt="" width="148" height="186" style="width:148px;height:186px;">
+                <div class="think-bubble">
+                  <div class="think-cloud">?</div>
+                  <div class="think-dots"><span></span><span></span><span></span></div>
+                </div>
+                <p class="owner-caption">Business Owner</p>
               </div>
-              <p class="owner-caption">Wondering which marketing option actually fits…</p>
-            </div>
-            <p class="confused-label">Stuck choosing between</p>
-            <div class="choice-grid">
-              <div class="choice-tile web">Website<small>Look professional</small></div>
-              <div class="choice-tile fb">Facebook Ads<small>Fast enquiries</small></div>
-              <div class="choice-tile gads">Google Ads<small>Search demand</small></div>
-              <div class="choice-tile other">Something else?<small>SEO, Instagram…</small></div>
-            </div>
-            <div class="confused-bridge">
-              <span class="dots">· · ·</span>
-              Too many options
-              <span class="dots">· · ·</span>
-            </div>
-            <div class="clarity-card">
-              <strong>Get clear advice</strong>
-              <span>We’ll tell you what fits your goal &amp; budget</span>
+              <div class="story-arrow">↓</div>
+              <div class="story-question">What's right for me?</div>
+              <div class="story-arrow">↓</div>
+              <div class="story-options">
+                <div class="choice-tile web">Website</div>
+                <div class="choice-tile fb">Facebook Ads</div>
+                <div class="choice-tile gads">Google Ads</div>
+              </div>
+              <div class="story-arrow">↓</div>
+              <div class="story-outcome">
+                <strong>More enquiries</strong>
+                <span>Spend only on what actually fits</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1369,8 +1508,226 @@
     </div>
   </section>
 
-  <!-- Section 1 -->
-  <section id="start" class="section section--b">
+  <!-- Strategy (visual) -->
+  <section id="guide" class="section section--b">
+    <div class="container">
+      <div class="section-eyebrow reveal">Simple comparison</div>
+      <h2 class="section-title reveal">Which Marketing Strategy Is Right For You?</h2>
+      <p class="section-sub reveal d1">Scan the cards. Pick the path that matches what you need right now.</p>
+
+      <div class="strategy-grid">
+        <a href="#facebook-ads" class="strategy-card fb reveal">
+          <div class="s-icon">🚀</div>
+          <h3>Need enquiries fast?</h3>
+          <div class="s-pick">👉 Facebook Ads</div>
+          <p class="s-time">⏱ Usually starts generating leads within around 48 hours*</p>
+        </a>
+        <a href="#google-ads" class="strategy-card gads reveal d1">
+          <div class="s-icon">🔍</div>
+          <h3>People already searching for your service?</h3>
+          <div class="s-pick">👉 Google Ads</div>
+          <p class="s-time">⏱ Usually within around 48 hours*</p>
+        </a>
+        <a href="#website" class="strategy-card web reveal d2">
+          <div class="s-icon">💻</div>
+          <h3>Need to build trust?</h3>
+          <div class="s-pick">👉 Website</div>
+          <p class="s-time">⏱ Ready in 7–10 days</p>
+        </a>
+      </div>
+      <p class="table-note reveal">*Actual timing and results vary based on industry, competition, audience, budget, and campaign quality.</p>
+    </div>
+  </section>
+
+  <!-- Services higher -->
+  <section id="help" class="section section--a">
+    <div class="container">
+      <div class="section-eyebrow reveal">Only 3 services</div>
+      <h2 class="section-title reveal">How I Can Help</h2>
+      <p class="section-sub reveal d1">I don't offer ten services. I offer three clear options — so you always know what you're paying for.</p>
+
+      <div class="help-grid">
+
+        <article class="help-card accent-teal reveal" id="website">
+          <div class="help-top">
+            <div>
+              <span class="help-badge teal">Website</span>
+              <h3>Professional Business Website</h3>
+              <p class="help-for">Perfect for businesses starting their online presence.</p>
+            </div>
+            <div class="help-price">
+              <span class="amount">₹10,000</span>
+              <span class="meta">One-time project</span>
+            </div>
+          </div>
+          <div class="help-body">
+            <div class="help-block">
+              <h4>Includes</h4>
+              <ul>
+                <li>Modern responsive website</li>
+                <li>Mobile friendly</li>
+                <li>WhatsApp integration</li>
+                <li>Contact form</li>
+                <li>Basic SEO setup</li>
+                <li>Fast loading pages</li>
+                <li>1 year support</li>
+              </ul>
+              <div class="support-note">Yearly Support &amp; Maintenance after year one: <span>₹3,000/year</span></div>
+            </div>
+            <div class="why-box">
+              <h4>Is a website right for you?</h4>
+              <div class="fit-box">
+                <div class="fit-col yes">
+                  <h5>Choose this if:</h5>
+                  <ul>
+                    <li>Customers look you up online</li>
+                    <li>You want to look professional and trustworthy</li>
+                    <li>You're ready for a lasting online presence</li>
+                  </ul>
+                </div>
+                <div class="fit-col no">
+                  <h5>Not recommended if:</h5>
+                  <ul>
+                    <li>You're only testing an idea for a few weeks</li>
+                    <li>You have no offer or details to share yet</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="help-actions">
+            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20a%20Professional%20Business%20Website%20(%E2%82%B910%2C000)." target="_blank" rel="noopener" class="btn-primary">Talk About a Website</a>
+          </div>
+        </article>
+
+        <article class="help-card accent-amber reveal d1" id="facebook-ads">
+          <div class="help-top">
+            <div>
+              <span class="help-badge amber">Lead Gen</span>
+              <h3>Generate Leads with Facebook Ads</h3>
+              <p class="help-for">Perfect if you want to start generating enquiries quickly.</p>
+            </div>
+            <div class="help-price">
+              <span class="amount">₹10,000</span>
+              <span class="meta">2-month campaign<br>Recommended ad budget: ₹10,000/month<br>(≈ ₹500/day for around 20 days)</span>
+            </div>
+          </div>
+          <div class="help-body">
+            <div class="help-block">
+              <h4>Includes</h4>
+              <ul>
+                <li>Research into your business and audience</li>
+                <li>Landing page creation for your ads</li>
+                <li>Two different lead generation campaigns</li>
+                <li>Monitoring and fine-tuning for 2 months</li>
+              </ul>
+            </div>
+            <div class="why-box">
+              <h4>Is Facebook Ads right for you?</h4>
+              <div class="fit-box">
+                <div class="fit-col yes">
+                  <h5>Choose this if:</h5>
+                  <ul>
+                    <li>You want enquiries quickly</li>
+                    <li>You're ready to invest in advertising</li>
+                    <li>You already have a product or service to sell</li>
+                  </ul>
+                </div>
+                <div class="fit-col no">
+                  <h5>Not recommended if:</h5>
+                  <ul>
+                    <li>You don't yet have a clear offer</li>
+                    <li>You aren't ready to spend on ads</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="help-actions">
+            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20Facebook%20Ads%20Lead%20Generation%20(%E2%82%B910%2C000%20for%202%20months)." target="_blank" rel="noopener" class="btn-primary">Talk About Facebook Ads</a>
+          </div>
+        </article>
+
+        <article class="help-card accent-green reveal d2" id="google-ads">
+          <div class="help-top">
+            <div>
+              <span class="help-badge green">Search Ads</span>
+              <h3>Get Customers from Google Search</h3>
+              <p class="help-for">For when people are already searching for businesses like yours.</p>
+            </div>
+            <div class="help-price">
+              <span class="amount">₹10,000</span>
+              <span class="meta">2-month campaign<br>Recommended ad budget: ₹10,000/month</span>
+            </div>
+          </div>
+          <div class="help-body">
+            <div class="help-block">
+              <h4>Includes</h4>
+              <ul>
+                <li>Research into your business and keywords</li>
+                <li>Landing page creation for your ads</li>
+                <li>Two different lead generation campaigns</li>
+                <li>Monitoring and fine-tuning for 2 months</li>
+              </ul>
+            </div>
+            <div class="why-box">
+              <h4>Is Google Ads right for you?</h4>
+              <div class="fit-box">
+                <div class="fit-col yes">
+                  <h5>Choose this if:</h5>
+                  <ul>
+                    <li>People already search for your type of service</li>
+                    <li>You want higher-intent enquiries</li>
+                    <li>You're ready to invest in ad spend</li>
+                  </ul>
+                </div>
+                <div class="fit-col no">
+                  <h5>Not recommended if:</h5>
+                  <ul>
+                    <li>Almost nobody searches for your service yet</li>
+                    <li>You aren't ready to spend on ads</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="help-actions">
+            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20Google%20Ads%20Lead%20Generation%20(%E2%82%B910%2C000%20for%202%20months)." target="_blank" rel="noopener" class="btn-primary">Talk About Google Ads</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Business types -->
+  <section id="businesses" class="section section--b">
+    <div class="container">
+      <div class="section-eyebrow reveal">Made for local &amp; service businesses</div>
+      <h2 class="section-title reveal">Which Business Are You?</h2>
+      <p class="section-sub reveal d1">If you recognise your business here, you're in the right place.</p>
+
+      <div class="biz-type-grid">
+        <div class="biz-type reveal"><span class="bt-icon">🦷</span>Dentist</div>
+        <div class="biz-type reveal d1"><span class="bt-icon">🏥</span>Clinic</div>
+        <div class="biz-type reveal d2"><span class="bt-icon">🍽</span>Restaurant</div>
+        <div class="biz-type reveal"><span class="bt-icon">🏋</span>Gym</div>
+        <div class="biz-type reveal d1"><span class="bt-icon">🏠</span>Real Estate</div>
+        <div class="biz-type reveal d2"><span class="bt-icon">⚖</span>Lawyer</div>
+        <div class="biz-type reveal"><span class="bt-icon">💄</span>Salon</div>
+        <div class="biz-type reveal d1"><span class="bt-icon">🏫</span>Coaching Centre</div>
+        <div class="biz-type reveal d2"><span class="bt-icon">👨‍💼</span>Consultant</div>
+      </div>
+
+      <div class="biz-type-note reveal">
+        <strong>Don't see your business?</strong>
+        <span>We probably work with it too — message me and I'll tell you what usually works.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where you are + roadmaps -->
+  <section id="start" class="section section--a">
     <div class="container">
       <div class="section-eyebrow reveal">Business stage</div>
       <h2 class="section-title reveal">Where Are You Right Now?</h2>
@@ -1402,62 +1759,6 @@
     </div>
   </section>
 
-  <!-- Section 2 -->
-  <section id="guide" class="section section--a">
-    <div class="container">
-      <div class="section-eyebrow reveal">Simple comparison</div>
-      <h2 class="section-title reveal">Which Marketing Strategy Is Right For You?</h2>
-      <p class="section-sub reveal d1">Different marketing methods solve different problems. Don't spend money until you understand what each one does.</p>
-
-      <div class="table-wrap reveal">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>I Want To...</th>
-              <th>Best Option</th>
-              <th>When You'll Usually See Results</th>
-              <th>Typical Investment</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Start getting enquiries quickly</td>
-              <td><span class="opt-pill fb">Facebook Ads</span></td>
-              <td>Usually within about 48 hours after launching your campaign*</td>
-              <td>₹10,000 service fee<br>+ recommended ad budget</td>
-            </tr>
-            <tr>
-              <td>Reach people already searching for my service</td>
-              <td><span class="opt-pill gads">Google Ads</span></td>
-              <td>Usually within about 48 hours after campaign approval*</td>
-              <td>₹10,000 service fee<br>+ recommended ad budget</td>
-            </tr>
-            <tr>
-              <td>Build trust and look professional</td>
-              <td><span class="opt-pill web">Website</span></td>
-              <td>Usually ready within 7–10 days</td>
-              <td>₹10,000</td>
-            </tr>
-            <tr>
-              <td>Grow organically on Google</td>
-              <td><span class="opt-pill seo">SEO</span></td>
-              <td>Usually takes several months</td>
-              <td>Long-term investment</td>
-            </tr>
-            <tr>
-              <td>Build an audience</td>
-              <td><span class="opt-pill ig">Instagram</span></td>
-              <td>Weeks to months</td>
-              <td>Depends on consistency</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="table-note reveal">*Actual timing and results vary based on industry, competition, audience, budget, and campaign quality.</p>
-    </div>
-  </section>
-
-  <!-- Section 3 -->
   <section id="roadmaps" class="section section--b">
     <div class="container">
       <div class="section-eyebrow reveal">Practical paths</div>
@@ -1540,165 +1841,6 @@
     </div>
   </section>
 
-  <!-- Section 4 -->
-  <section id="help" class="section section--a">
-    <div class="container">
-      <div class="section-eyebrow reveal">Only 3 services</div>
-      <h2 class="section-title reveal">How I Can Help</h2>
-      <p class="section-sub reveal d1">I don't offer ten services. I offer three clear options — so you always know what you're paying for.</p>
-
-      <div class="help-grid">
-
-        <article class="help-card accent-teal reveal" id="website">
-          <div class="help-top">
-            <div>
-              <span class="help-badge teal">Website</span>
-              <h3>Website Development</h3>
-              <p class="help-for">Perfect for businesses starting their online presence.</p>
-            </div>
-            <div class="help-price">
-              <span class="amount">₹10,000</span>
-              <span class="meta">One-time project</span>
-            </div>
-          </div>
-          <div class="help-body">
-            <div class="help-block">
-              <h4>Includes</h4>
-              <ul>
-                <li>Modern responsive website</li>
-                <li>Mobile friendly</li>
-                <li>WhatsApp integration</li>
-                <li>Contact form</li>
-                <li>Basic SEO setup</li>
-                <li>Fast loading pages</li>
-                <li>1 year support</li>
-              </ul>
-              <div class="support-note">Yearly Support &amp; Maintenance after year one: <span>₹3,000/year</span></div>
-            </div>
-            <div class="why-box">
-              <h4>Why choose this?</h4>
-              <p>If customers search your business online and don't find a professional website, many may move on to a competitor. A website builds credibility and gives people confidence to contact you.</p>
-            </div>
-          </div>
-          <div class="help-actions">
-            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20Website%20Development%20(%E2%82%B910%2C000)." target="_blank" rel="noopener" class="btn-primary">Talk About a Website</a>
-          </div>
-        </article>
-
-        <article class="help-card accent-amber reveal d1" id="facebook-ads">
-          <div class="help-top">
-            <div>
-              <span class="help-badge amber">Lead Gen</span>
-              <h3>Facebook Lead Generation</h3>
-              <p class="help-for">Perfect if you want to start generating enquiries quickly.</p>
-            </div>
-            <div class="help-price">
-              <span class="amount">₹10,000</span>
-              <span class="meta">2-month campaign<br>Recommended ad budget: ₹10,000/month<br>(≈ ₹500/day for around 20 days)</span>
-            </div>
-          </div>
-          <div class="help-body">
-            <div class="help-block">
-              <h4>Includes</h4>
-              <ul>
-                <li>Research into your business and audience</li>
-                <li>Landing page creation for your ads</li>
-                <li>Two different lead generation campaigns</li>
-                <li>Monitoring and fine-tuning for 2 months</li>
-              </ul>
-            </div>
-            <div class="why-box">
-              <h4>Why choose this?</h4>
-              <p>Perfect if you want to start generating enquiries quickly. Businesses often begin receiving leads within around 48 hours after campaigns are launched, although this varies depending on industry, audience, competition, and budget.</p>
-            </div>
-          </div>
-          <div class="help-actions">
-            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20Facebook%20Lead%20Generation%20(%E2%82%B910%2C000%20for%202%20months)." target="_blank" rel="noopener" class="btn-primary">Talk About Facebook Ads</a>
-          </div>
-        </article>
-
-        <article class="help-card accent-green reveal d2" id="google-ads">
-          <div class="help-top">
-            <div>
-              <span class="help-badge green">Search Ads</span>
-              <h3>Google Ads Lead Generation</h3>
-              <p class="help-for">For when people are already searching for businesses like yours.</p>
-            </div>
-            <div class="help-price">
-              <span class="amount">₹10,000</span>
-              <span class="meta">2-month campaign<br>Recommended ad budget: ₹10,000/month</span>
-            </div>
-          </div>
-          <div class="help-body">
-            <div class="help-block">
-              <h4>Includes</h4>
-              <ul>
-                <li>Research into your business and keywords</li>
-                <li>Landing page creation for your ads</li>
-                <li>Two different lead generation campaigns</li>
-                <li>Monitoring and fine-tuning for 2 months</li>
-              </ul>
-            </div>
-            <div class="why-box">
-              <h4>Why choose this?</h4>
-              <p>Google Ads reaches people who are already searching for businesses like yours. Businesses often begin receiving enquiries within around 48 hours after campaigns go live, depending on search demand, competition, and budget.</p>
-            </div>
-          </div>
-          <div class="help-actions">
-            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27m%20interested%20in%20Google%20Ads%20Lead%20Generation%20(%E2%82%B910%2C000%20for%202%20months)." target="_blank" rel="noopener" class="btn-primary">Talk About Google Ads</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 5 -->
-  <section id="talk" class="section section--b">
-    <div class="container">
-      <div class="talk-card reveal">
-        <h2>Let's Talk About Your Business</h2>
-        <p>Tell me what you need and your budget. I'll reply on WhatsApp with clear next steps.</p>
-
-        <form id="lead-form" class="lead-form" novalidate>
-          <div class="lead-field">
-            <label for="lead-name">Your Name</label>
-            <input id="lead-name" name="name" type="text" placeholder="e.g. Ravi" required autocomplete="name">
-          </div>
-          <div class="lead-field">
-            <label for="lead-whatsapp">WhatsApp Number</label>
-            <input id="lead-whatsapp" name="whatsapp" type="tel" placeholder="+91 98765 43210" required autocomplete="tel">
-          </div>
-          <div class="lead-field">
-            <label for="lead-service">Service You Need</label>
-            <select id="lead-service" name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="Website Development">Website Development</option>
-              <option value="Facebook Lead Generation">Facebook Lead Generation</option>
-              <option value="Google Ads Lead Generation">Google Ads Lead Generation</option>
-              <option value="Not sure — need advice">Not sure — need advice</option>
-            </select>
-          </div>
-          <div class="lead-field">
-            <label for="lead-budget">Your Monthly Budget</label>
-            <select id="lead-budget" name="budget" required>
-              <option value="" disabled selected>Select your budget</option>
-              <option value="Under ₹10,000">Under ₹10,000</option>
-              <option value="₹10,000 – ₹20,000">₹10,000 – ₹20,000</option>
-              <option value="₹20,000 – ₹50,000">₹20,000 – ₹50,000</option>
-              <option value="₹50,000+">₹50,000+</option>
-              <option value="Not sure yet">Not sure yet</option>
-            </select>
-          </div>
-          <div class="lead-field full">
-            <button type="submit" class="btn-primary lead-submit burn-cta" id="lead-submit">Submit — Get Free Advice</button>
-          </div>
-          <p id="lead-msg" class="lead-msg" role="status"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
   <section id="faq" class="section section--a">
     <div class="container">
@@ -1715,25 +1857,89 @@
           <p>Facebook Ads are useful when you want to reach people quickly with an offer. Google Ads are better when people already search for your service. If you're unsure, message me with your business type — I'll recommend one.</p>
         </div>
         <div class="faq-item reveal">
-          <h3>How much should I spend every month?</h3>
-          <p>For ads, I usually recommend around ₹10,000/month in ad budget on top of the ₹10,000 service fee for a 2-month campaign. That gives the campaign enough room to learn. A website is a one-time ₹10,000 investment.</p>
+          <h3>How much should I spend on advertising?</h3>
+          <p>For most small businesses starting ads, I recommend around ₹10,000/month in ad budget on top of the ₹10,000 service fee for a 2-month campaign. That gives the ads enough room to learn what works. Spending much less often means slower learning and weaker results. If your budget is tighter, we can talk about what to do first — and what can wait. A website is a separate one-time ₹10,000 investment.</p>
         </div>
         <div class="faq-item reveal d1">
           <h3>Can I run ads without a website?</h3>
           <p>You can, but it's usually not ideal. People need a clear place to land and contact you. Both lead generation packages include landing page creation if you don't have a website yet.</p>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item reveal d1">
           <h3>How quickly can I expect enquiries?</h3>
           <p>With Facebook or Google Ads, businesses often begin seeing enquiries within around 48 hours after campaigns go live. Results vary by industry, competition, audience, and budget. Websites are typically ready in 7–10 days.</p>
         </div>
-        <div class="faq-item reveal d1">
+        <div class="faq-item reveal">
           <h3>Do you work with businesses outside Bangalore?</h3>
           <p>Yes. Most of the work is online — WhatsApp, calls, and shared drafts — so location is rarely a problem.</p>
         </div>
-        <div class="faq-item reveal">
+        <div class="faq-item reveal d1">
           <h3>How long does website development take?</h3>
           <p>Usually 7–10 days once we have your content and details. More complex sites can take a little longer.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="talk" class="section section--b">
+    <div class="container">
+      <div class="talk-card reveal">
+        <h2>Get Your Free Marketing Roadmap</h2>
+        <p>Tell me a few details about your business. I'll reply on WhatsApp with clear next steps — not a sales pitch.</p>
+
+        <div class="talk-split">
+          <div class="talk-panel you">
+            <h3>Tell me</h3>
+            <ul>
+              <li>Your business</li>
+              <li>Your city</li>
+              <li>Your monthly budget</li>
+            </ul>
+          </div>
+          <div class="talk-panel get">
+            <h3>I'll tell you</h3>
+            <ul>
+              <li>What to do first</li>
+              <li>Which marketing channel fits</li>
+              <li>Approximate budget</li>
+              <li>What can wait</li>
+            </ul>
+          </div>
+        </div>
+
+        <form id="lead-form" class="lead-form" novalidate>
+          <div class="lead-field">
+            <label for="lead-name">Your Name</label>
+            <input id="lead-name" name="name" type="text" placeholder="e.g. Ravi" required autocomplete="name">
+          </div>
+          <div class="lead-field">
+            <label for="lead-whatsapp">WhatsApp Number</label>
+            <input id="lead-whatsapp" name="whatsapp" type="tel" placeholder="+91 98765 43210" required autocomplete="tel">
+          </div>
+          <div class="lead-field">
+            <label for="lead-business">Your Business</label>
+            <input id="lead-business" name="business" type="text" placeholder="e.g. Dental clinic" required>
+          </div>
+          <div class="lead-field">
+            <label for="lead-city">Your City</label>
+            <input id="lead-city" name="city" type="text" placeholder="e.g. Bangalore" required>
+          </div>
+          <div class="lead-field full">
+            <label for="lead-budget">Your Monthly Budget</label>
+            <select id="lead-budget" name="budget" required>
+              <option value="" disabled selected>Select your budget</option>
+              <option value="Under ₹10,000">Under ₹10,000</option>
+              <option value="₹10,000 – ₹20,000">₹10,000 – ₹20,000</option>
+              <option value="₹20,000 – ₹50,000">₹20,000 – ₹50,000</option>
+              <option value="₹50,000+">₹50,000+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="lead-field full">
+            <button type="submit" class="btn-primary lead-submit burn-cta" id="lead-submit">Get My Free Roadmap</button>
+          </div>
+          <p id="lead-msg" class="lead-msg" role="status"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -1786,13 +1992,14 @@
         const btn = document.getElementById('lead-submit');
         const name = document.getElementById('lead-name').value.trim();
         const whatsapp = document.getElementById('lead-whatsapp').value.trim();
-        const service = document.getElementById('lead-service').value;
+        const business = document.getElementById('lead-business').value.trim();
+        const city = document.getElementById('lead-city').value.trim();
         const budget = document.getElementById('lead-budget').value;
 
         msg.className = 'lead-msg';
         msg.textContent = '';
 
-        if (!name || !whatsapp || !service || !budget) {
+        if (!name || !whatsapp || !business || !city || !budget) {
           msg.className = 'lead-msg err';
           msg.textContent = 'Please fill in all fields.';
           return;
@@ -1811,16 +2018,17 @@
             body: JSON.stringify({
               name,
               whatsapp,
-              service,
+              business,
+              city,
               budget,
-              _subject: 'New lead from DigitalYes Marketing',
+              _subject: 'Free Marketing Roadmap request — DigitalYes',
               _template: 'table'
             })
           });
           const data = await res.json().catch(() => ({}));
           if (res.ok) {
             msg.className = 'lead-msg ok';
-            msg.textContent = 'Thanks! I’ll reply on WhatsApp soon.';
+            msg.textContent = 'Thanks! I’ll reply on WhatsApp with your roadmap soon.';
             leadForm.reset();
           } else {
             throw new Error(data.message || 'Could not send. Please try WhatsApp.');
@@ -1830,7 +2038,7 @@
           msg.textContent = err.message || 'Something went wrong. Please message on WhatsApp.';
         } finally {
           btn.disabled = false;
-          btn.textContent = 'Submit — Get Free Advice';
+          btn.textContent = 'Get My Free Roadmap';
         }
       });
     }
