@@ -22,6 +22,11 @@
       --accent:    #0F172A;
       --ok:        #16A34A;
       --primary:   #0891B2;
+      --amber:     #F59E0B;
+      --emerald:   #10B981;
+      --coral:     #F97316;
+      --sky:       #0EA5E9;
+      --indigo:    #4F46E5;
       --border:    #94A3B8;
       --footer:    #0B1220;
       --shadow:    0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04);
@@ -36,7 +41,7 @@
       background: var(--bg);
       color: var(--text-1);
       line-height: 1.6;
-      font-size: 16px;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -74,7 +79,7 @@
 
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
-      font-weight: 800; font-size: 16px; justify-self: start;
+      font-weight: 800; font-size: 17px; justify-self: start;
     }
 
     .nav-logo-mark {
@@ -89,7 +94,7 @@
     .nav-links { display: flex; gap: 28px; justify-self: center; }
 
     .nav-links a {
-      font-size: 14px; font-weight: 600; color: var(--text-3);
+      font-size: 15px; font-weight: 600; color: var(--text-3);
       transition: color 0.2s;
     }
 
@@ -99,7 +104,7 @@
       display: inline-flex; align-items: center;
       background: var(--text-1); color: white !important;
       border-radius: 50px; padding: 10px 18px;
-      font-size: 13px; font-weight: 700;
+      font-size: 14px; font-weight: 700;
       justify-self: end; transition: opacity 0.2s;
     }
 
@@ -116,7 +121,7 @@
       padding: 16px 28px;
     }
 
-    #mobile-menu a { font-size: 15px; font-weight: 600; color: var(--text-2); }
+    #mobile-menu a { font-size: 16px; font-weight: 600; color: var(--text-2); }
     #mobile-menu .mobile-cta {
       background: var(--text-1); color: white;
       padding: 12px 18px; border-radius: 50px; text-align: center;
@@ -127,7 +132,7 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--text-1); color: white;
       border-radius: 50px; padding: 14px 26px;
-      font-size: 14px; font-weight: 700;
+      font-size: 15px; font-weight: 700;
       transition: all 0.25s;
     }
 
@@ -138,7 +143,7 @@
       background: var(--surface); color: var(--text-1);
       border: 1.5px solid var(--border);
       border-radius: 50px; padding: 13px 24px;
-      font-size: 14px; font-weight: 700;
+      font-size: 15px; font-weight: 700;
       transition: all 0.25s;
       box-shadow: var(--shadow);
     }
@@ -149,7 +154,7 @@
       display: inline-flex; align-items: center; justify-content: center;
       background: var(--bg-blue); color: var(--text-1);
       border-radius: 50px; padding: 11px 18px;
-      font-size: 13px; font-weight: 700;
+      font-size: 14px; font-weight: 700;
       transition: all 0.25s;
       align-self: flex-start;
     }
@@ -181,7 +186,7 @@
     }
 
     .hero-sub {
-      font-size: 18px;
+      font-size: 19px;
       color: var(--text-2);
       max-width: 540px;
       margin-bottom: 16px;
@@ -194,7 +199,7 @@
     }
 
     .hero-support {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--text-3);
       max-width: 500px;
       margin-bottom: 36px;
@@ -217,7 +222,7 @@
     }
 
     .hero-trust span {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text-2);
       display: inline-flex;
@@ -267,14 +272,14 @@
     }
 
     .journey-node.is-muted {
-      background: var(--bg-blue);
-      color: var(--text-3);
+      background: #FEF3C7;
+      color: #B45309;
       font-weight: 700;
       box-shadow: none;
     }
 
     .journey-node.is-focus {
-      background: var(--text-1);
+      background: var(--primary);
       color: white;
     }
 
@@ -293,14 +298,14 @@
 
     .journey-card strong {
       display: block;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       letter-spacing: -0.2px;
       margin-bottom: 2px;
     }
 
     .journey-card span {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-3);
       font-weight: 500;
     }
@@ -322,6 +327,161 @@
       margin-left: 23px;
     }
 
+    /* ─── MOTION & COLOR ─── */
+    @keyframes float-y {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes pulse-soft {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0.28); }
+      50% { box-shadow: 0 0 0 10px rgba(8, 145, 178, 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .journey-node, .biz-chip, .btn-primary.pulse { animation: none !important; }
+    }
+
+    .biz-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .biz-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-2);
+      box-shadow: var(--shadow);
+      animation: float-y 5s ease-in-out infinite;
+    }
+
+    .biz-chip:nth-child(2) { animation-delay: 0.4s; }
+    .biz-chip:nth-child(3) { animation-delay: 0.8s; }
+    .biz-chip:nth-child(4) { animation-delay: 1.2s; }
+
+    .biz-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .biz-dot.teal { background: var(--primary); }
+    .biz-dot.amber { background: var(--amber); }
+    .biz-dot.green { background: var(--emerald); }
+    .biz-dot.coral { background: var(--coral); }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: var(--primary);
+      background: rgba(8, 145, 178, 0.1);
+      border-radius: 50px;
+      padding: 7px 12px;
+      margin-bottom: 14px;
+    }
+
+    .card-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+      transition: transform 0.3s;
+    }
+
+    .situation-card:hover .card-icon,
+    .roadmap-card:hover .card-icon { transform: scale(1.08) rotate(-3deg); }
+
+    .situation-card.tint-teal {
+      border-color: rgba(8, 145, 178, 0.5);
+      background: linear-gradient(180deg, #F0FBFF 0%, #FFFFFF 38%);
+    }
+    .situation-card.tint-teal .situation-num,
+    .situation-card.tint-teal .card-icon { background: rgba(8, 145, 178, 0.15); color: #0E7490; }
+    .situation-card.tint-teal:hover { border-color: var(--primary); box-shadow: 0 12px 32px rgba(8, 145, 178, 0.16); }
+
+    .situation-card.tint-amber {
+      border-color: rgba(245, 158, 11, 0.5);
+      background: linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 38%);
+    }
+    .situation-card.tint-amber .situation-num,
+    .situation-card.tint-amber .card-icon { background: rgba(245, 158, 11, 0.18); color: #B45309; }
+    .situation-card.tint-amber:hover { border-color: var(--amber); box-shadow: 0 12px 32px rgba(245, 158, 11, 0.16); }
+
+    .situation-card.tint-green {
+      border-color: rgba(16, 185, 129, 0.5);
+      background: linear-gradient(180deg, #ECFDF5 0%, #FFFFFF 38%);
+    }
+    .situation-card.tint-green .situation-num,
+    .situation-card.tint-green .card-icon { background: rgba(16, 185, 129, 0.15); color: #047857; }
+    .situation-card.tint-green:hover { border-color: var(--emerald); box-shadow: 0 12px 32px rgba(16, 185, 129, 0.16); }
+
+    .roadmap-card.tint-sky {
+      border-color: rgba(14, 165, 233, 0.45);
+      background: linear-gradient(180deg, #F0F9FF 0%, #FFFFFF 40%);
+    }
+    .roadmap-card.tint-coral {
+      border-color: rgba(249, 115, 22, 0.45);
+      background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 40%);
+    }
+    .roadmap-card.tint-indigo {
+      border-color: rgba(79, 70, 229, 0.4);
+      background: linear-gradient(180deg, #EEF2FF 0%, #FFFFFF 40%);
+    }
+
+    .help-card.accent-teal { border-top: 4px solid var(--primary); }
+    .help-card.accent-amber { border-top: 4px solid var(--amber); }
+    .help-card.accent-green { border-top: 4px solid var(--emerald); }
+
+    .help-badge {
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 50px;
+      padding: 6px 10px;
+      margin-bottom: 12px;
+    }
+
+    .help-badge.teal { background: rgba(8,145,178,0.12); color: #0E7490; }
+    .help-badge.amber { background: rgba(245,158,11,0.15); color: #B45309; }
+    .help-badge.green { background: rgba(16,185,129,0.12); color: #047857; }
+
+    .opt-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .opt-pill.fb { background: #E0F2FE; color: #0369A1; }
+    .opt-pill.gads { background: #FEF3C7; color: #B45309; }
+    .opt-pill.web { background: #D1FAE5; color: #047857; }
+    .opt-pill.seo { background: #E0E7FF; color: #3730A3; }
+    .opt-pill.ig { background: #FCE7F3; color: #BE185D; }
+
+    .btn-primary.pulse {
+      animation: pulse-soft 2.8s ease-in-out infinite;
+    }
+
+    .journey-node { animation: float-y 3.8s ease-in-out infinite; }
+    .journey-step:nth-child(3) .journey-node { animation-delay: 0.3s; }
+    .journey-step:nth-child(5) .journey-node { animation-delay: 0.6s; }
+    .journey-step:nth-child(7) .journey-node { animation-delay: 0.9s; }
+
     /* ─── SECTIONS ─── */
     .section { padding: 112px 0; }
     .section--a { background: var(--bg); }
@@ -338,7 +498,7 @@
     }
 
     .section-sub {
-      font-size: 17px;
+      font-size: 18px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.7;
@@ -381,7 +541,7 @@
     }
 
     .situation-card h3 {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.4px;
       margin-bottom: 10px;
@@ -389,7 +549,7 @@
     }
 
     .situation-card p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.6;
@@ -417,12 +577,12 @@
       text-align: left;
       padding: 20px 24px;
       border-bottom: 1px solid #F1F5F9;
-      font-size: 15px;
+      font-size: 16px;
       vertical-align: top;
     }
 
     .compare-table th {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -450,7 +610,7 @@
 
     .table-note {
       margin-top: 18px;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-4);
       font-weight: 500;
       line-height: 1.55;
@@ -481,7 +641,7 @@
     }
 
     .roadmap-label {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.6px;
@@ -490,7 +650,7 @@
     }
 
     .roadmap-card h3 {
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 24px;
@@ -515,7 +675,7 @@
     }
 
     .rm-block li {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--text-2);
       padding-left: 18px;
@@ -539,7 +699,7 @@
       margin-top: auto;
       padding-top: 18px;
       border-top: 1px solid #F1F5F9;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.55;
@@ -587,14 +747,14 @@
     }
 
     .help-card h3 {
-      font-size: 28px;
+      font-size: 29px;
       font-weight: 800;
       letter-spacing: -0.7px;
       margin-bottom: 10px;
     }
 
     .help-for {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--text-3);
       font-weight: 500;
       max-width: 420px;
@@ -616,7 +776,7 @@
     .help-price .meta {
       display: block;
       margin-top: 8px;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.5;
@@ -647,7 +807,7 @@
     }
 
     .help-block li {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
       color: var(--text-2);
       padding-left: 22px;
@@ -667,7 +827,7 @@
       background: #FFFFFF;
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-2);
     }
@@ -691,7 +851,7 @@
     }
 
     .why-box p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-2);
       font-weight: 500;
       line-height: 1.65;
@@ -721,7 +881,7 @@
     }
 
     .talk-card > p {
-      font-size: 17px;
+      font-size: 18px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.7;
@@ -744,7 +904,7 @@
     .lead-field.full { grid-column: 1 / -1; }
 
     .lead-field label {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--text-2);
     }
@@ -756,7 +916,7 @@
       border: 1.5px solid var(--border);
       border-radius: 12px;
       font-family: var(--font);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
       color: var(--text-1);
       background: #FFFFFF;
@@ -793,7 +953,7 @@
     .lead-msg {
       display: none;
       grid-column: 1 / -1;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       line-height: 1.5;
       padding: 12px 14px;
@@ -830,14 +990,14 @@
     }
 
     .faq-item h3 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       margin-bottom: 8px;
       letter-spacing: -0.3px;
     }
 
     .faq-item p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-3);
       font-weight: 500;
       line-height: 1.65;
@@ -866,7 +1026,7 @@
     .footer-brand h4 em { color: #94A3B8; font-style: normal; }
 
     .footer-tagline {
-      font-size: 14px; color: rgba(255,255,255,0.45);
+      font-size: 15px; color: rgba(255,255,255,0.45);
       font-weight: 500; line-height: 1.5;
     }
 
@@ -879,7 +1039,7 @@
 
     .footer-col a {
       display: block;
-      font-size: 14px; font-weight: 600;
+      font-size: 15px; font-weight: 600;
       color: rgba(255,255,255,0.65);
       margin-bottom: 10px;
       transition: color 0.2s;
@@ -967,7 +1127,7 @@
           </p>
           <p class="hero-support reveal d1">We'll help you understand what your business actually needs based on your goals and budget—without confusing marketing jargon.</p>
           <div class="hero-actions reveal d2">
-            <a href="https://wa.me/917829036211?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary">
+            <a href="https://wa.me/917829036211?text=Hi%2C%20I%27m%20confused%20about%20digital%20marketing.%20Can%20you%20help%3F" target="_blank" rel="noopener" class="btn-primary pulse">
               Get Free Advice on WhatsApp
               <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
@@ -977,6 +1137,12 @@
             <span>Beginner Friendly</span>
             <span>Budget Based Advice</span>
             <span>No Marketing Jargon</span>
+          </div>
+          <div class="biz-strip reveal d2">
+            <span class="biz-chip"><span class="biz-dot teal"></span> Websites from ₹10,000</span>
+            <span class="biz-chip"><span class="biz-dot amber"></span> Ads that bring enquiries</span>
+            <span class="biz-chip"><span class="biz-dot green"></span> Clear pricing</span>
+            <span class="biz-chip"><span class="biz-dot coral"></span> WhatsApp support</span>
           </div>
         </div>
 
@@ -1020,23 +1186,27 @@
   <!-- Section 1 -->
   <section id="start" class="section section--b">
     <div class="container">
+      <div class="section-eyebrow reveal">Business stage</div>
       <h2 class="section-title reveal">Where Are You Right Now?</h2>
       <p class="section-sub reveal d1">Every business is different. Choose the situation that best describes you.</p>
 
       <div class="situation-grid">
-        <a href="#roadmaps" class="situation-card reveal">
+        <a href="#roadmaps" class="situation-card tint-teal reveal">
+          <div class="card-icon">🏪</div>
           <div class="situation-num">01</div>
           <h3>I'm Starting My Business</h3>
           <p>I need a professional online presence.</p>
           <span class="btn-soft">See My Path →</span>
         </a>
-        <a href="#roadmaps" class="situation-card reveal d1">
+        <a href="#roadmaps" class="situation-card tint-amber reveal d1">
+          <div class="card-icon">📈</div>
           <div class="situation-num">02</div>
           <h3>I Want More Customers</h3>
           <p>I already have a business but need more enquiries.</p>
           <span class="btn-soft">See My Path →</span>
         </a>
-        <a href="#roadmaps" class="situation-card reveal d2">
+        <a href="#roadmaps" class="situation-card tint-green reveal d2">
+          <div class="card-icon">🎯</div>
           <div class="situation-num">03</div>
           <h3>I Want Predictable Growth</h3>
           <p>I want a consistent system for generating leads.</p>
@@ -1049,6 +1219,7 @@
   <!-- Section 2 -->
   <section id="guide" class="section section--a">
     <div class="container">
+      <div class="section-eyebrow reveal">Simple comparison</div>
       <h2 class="section-title reveal">Which Marketing Strategy Is Right For You?</h2>
       <p class="section-sub reveal d1">Different marketing methods solve different problems. Don't spend money until you understand what each one does.</p>
 
@@ -1065,31 +1236,31 @@
           <tbody>
             <tr>
               <td>Start getting enquiries quickly</td>
-              <td class="opt">Facebook Ads</td>
+              <td><span class="opt-pill fb">Facebook Ads</span></td>
               <td>Usually within about 48 hours after launching your campaign*</td>
               <td>₹10,000 service fee<br>+ recommended ad budget</td>
             </tr>
             <tr>
               <td>Reach people already searching for my service</td>
-              <td class="opt">Google Ads</td>
+              <td><span class="opt-pill gads">Google Ads</span></td>
               <td>Usually within about 48 hours after campaign approval*</td>
               <td>₹10,000 service fee<br>+ recommended ad budget</td>
             </tr>
             <tr>
               <td>Build trust and look professional</td>
-              <td class="opt">Website</td>
+              <td><span class="opt-pill web">Website</span></td>
               <td>Usually ready within 7–10 days</td>
               <td>₹10,000</td>
             </tr>
             <tr>
               <td>Grow organically on Google</td>
-              <td class="opt">SEO</td>
+              <td><span class="opt-pill seo">SEO</span></td>
               <td>Usually takes several months</td>
               <td>Long-term investment</td>
             </tr>
             <tr>
               <td>Build an audience</td>
-              <td class="opt">Instagram</td>
+              <td><span class="opt-pill ig">Instagram</span></td>
               <td>Weeks to months</td>
               <td>Depends on consistency</td>
             </tr>
@@ -1103,11 +1274,13 @@
   <!-- Section 3 -->
   <section id="roadmaps" class="section section--b">
     <div class="container">
+      <div class="section-eyebrow reveal">Practical paths</div>
       <h2 class="section-title reveal">Marketing Roadmaps</h2>
       <p class="section-sub reveal d1">Practical guidance — not technical jargon. Start where you are.</p>
 
       <div class="roadmap-grid">
-        <div class="roadmap-card reveal">
+        <div class="roadmap-card tint-sky reveal">
+          <div class="card-icon">🌱</div>
           <div class="roadmap-label">Starting Out</div>
           <h3>Build trust first</h3>
           <div class="rm-block yes">
@@ -1130,7 +1303,8 @@
           </div>
         </div>
 
-        <div class="roadmap-card reveal d1">
+        <div class="roadmap-card tint-coral reveal d1">
+          <div class="card-icon">📞</div>
           <div class="roadmap-label">Want More Customers</div>
           <h3>Get enquiries faster</h3>
           <div class="rm-block yes">
@@ -1153,7 +1327,8 @@
           </div>
         </div>
 
-        <div class="roadmap-card reveal d2">
+        <div class="roadmap-card tint-indigo reveal d2">
+          <div class="card-icon">🚀</div>
           <div class="roadmap-label">Ready to Scale</div>
           <h3>Make growth predictable</h3>
           <div class="rm-block yes">
@@ -1182,14 +1357,16 @@
   <!-- Section 4 -->
   <section id="help" class="section section--a">
     <div class="container">
+      <div class="section-eyebrow reveal">Only 3 services</div>
       <h2 class="section-title reveal">How I Can Help</h2>
       <p class="section-sub reveal d1">I don't offer ten services. I offer three clear options — so you always know what you're paying for.</p>
 
       <div class="help-grid">
 
-        <article class="help-card reveal" id="website">
+        <article class="help-card accent-teal reveal" id="website">
           <div class="help-top">
             <div>
+              <span class="help-badge teal">Website</span>
               <h3>Website Development</h3>
               <p class="help-for">Perfect for businesses starting their online presence.</p>
             </div>
@@ -1222,9 +1399,10 @@
           </div>
         </article>
 
-        <article class="help-card reveal d1" id="facebook-ads">
+        <article class="help-card accent-amber reveal d1" id="facebook-ads">
           <div class="help-top">
             <div>
+              <span class="help-badge amber">Lead Gen</span>
               <h3>Facebook Lead Generation</h3>
               <p class="help-for">Perfect if you want to start generating enquiries quickly.</p>
             </div>
@@ -1258,9 +1436,10 @@
           </div>
         </article>
 
-        <article class="help-card reveal d2" id="google-ads">
+        <article class="help-card accent-green reveal d2" id="google-ads">
           <div class="help-top">
             <div>
+              <span class="help-badge green">Search Ads</span>
               <h3>Google Ads Lead Generation</h3>
               <p class="help-for">For when people are already searching for businesses like yours.</p>
             </div>
