@@ -43,6 +43,7 @@
       line-height: 1.6;
       font-size: 17px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -1529,8 +1530,90 @@
     .hero-sub .hl-web,
     .hero-sub .hl-fb,
     .hero-sub .hl-gads { display: inline; }
+
+    .strategy-card .s-pick {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 19px; font-weight: 800; margin-bottom: 12px;
+      padding: 10px 16px; border-radius: 50px;
+      letter-spacing: -0.2px;
+    }
+    .biz-chip.trust {
+      gap: 6px;
+    }
+    .biz-chip .biz-check {
+      font-size: 13px;
+      line-height: 1;
+    }
+    .help-who strong {
+      font-weight: 800;
+      color: var(--text-1);
+      font-size: 17px;
+    }
+    .why-brand .section-title {
+      font-size: clamp(28px, 3.6vw, 40px);
+      margin-bottom: 20px;
+    }
+    .why-brand-line {
+      font-size: clamp(22px, 2.8vw, 28px);
+      font-weight: 700;
+      color: var(--text-2);
+      line-height: 1.45;
+      letter-spacing: -0.3px;
+    }
+    .form-privacy {
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-3);
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    /* Mobile optimization */
+    html { -webkit-text-size-adjust: 100%; }
+    img, svg { max-width: 100%; height: auto; }
+    .container { overflow-wrap: anywhere; }
+
+    @media (max-width: 900px) {
+      .hero-visual { position: static; top: auto; }
+      .confused-panel { max-height: none; }
+      .biz-strip { gap: 8px; }
+      .biz-chip { font-size: 13px; padding: 7px 12px; }
+      .why-brand { padding: 36px 22px; }
+      .talk-split { grid-template-columns: 1fr; }
+      .story-options .choice-tile { font-size: 14px; padding: 14px 8px; }
+      .owner-art { width: 160px; max-height: 210px; }
+      .section-title { font-size: clamp(26px, 7vw, 34px); }
+      .hero h1 { font-size: clamp(30px, 8vw, 40px); letter-spacing: -1.2px; }
+      .hero-sub { font-size: 17px; }
+      .hero-support, .positioning-line { font-size: 16px; }
+      .strategy-card .s-pick { font-size: 18px; }
+      input, select, textarea { font-size: 16px !important; }
+      .lead-submit, .btn-primary, .btn-secondary { min-height: 48px; }
+      .nav-container { padding: 0 18px; }
+      .container { padding: 0 18px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 100px 0 56px; }
+      .section { padding: 64px 0; }
+      .hero-grid { gap: 28px; }
+      .confused-panel { padding: 22px 16px; border-radius: 20px; }
+      .story-flow { gap: 10px; }
+      .story-question { font-size: 14px; padding: 10px 14px; }
+      .story-outcome strong { font-size: 16px; }
+      .biz-type-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .biz-type { padding: 16px 10px 14px; font-size: 14px; }
+      .biz-type .bt-icon { font-size: 32px; }
+      .help-card, .talk-card { padding: 24px 18px; border-radius: 20px; }
+      .help-top { gap: 16px; }
+      .faq-item { padding: 18px 16px; }
+      .footer-inner { gap: 28px; }
+      .form-privacy { font-size: 12px; }
+    }
+
   </style>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="3a1aca4d-18f7-47f1-aba2-35dbbecfd51e"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="3a1aca4d-18f7-47f1-aba2-35dbbecfd51e" data-auto-track="true"></script>
 </head>
 <body>
 
@@ -1546,8 +1629,8 @@
         <a href="#faq">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
-      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20roadmap." target="_blank" rel="noopener" class="nav-cta burn-cta">
-        Get My Free Roadmap
+      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20plan." target="_blank" rel="noopener" class="nav-cta burn-cta">
+        Get My Free Marketing Plan
       </a>
       <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">
         <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h16M3 12h16M3 17h16"/></svg>
@@ -1558,8 +1641,8 @@
       <a href="#help" onclick="closeMenu()">Services</a>
       <a href="#faq" onclick="closeMenu()">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20roadmap." target="_blank" rel="noopener" class="mobile-cta burn-cta">
-        Get My Free Roadmap
+      <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20plan." target="_blank" rel="noopener" class="mobile-cta burn-cta">
+        Get My Free Marketing Plan
       </a>
     </div>
   </nav>
@@ -1573,21 +1656,20 @@
           <p class="hero-sub reveal d1">
             Not sure whether your business needs a <span class="hl-web">website</span>, <span class="hl-fb">Facebook Ads</span>, or <span class="hl-gads">Google Ads</span>?
           </p>
-          <p class="hero-support reveal d1" style="margin-bottom:16px;">We'll help you understand which one makes the most sense based on your business, goals, and budget.</p>
+          <p class="hero-support reveal d1" style="margin-bottom:16px;">We'll help you decide whether your business needs a website, Facebook Ads or Google Ads based on your goals and budget.</p>
           <p class="positioning-line reveal d1">The goal isn't to spend more on marketing. It's to spend on the right marketing.</p>
           <p class="hero-support reveal d1">We'll recommend what your business actually needs—not sell you every marketing service available.</p>
           <div class="hero-actions reveal d2">
-            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20roadmap." target="_blank" rel="noopener" class="btn-primary pulse burn-cta">
-              Get My Free Marketing Roadmap
+            <a href="https://wa.me/918095355524?text=Hi%2C%20I%27d%20like%20my%20free%20marketing%20plan." target="_blank" rel="noopener" class="btn-primary pulse burn-cta">
+              Get My Free Marketing Plan
               <svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
             <a href="#guide" class="btn-secondary">See Which Strategy Fits You</a>
           </div>
           <div class="biz-strip reveal d2">
-            <span class="biz-chip"><span class="biz-dot teal"></span> Websites from ₹10,000</span>
-            <span class="biz-chip"><span class="biz-dot amber"></span> Ads that bring customers</span>
-            <span class="biz-chip"><span class="biz-dot green"></span> Clear pricing</span>
-            <span class="biz-chip"><span class="biz-dot coral"></span> WhatsApp support</span>
+            <span class="biz-chip trust"><span class="biz-check">✅</span> Beginner Friendly</span>
+            <span class="biz-chip trust"><span class="biz-check">✅</span> No Marketing Jargon</span>
+            <span class="biz-chip trust"><span class="biz-check">✅</span> Honest Recommendations</span>
           </div>
         </div>
 
@@ -1707,7 +1789,7 @@
           <div class="help-body">
             <div class="help-block">
               <h4>Who is it for?</h4>
-              <p class="help-who">Businesses that want customers to trust them online — before they call, message, or walk in.</p>
+              <p class="help-who"><strong>Perfect for businesses starting their online presence.</strong></p>
               <h4 style="margin-top:22px;">What's included?</h4>
               <ul>
                 <li>Modern responsive website</li>
@@ -1761,7 +1843,7 @@
           <div class="help-body">
             <div class="help-block">
               <h4>Who is it for?</h4>
-              <p class="help-who">Perfect if you want to start getting customer enquiries quickly.</p>
+              <p class="help-who"><strong>Perfect if your goal is to receive enquiries quickly.</strong></p>
               <h4 style="margin-top:22px;">What's included?</h4>
               <ul>
                 <li>Research into your business and audience</li>
@@ -1811,7 +1893,7 @@
           <div class="help-body">
             <div class="help-block">
               <h4>Who is it for?</h4>
-              <p class="help-who">Perfect when people are already searching for the products or services you offer.</p>
+              <p class="help-who"><strong>Perfect if people are already searching for your service.</strong></p>
               <h4 style="margin-top:22px;">What's included?</h4>
               <ul>
                 <li>Research into your business and keywords</li>
@@ -1887,7 +1969,7 @@
   <section id="roadmaps" class="section section--b">
     <div class="container">
       <div class="section-eyebrow reveal">Practical paths</div>
-      <h2 class="section-title reveal">Where Most Businesses Start</h2>
+      <h2 class="section-title reveal">Recommended Starting Points</h2>
       <p class="section-sub reveal d1">Simple starting points — not a one-size-fits-all plan.</p>
 
       <div class="roadmap-grid">
@@ -2010,6 +2092,10 @@
           <h3>Do you work with businesses outside Bangalore?</h3>
           <p>Yes. Most of the work is online — WhatsApp, calls, and shared drafts — so location is rarely a problem.</p>
         </div>
+        <div class="faq-item reveal">
+          <h3>How soon will you contact me after I submit the form?</h3>
+          <p>Usually within a few hours during business hours. If you message late in the evening, I'll reply the next morning.</p>
+        </div>
         <div class="faq-item reveal d1">
           <h3>How long does website development take?</h3>
           <p>Usually 7–10 days once we have your content and details. More complex sites can take a little longer.</p>
@@ -2022,7 +2108,7 @@
   <section id="talk" class="section section--b">
     <div class="container">
       <div class="talk-card reveal">
-        <h2>Get Your Free Marketing Roadmap</h2>
+        <h2>Get Your Free Marketing Plan</h2>
         <p class="form-ease">It only takes about 30 seconds to fill out this form.</p>
         <p>Tell me a few details about your business. I'll reply on WhatsApp with clear next steps — not a sales pitch.</p>
 
@@ -2075,7 +2161,8 @@
             </select>
           </div>
           <div class="lead-field full">
-            <button type="submit" class="btn-primary lead-submit burn-cta" id="lead-submit">Get My Free Roadmap</button>
+            <button type="submit" class="btn-primary lead-submit burn-cta" id="lead-submit">Get My Free Marketing Plan</button>
+            <p class="form-privacy">🔒 Your information is only used to contact you about your enquiry.</p>
           </div>
           <p id="lead-msg" class="lead-msg" role="status"></p>
         </form>
@@ -2123,6 +2210,19 @@
       document.getElementById('mobile-menu').style.display = 'none';
     }
 
+
+    document.querySelectorAll('a[href*="wa.me"], .burn-cta, #lead-form').forEach((el) => {
+      if (el.id === 'lead-form') {
+        el.addEventListener('submit', () => {
+          if (window.umami) umami.track('Lead Form Submit');
+        });
+      } else {
+        el.addEventListener('click', () => {
+          if (window.umami) umami.track('WhatsApp CTA Click');
+        });
+      }
+    });
+
     const leadForm = document.getElementById('lead-form');
     if (leadForm) {
       leadForm.addEventListener('submit', async (e) => {
@@ -2160,14 +2260,14 @@
               business,
               city,
               budget,
-              _subject: 'Free Marketing Roadmap request — DigitalYes',
+              _subject: 'Free Marketing Plan request — DigitalYes',
               _template: 'table'
             })
           });
           const data = await res.json().catch(() => ({}));
           if (res.ok) {
             msg.className = 'lead-msg ok';
-            msg.textContent = 'Thanks! I’ll reply on WhatsApp with your roadmap soon.';
+            msg.textContent = 'Thanks! I’ll reply on WhatsApp with your plan soon.';
             leadForm.reset();
           } else {
             throw new Error(data.message || 'Could not send. Please try WhatsApp.');
@@ -2177,7 +2277,7 @@
           msg.textContent = err.message || 'Something went wrong. Please message on WhatsApp.';
         } finally {
           btn.disabled = false;
-          btn.textContent = 'Get My Free Roadmap';
+          btn.textContent = 'Get My Free Marketing Plan';
         }
       });
     }
