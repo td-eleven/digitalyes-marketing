@@ -241,7 +241,7 @@
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 64px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .hero h1 {
@@ -293,18 +293,27 @@
     }
 
     .hero-visual {
-      padding: 8px 0;
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+      align-self: stretch;
+      min-height: 80%;
     }
 
     .confused-panel {
       background: #FFFFFF;
       border: 1.5px solid var(--border);
-      border-radius: 24px;
-      padding: 24px 22px 26px;
+      border-radius: 28px;
+      padding: 36px 30px 40px;
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
-      min-height: 0;
+      width: 100%;
+      min-height: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .confused-panel::before {
@@ -312,8 +321,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 90% 0%, rgba(245, 158, 11, 0.12), transparent 40%),
-        radial-gradient(circle at 10% 100%, rgba(8, 145, 178, 0.1), transparent 42%);
+        radial-gradient(circle at 90% 0%, rgba(245, 158, 11, 0.1), transparent 40%),
+        radial-gradient(circle at 10% 100%, rgba(8, 145, 178, 0.08), transparent 42%);
       pointer-events: none;
     }
 
@@ -324,24 +333,25 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 8px;
     }
 
     .owner-art {
-      width: 168px;
-      height: 210px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 20px;
-      border: 1.5px solid var(--border);
-      box-shadow: var(--shadow);
-      background: #F8FAFC;
+      width: 240px;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      object-position: center bottom;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
     }
 
     .think-bubble {
       position: absolute;
-      top: 8px;
-      right: 18%;
+      top: 12px;
+      right: 12%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -353,8 +363,8 @@
       background: #FFFFFF;
       border: 1.5px solid #F59E0B;
       border-radius: 18px;
-      padding: 8px 12px;
-      font-size: 18px;
+      padding: 10px 14px;
+      font-size: 20px;
       font-weight: 800;
       color: #B45309;
       box-shadow: var(--shadow);
@@ -380,12 +390,12 @@
     .think-dots span:nth-child(3) { animation-delay: 0.4s; }
 
     .owner-caption {
-      margin-top: 12px;
+      margin-top: 10px;
       text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-3);
-      max-width: 260px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-2);
+      max-width: 280px;
       line-height: 1.45;
     }
 
@@ -1273,9 +1283,10 @@
       .nav-container { grid-template-columns: 1fr auto; }
       .nav-links, .nav-cta { display: none; }
       .mobile-menu-btn { display: block; }
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-      .confused-panel { min-height: 0; }
-      .owner-art { width: 148px; height: 186px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+      .hero-visual { min-height: 0; }
+      .confused-panel { min-height: 0; padding: 28px 22px; }
+      .owner-art { width: 180px; max-height: 230px; }
       .footer-inner { grid-template-columns: 1fr; }
       .help-card, .talk-card { padding: 28px 24px; }
     }
@@ -1323,20 +1334,28 @@
     .strategy-card.web { border-top: 4px solid var(--emerald); }
 
     /* Hero story flow */
-    .story-flow { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .story-flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      flex: 1;
+      justify-content: center;
+    }
     .story-arrow {
-      color: var(--text-4); font-size: 18px; font-weight: 800; line-height: 1;
+      color: var(--text-4); font-size: 22px; font-weight: 800; line-height: 1;
     }
     .story-question {
       background: #FEF3C7; border: 1.5px solid #F59E0B; color: #B45309;
-      border-radius: 50px; padding: 10px 18px; font-size: 14px; font-weight: 800;
+      border-radius: 50px; padding: 12px 22px; font-size: 16px; font-weight: 800;
       text-align: center;
     }
     .story-options {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; width: 100%;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; width: 100%;
     }
     .story-options .choice-tile {
-      flex: 1 1 30%; min-width: 90px; padding: 12px 8px; font-size: 13px;
+      flex: 1 1 28%; min-width: 100px; padding: 16px 10px; font-size: 15px;
     }
     .story-options .choice-tile::after { display: none; }
     .story-or {
@@ -1346,12 +1365,12 @@
     .story-outcome {
       background: linear-gradient(135deg, rgba(16,185,129,0.12), rgba(8,145,178,0.12));
       border: 1.5px solid var(--emerald);
-      border-radius: 16px; padding: 14px 18px; text-align: center; width: 100%;
+      border-radius: 18px; padding: 18px 20px; text-align: center; width: 100%;
     }
     .story-outcome strong {
-      display: block; font-size: 16px; font-weight: 800; color: #047857; margin-bottom: 2px;
+      display: block; font-size: 18px; font-weight: 800; color: #047857; margin-bottom: 4px;
     }
-    .story-outcome span { font-size: 13px; color: var(--text-2); font-weight: 500; }
+    .story-outcome span { font-size: 14px; color: var(--text-2); font-weight: 500; }
 
     /* Fit box (Is this right for you?) */
     .fit-box { display: grid; gap: 14px; }
@@ -1572,7 +1591,7 @@
           <div class="confused-panel">
             <div class="story-flow">
               <div class="owner-scene" style="margin-bottom:0;">
-                <img class="owner-art" src="images/thinking-business-owner.png" alt="" width="148" height="186" style="width:148px;height:186px;">
+                <img class="owner-art" src="images/thinking-business-owner.png" alt="" width="240" height="300">
                 <div class="think-bubble">
                   <div class="think-cloud">?</div>
                   <div class="think-dots"><span></span><span></span><span></span></div>
